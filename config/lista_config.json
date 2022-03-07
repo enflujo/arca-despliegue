@@ -1,0 +1,19 @@
+{
+  "table_dir":"../tablas/tablas-arcanov29/",
+  "baseurl": "http://arca.solucionesinmateriales.com/",
+  "key": "arca2021",
+  "tables": [
+    {
+      "table":"Info_categorias_personajes_lista",
+      "resource":"info_categorias_personajes_lista",
+      "fields":{
+        "id":"arca_id",
+        "name":"nombre",
+        "text":"gesto_iconotexto",
+        "Fecha muerte":"fecha_muerte",
+        "Fecha beatificación":"fecha_beatificacion",
+        "source":"source"
+      }
+    }
+  ]
+}

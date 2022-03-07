@@ -1,0 +1,687 @@
+te,name
+1,Bogotá
+2,Turmequé
+3,Monguí
+4,Tunja
+5,Popayán
+6,Duitama
+7,Sutamerchán
+8,Villa de Leyva
+9,Sopó
+10,Tabio
+11,Subachoque
+12,Tenjo
+13,Buga
+14,Tibasosa
+15,Real de Catorce
+16,Simijaca
+17,Ríonegro
+18,Pamplona
+19,Medellín
+20,Santa Fe de Antioquia
+21,Cartagena
+22,Sutatausa
+23,La Calera
+24,Barichara
+25,Oiba
+26,Ubaté
+27,Cali
+28,Cómbita
+29,Fúquene
+30,Cuitiva
+31,Funza
+32,Belencito
+33,Bonza
+34,Chiquinquirá
+35,Ráquira
+36,Tobasía
+37,Cerrito
+38,Bojacá
+39,Cucunubá
+40,Tópaga
+41,Samacá
+42,La Ceja
+43,Tuscaloosa
+44,Oicatá
+45,Tobasía
+46,Guane
+47,Siachoque
+48,Las Lajas
+49,El Retiro
+50,Carmen de Viboral
+51,Corinto
+52,Buriticá
+53,Sopetrán
+54,San Pedro de los Milagros
+55,Jardín Antioquia
+56,Marinilla
+57,Guasca
+58,Ayapango
+59,Puebla
+60,Ixtaltepec
+61,México CdMx
+62,Mérida (Yuc.)
+63,Taxco
+64,Chiautempan
+65,Tlalmanalco
+66,Oaxaca
+67,Querétaro
+68,Caracas
+69,Sabará
+70,Zacatecas
+71,Atlixco
+72,Guadalajara
+73,Huejotzingo
+74,Guanajuato
+75,Tepetlaoxtoc de Hidalgo
+76,Aguascalientes
+77,Celaya
+78,Tehuacán
+79,El Carmen (Jujuy)
+80,Titiribí
+81,Yauri
+82,Monterrey
+83,Worcester
+84,Zinacatepec (Puebla)
+85,Tenancingo
+86,Cholula
+87,Tepotzotlán
+88,Morelia
+89,León
+90,Tlaxcala
+91,Campeche
+92,Cuernavaca
+93,Ozumba
+94,Etzatlán
+95,Texmelucan
+96,Tochtepec
+97,Ocotlán de Morelos
+98,Tlapa
+99,Capulhuac
+100,Acatzingo
+101,Huaquechula
+102,El Cocuy
+103,Chihuahua
+104,Veracruz
+105,Axapusco
+106,Acolman
+107,San Luis Potosí
+108,Aculco
+109,San Miguel Allende
+110,Valladolid (Yucatán)
+111,Lerma
+112,Tecamachalco
+113,San Andrés Cholula
+114,Santuario
+115,Asunción
+116,Quito
+117,Trujillo
+118,Lima
+119,Cuzco
+120,Chosica
+121,Ayacucho
+122,Santa Cruz
+123,Arequipa
+124,San Pedro Cholula
+125,Juchitán de Zaragoza
+126,Antigua
+127,Tlacotepec
+128,Tlayacapan
+129,Zapopan
+130,Pachuca
+131,Santiago (Cl)
+132,Charcas
+133,Huamantla
+134,San Nicolás Peralta
+135,Tamazulápam del Progreso
+136,Coixtlahuaca
+137,Cuauhtinchán
+138,San Cristóbal de las Casas
+139,Huancané
+140,Santa Rosa de Ocopa
+141,Concepción
+142,Araure
+143,Tocuyo
+144,La Paz
+145,Maracaibo
+146,Calabozo
+147,Cuautitlán
+148,Ouro Preto
+149,Potosí
+150,Calamarca (Bol)
+151,Rio de Janeiro
+152,San Juan (PR)
+153,Sucre
+154,El Quinche
+155,Puno
+156,Tetla
+157,Juli
+158,São Paulo
+159,Buenos Aires
+160,Cuilapam
+161,Acámbaro
+162,Tecaxic
+163,Toluca
+164,Tecalí
+165,Cochinoca
+166,Uquía
+167,Córdoba
+168,Charleston
+169,Casabindo
+170,Texcoco
+171,Junín
+172,Huaro
+173,Recife
+174,Yanhuitlan
+175,Meztitlán
+176,Luján
+177,Amecameca
+178,Santa Rosa de Lima 
+179,Ospino
+180,Coro
+181,Loja
+182,Carabuco
+183,Montecarlo
+184,Telixtlahuaca
+185,Atotonilco
+186,Ayaviri
+187,Saltillo
+188,Caquiaviri
+189,Cochabamba
+190,Ponce
+191,Santa Fe (Argentina)
+192,Guayaquil
+193,Tiradentes
+194,Durango
+195,San Petersburgo
+196,Otumba
+197,Zinacantepec (Edo. Mex)
+198,Texcalyacac
+199,Culhuacán
+200,Madrid
+201,Cajamarca (Perú)
+202,Huánuco
+203,Oruro
+204,Cuenca
+205,Parinacota
+206,Hualahoyo
+207,Humahuaca
+208,Santiago de Huata
+209,Loreto
+210,Rosario
+211,San Salvador de Jujuy
+212,Tlaquepaque
+213,Rapaz
+214,Tucson
+215,Tinta
+216,Quíbor
+217,Trinidad (Paraguay)
+218,Orosí
+219,Acomayo
+220,Copacabana
+221,Tzintzuntzan
+222,Chalchicomula de Sesma
+223,San Francisco
+224,Salas (Perú)
+225,Salta
+226,Pasto
+227,Huamanga
+228,San Salvador el Verde
+229,Olinda
+230,Penedo
+231,Guadalupe
+232,Mérida (Ven.)
+233,Ohio
+234,Mariana
+235,São João del Rei
+236,Belem
+237,Tultitlán
+238,Diamantina
+239,Catas altas
+240,Niteroi
+241,Huanoquite
+242,Igaraçu
+243,Santa Rita Durao
+244,Embu
+245,São Roque
+246,Itu São Paulo
+247,Salvador de Bahia
+248,Malinalco
+249,Itaverava
+250,Pirapetinga
+251,Vitoriano Veloso
+252,Serro
+253,Actopan
+254,Filadelfia
+255,Tonalá
+256,Tepeaca
+257,El Venado
+258,Pinos
+259,Zumpango
+260,Juitepec
+261,Tabasco (Zacatecas)
+262,Roma
+263,Ejutla
+264,Coacalco de Berriozábal
+265,Huehuetoca
+266,Cocula
+267,Pinos Zacatecas
+268,Rinconada
+269,Accha
+270,Tlahuelilpan
+271,San Lucas Xolox
+272,Urcos
+273,Quecholac
+274,Jiquipilco
+275,Chiclayo
+276,Santiago del Estero
+277,Chapala
+278,Catamarca
+279,Yavi
+280,Paraná
+281,Tilcara
+282,Azcapotzalco
+283,Tegucigalpa
+284,Esquipulas
+285,Brasília
+286,Cachoeira
+287,João Pessoa
+288,Vila de Nova Almeida
+289,São Cristóvão
+290,Pirenópolis
+291,São Tomé das Letras
+292,Jaboatão dos Guararapes
+293,Arani
+294,Belo Vale
+295,Santa Bárbara MG
+296,Ouro Branco
+297,Baruta
+298,Paucartambo
+299,Higüey
+300,Urquillos
+301,"Garachico, Tenerife"
+302,San Juan de Tilapa
+303,La Habana
+304,Denver
+305,Corrientes
+306,Santana dos Montes
+307,Nova Era
+308,Itapanhoacanga
+309,Huancavelica
+310,Congonhas
+311,Santo Domingo
+312,Nueva York
+313,Guaqui
+314,Los Angeles
+315,Chicago
+316,Houston
+317,New Haven
+318,Lincoln
+319,Washington
+320,Baltimore
+321,Springfield
+322,Boston
+323,Dallas
+324,Allentown
+325,Jerusalem
+326,Williamsburg
+327,Puerto Príncipe
+328,Managua
+329,Attard (Malta)
+330,New Orleans
+331,Daytona Beach
+332,Newark
+333,Cárdenas
+334,Camagüey
+335,Tulsa
+336,Albany (NY)
+337,Forth Worth
+338,Pittsfield
+339,Birmingham
+340,Cincinnatti
+341,Charlotte
+342,Provo
+343,Omaha
+344,Stratford
+345,North Kingston
+346,Indianapolis
+347,Stanford
+348,Minneapolis
+349,La Serena
+350,Salem
+351,Rancagua
+352,Ozumbilla
+353,Davenport
+354,Guatemala
+355,Gurabo
+356,Soria
+357,Valladolid (España)
+358,Kenilworth - Illi.
+359,Sevilla
+360,Salamanca (Gto.)
+361,Londres
+362,Viena
+363,Chalma
+364,Miami
+365,Tudela
+366,Nemocón
+367,San Antonio
+368,Chinchilla
+369,Colorado Springs
+370,Tuxedo Park
+371,Valle de Bravo
+372,Machetá
+373,Dublin
+374,Zacatelco
+375,Ahuatempa
+376,Tasco (Colombia)
+377,Turabo
+378,Austin
+379,Lisboa
+380,Berlin
+381,Hannover
+382,Mongüa
+383,Paz del Río
+384,Pisco
+385,Tuta
+386,Tota
+387,"San Petersburgo, FL"
+388,Iza
+389,Phoenix
+390,Belo Horizonte
+391,Richmond
+392,Hartford
+393,Talca
+394,Maca
+395,Florencia
+396,Bloomington
+397,Maipú
+398,Torreón (Coahuila)
+399,San Javier
+400,Amberes
+401,Liubliana
+402,San Francisco de Yare
+403,París
+404,Tomave-Uyuni
+405,Lieja
+406,Santa Fe (EE.UU)
+407,San José Teotihuacán
+408,Huarocondo
+409,Ámsterdam
+410,Panamá
+411,Andahuaylillas
+412,Santa Ana (Ven)
+413,Tuxpan (Mich)
+414,San Jerónimo (Baja Verapaz)
+415,Jaén
+416,"Nazareth, Pennsylvannia"
+417,Naucalupan
+418,Saint Louis (Missouri)
+419,"Brunswick, Maine"
+420,Detroit
+421,Kansas City
+422,Princenton
+423,Cambridge (Massach.)
+424,Ecatepec
+425,San Mateo Xoloc
+426,Sayula (Jalisco)
+427,"Pícuris, Nuevo México"
+428,La Valletta
+429,Budapest
+430,Oropesa
+431,San Diego
+432,Curahuara de Carangas
+433,Ocongate
+434,San Bernardino de Chalchihuapán
+435,Ahuashuatepec
+436,Tonanzintla
+437,Totolapan
+438,Milpa Alta
+439,El Cardonal
+440,Cucaita
+441,Firavitova
+442,Yanahuara
+443,Lobatera
+444,Castellón de la Plana
+445,Winston-Salem
+446,Winterthur
+447,Littleton
+448,Pecos
+449,Greensburg
+450,Cáceres
+451,Ipiales
+452,Riobamba
+453,Ithaca
+454,Utica (NY)
+455,Columbia
+456,Palma de Mallorca
+457,Calpan
+458,Edimburgo
+459,Newport
+460,Charles City
+461,Statesboro
+462,Oxford
+463,Lexington
+464,Hamilton
+465,Copenhague
+466,Barcelona
+467,Nápoles
+468,Corsham
+469,Alexandria (EE.UU)
+470,Auch
+471,Ottawa
+472,Saint George (Bermudas)
+473,Newport News
+474,Athens (EE.UU)
+475,Mérida (Venezuela)
+476,Tuxtla Gutiérrez
+477,Tulancingo
+478,Tlalnepantla
+479,Zamora
+480,San Juan de los Lagos
+481,Tula
+482,Xalapa
+483,La Soledad (Ca.)
+484,San Juan Bautista (Ca.)
+485,Winters (Ca.)
+486,Pasadena
+487,Jolón
+488,Molinos
+489,Quinua
+490,Cangallo
+491,Zacatlán
+492,Acaxochitlán
+493,Apetitlán
+494,Teposcolula
+495,Calimaya
+496,Chelmsford
+497,Davis (CA)
+498,Oxtotipac
+499,Quiquijana
+500,Chinchero 
+501,Sangarará
+502,Caicay
+503,Cayma
+504,Caracoto
+505,Berlanga del Duero
+506,Characato
+507,Checacupe
+508,Arrollozarco
+509,Cocucho
+510,Cohoni
+511,Colquepata
+512,San Antonio Pecos
+513,San Fernando del valle
+514,Anta
+515,Yecapixtla
+516,apaseo el grande (gto.)
+517,Epatlán
+518,Cuautlacingo
+519,Italaque
+520,Lampa
+521,Maras
+522,Molcaxac
+523,Motavita
+524,Azángaro
+525,Pitumarca
+526,Pucyura
+527,Tecali de Herrera
+528,Andenes
+529,Susques
+530,Lamay
+531,Pacarectambo
+532,Lucre
+533,Ollataytambo
+534,Pampatar
+535,Patzcuaro
+536,Tlacolula
+537,Coyotepec
+538,Tlacochahuaya
+539,Lagos de Moreno
+540,Soltepec
+541,Cachi
+542,San Luis Tehuiloyocan
+543,Teolocholco
+544,Boconó
+545,Hardford
+546,San Miguel Octopan
+547,San Pablo Villa de Mitla
+548,Caquingora
+549,Tecámac de Felipe Villanueva
+550,Santa Isabel de Xiloxoxtla
+551,Acajete
+552,Santa María Acuexcomac
+553,Vizarrón de Montes
+554,Contla
+555,Yauhquemehcan
+556,Izúcar de Matamoros
+557,San Pedro y San Pablo Tequixtepec
+558,Tumbaco
+559,Tumbaya
+560,Urubamba
+561,Vilque
+562,San Miguel del Milagro
+563,Buenavista
+564,Cocula
+565,Yanaoca
+566,Yucay
+567,Zimatlán de Álvarez
+568,Ilave
+569,Santa Marta 
+570,Milán
+571,Calpulalpan
+572,Teoloyucan
+573,Chinchaypuqyu
+574,Nagasaki
+575,Valencia
+576,Kobe
+577,Cuitzeo
+578,Atenco
+579,Hueyapan
+580,Chalchicomula - Serdán
+581,San Rafael 
+582,Mixco
+583,Manizales
+584,Españita
+585,San Mateo Atenco
+586,Metepec
+587,Encarnación de Diaz
+588,Valle de la Pascua
+589,San Lucas Totolmaloya
+590,Churo
+591,Nealtican
+592,Calapuja
+593,Natívitas
+594,Paruro
+595,Axochiapan
+596,San Pablo del Monte
+597,Ate 
+598,Cacaotepec
+599,Condoroma
+600,Tlapujahua
+601,Calpulalpan de Mendez (Oax)
+602,San Mateo Peñasco
+603,Jesús de Machaca
+604,El tablazo
+605,Vila Velha
+606,San Lucas el verde
+607,Singuilucan
+608,Pichigua
+609,Atlihuetzía
+610,Oceanside
+611,San Salvador (Cuzco)
+612,San Luis Coyotzingo
+613,Calca
+614,Pisaq
+615,Occoruro
+616,Colcha
+617,Omacha
+618,Mosocllacta
+619,Cusipata
+620,Pomacanchi
+621,Limatambo
+622,Coya
+623,Yaurisque
+624,Challabamba
+625,Qatqa
+626,Santiago (Cuzco)
+627,Surimana
+628,Huayllabamba
+629,Chuquinga 
+630,Tlanechicolpan
+631,Etla
+632,Winchester
+633,Stonington
+634,Annapolis
+635,Mexquitic de Carmona
+636,Irapuato
+637,Ramiriquí
+638,Ixtapaluca
+639,Leeland
+640,Divina Pastora
+641,Izamal
+642,Serra
+643,Huachacalla
+644,"Villagarcía de campos, Valladolid"
+645,Yehualtepec
+646,Ccorca
+647,Chamartín
+648,San Angelo
+649,Santa Maria Coatepec
+650,San Bartolomé Soyaltepec
+651,Wellesley College
+652,Quetzaltenango
+653,Jiménez (Chih)
+654,San Cristóbal Suchixtlahuaca
+655,Cádiz
+656,Pabellón de Hidalgo
+657,Pucarani
+658,Ciudad Juárez
+659,La Valeta
+660,Transilvania
+661,Sora
+662,Trinidad (Cuba)
+663,Cuenca (Ecuador)
+664,Pomata
+665,Andamarca
+666,Achocalla
+667,Litchfield
+668,Rhode Island
+669,Portsmouth
+670,Tecozautla
+671,Barquisimeto
+672,Valencia (Vn)
+673,San Antonio Copayacuar
+674,Santa Cruz de Tenerife
+675,Carora
+676,Táchira
+677,San Felipe
+678,Chilpancingo de los Bravo
+679,Yuriria
+680,Colima
+681,Oxolotán
+682,Dolores
+683,Acapulco
+684,Montevideo
+685,Angahuan
+686,Nurio

@@ -1,0 +1,161 @@
+{
+    "baseurl": "http://localhost:8055",
+    "csv": "../datos/entrada/csv/Registro general.csv",
+    "filtro": "",
+    "files_dir":"",
+    "fields_map" : {
+        "t":"arca_id",
+        "Fuente imagen":"fuente_imagen",
+        "título":"titulo",
+        "Sintesis":"sintesis",
+        "Anotacion / Comentario bibliográfico":"anotacion_comentario_bibliografico",
+        "Iconotexto":"transcripcion_iconotexto",
+        "fechas_actividad":"fechas_actividad"
+        },
+    "m2o_map":[
+        {
+            "field": "autor",
+            "resource":"autores",
+            "arca_id": "autores_id",
+            "value": "Autores"
+        },
+        {
+            "field": "donante",
+            "resource":"donante_lista",
+            "arca_id": "donante_1_id",
+            "value": "donante"
+        },
+        {
+            "field": "tecnica",
+            "resource":"tecnica_lista",
+            "arca_id": "tecnica__id",
+            "value": "tecnica"
+        },
+        {
+            "field": "rostro",
+            "resource":"rostro_lista",
+            "arca_id": "Rostro_lista",
+            "value": "rostro"
+        },
+        {
+            "field": "tipo_iconotexto",
+            "resource":"cartela_filacteria_lista",
+            "arca_id": "Cartela_filacteria_2_lista",
+            "value": "Gesto-iconotexto"
+        },
+        {
+            "field": "complejidad_gestual",
+            "resource":"complejo_gestual_lista",
+            "arca_id": "Complejo_gestual_lista",
+            "value": "Complejo gestual"
+        },
+        {
+            "field": "tipo_gestual",
+            "resource":"tipo_gestual_lista",
+            "arca_id": "Tipo_gestual_lista",
+            "value": "Tipo gestual"
+        },
+        {
+            "field":  "cuerpo_imagen",
+            "resource":"fisiognomica_imagen_lista",
+            "arca_id": "Fisiognomica_imagen_lista",
+            "value": "fisiognómica imagen"
+        },
+        {
+            "field": "disposicion_corporal",
+            "resource":"fisiognomica_lista",
+            "arca_id": "Fisiognómica_lista",
+            "value": "fisiognómica imagen"
+        },
+        {
+            "field":"ubicacion_actual",
+            "resource": "ubicacion",
+            "arca_id": "ubicacion_id",
+            "value": "Ubicacion"
+        },
+        {
+            "field": "escenario",
+            "resource": "escenarios_lista",
+            "arca_id":"escenario_2_id",
+            "value": "Escenario"
+        },
+        {
+            "field":"tipo_relato_visual",
+            "resource":"relato_visual_lista",
+            "arca_id": "Relato_visual_lista",
+            "value": "Relato_visual_lista.1"
+        }
+    ],
+    "m2m_map":[
+        {
+            "field": "informacion_referencial",
+            "m2mresource":"obra_info_categorias_personajes_lista",
+            "resource":"info_categorias_personajes_lista",
+            "objects":[
+                {
+                    "arca_id":"pasajes_3_id_1",
+                    "value": "Info_categorias_1"
+                },
+                {
+                    "arca_id":"pasajes_3_id_2",
+                    "value": "Info_categorias_2"
+                },
+                {
+                    "arca_id":"pasajes_3_id_3",
+                    "value": "Info_categorias_3"
+                }
+
+            ]
+        },
+        {
+            "field": "clasificacion",
+            "m2mresource":"obra_categorias_lista",
+            "resource":"categorias_lista",
+            "objects":[
+                {
+                    "arca_id":"categoria_1_id",
+                    "value": "Categoria 1"
+                },
+                {
+                    "arca_id":"categoria_2_id",
+                    "value": "Categoria 2"
+                },
+                {
+                    "arca_id":"categoria_3_id",
+                    "value": "Categoria 3"
+                },
+                {
+                    "arca_id":"categoria_4_id",
+                    "value": "Categoria 4"
+                },
+                {
+                    "arca_id":"categoria_5_id",
+                    "value": "Categoria 5"
+                },
+                {
+                    "arca_id":"categoria_6_id",
+                    "value": "Categoria 6"
+                }
+            ]
+        },
+        {
+            "field": "gestos",
+            "m2mresource": "obra_gestos_lista",
+            "resource": "gestos_lista",
+            "objects":[
+                {
+                    "arca_id": "Gesto_lista",
+                    "value": "Gesto dominante"
+                },
+                {
+                    "arca_id": "Gesto_lista.1",
+                    "value": "Gesto secundario"
+                },
+                {
+                    "arca_id": "Gesto_lista.2",
+                    "value": "Gesto 3"
+                }
+            ]
+        }
+    ]
+}

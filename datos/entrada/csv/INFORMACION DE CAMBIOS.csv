@@ -1,0 +1,48 @@
+,,
+Anoto a continuación los cambios que introduzco en la base de datos:,,
+ACCION EN:,cambio,ejecutó
+Ordené pestañas de acuedro al uso. al final las que no tienen datos relevantes,,Jaime
+Renombré pestañas siguiendo los nombres que están en el portal Arca,,Jaime
+Pestaña Registro general,agregué filtros,Jaime
+Pestaña Registro general: Marcado en rojo,campos vacios,Jaime
+Pestaña Registro general: marcado amarillo,campos revisados,Jaime
+Pestaña general: nombres de campos en español y relacionados con el nombre de las pestañas,renombrar ,Jaime
+Pestaña Tipo (existen dos pestañas que tienen este nombre),renombre: tecnica,Jaime
+Pestaña registro general: biographic_data. este campo no existe en arca,Marcado en rojo,Jaime
+Eliminadas pestañas: body gesture (tercera pestaña de arca),,
+"Pestaña Registros generales: columna creation_data. este campo repite las fechas. originalmente se trataba de un campo para hacer lineas de tiempo, pero nunca sirvió. creo que es suficiente con las otras fechas y puede desaparecer",marcado en rojo,Jaime
+"Pestaña Registros Generales: columna sub_image . tampoco tiene utilidad. la idea era subir fragmentos de imagenes, o detalles, nunca se habilitó. al final de la tabla hay 3 sub_image_content_type",marcado en rojo,Jaime
+"Eliminadas Hojas Artworks, Users, Tlb2, ar internal metadata, Autores 2 (artworksbk, autores 2 y Tlb en otro documento)",,
+Agregada columna fullname = concat de name y last name en Autores,,
+Agregada hoja madre de IDs,,
+Se borro columnas de firma y fecha de actividad en registro general,,
+se agregaron cerca de 1800 filas nuevas,,
+"se agregaron 15 campos nuevos de analisis gestual, con respectivas pestañas con los códigos ",,
+Eliminadas columnas rojas en Registro General,,
+Se agregó columnas de latitud y longitud en tabla Ubicacion_1_ Lista,,
+Se borraron los campos de escuela; fuente iconográfica,,
+SE borraron ceros en clasificación y datoas de arrastre en todas las tablas,,
+SE borraron pestañas Escuela y fuente iconográfica y Tipo de Historia,,
+Pestañas Pasajes_3 y Biografias_3 se unifican en una denominada Info_categorias_personajes. Se borra pestaña de registros de biografias,,
+Cosas por revisar,,
+Pestaña autores 2: autores resaltados en rosado,,
+"Revisar ciudades, algunas son estados, otras repetidas",,
+"Cotejar imagenes faltantes entre carpetas y esta base, algunas borradas",,
+Procesar datos de autorm ciudad y país que aparece en anotaciones,,
+,,
+,,
+revisar ubicacion de obras del catálogo de onras mexicanas en Vwenezuela - todo mal,,
+,,
+Específico,,
+"Ubicación pinturas en Zacatecas entre santuario de Guadalupe y museo de guadalupe, parwece confuso el otorgamiento. Ver página Inah",,
+,,
+Cómo tratar pinturas  de colección particular para ubicarlas geográficamente?,,
+"Ubicación de imagenes cuyo nombre es igual a estado o departamento: zacatecas, Puebla, Tlaxcala",,
+Clasificar virgen carmen subcatrtegorias que se deben crear Tambien crucificado por devociones; purgatorio rosario; alegorias cristo lagar; Revisar toda la clasificacion de ángeles,,
+"revisar info salta del libro GORI, Iris y Sergio Barbieri. Patrimonio artístico nacional: inventario de bienes muebles: provincia de Salta. Buenos Aires: Academia Nacional de Bellas Artes, 1988.; Obras coloniales restauradas. La Paz, Cochabamba, Sucre, Potosí. La Paz: Fundación Cultural Banco Central de Bolivia. 2001.; Banco central de Bolivia. 70 obras coloniales restauradas. La Paz, Cochabamba, Sucre, Potosí.  La Paz: Fundación Cultural Banco Central de Bolivia, 2001; Buscar libros para confirmar ubicacuiones:Academia Nacional de Bellas Artes. Patrimonio Artístico Nacional. Inventario de Bienes Muebles. Ciudad de Buenos Aires I. Buenos Aires: Academia Nacional de Bellas Artes, 1998.",,
+,,
+,,
+revisar cuzco porque se ubican muchas iglesias ahí que están en el departamento y no la ciudad,,
+"Clasificacion de imagenes que estan en libro The Virgin de Susanne S-P, especialmente vinculadas a Taylor gallery",,
+confirmar autoría u homónimo de Vicente Escobar y flores (en especial los retratos),,
+"confitmar autenticidad colonial de: 13535, 13538, 15539, 7886",,
