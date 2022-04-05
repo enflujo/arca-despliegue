@@ -72,7 +72,7 @@
         {
             "field":"ubicacion_actual",
             "resource": "ubicacion",
-            "arca_id": "ubicacion_id",
+            "arca_id": "id_ubicacion",
             "value": "Ubicacion"
         },
         {
