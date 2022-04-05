@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+import sys
 import datetime
 import json
 import logging
@@ -19,10 +20,14 @@ class Lista:
         self.key = os.getenv('KEY')
         self.baseurl = self.config['baseurl']
 
-        self.headers = {'Authorization':f'Bearer {self.key}'}
+        self.headers = {'Authorization': f"Bearer {self.key}"}
         self.timestamp = datetime.datetime.now()
 
-        logging.basicConfig(level=logging.DEBUG, filename=f'../logs/listas-{self.timestamp.isoformat()}.log', filemode='w')
+        logging.basicConfig(level=logging.DEBUG, 
+            filename=f'../logs/listas-{self.timestamp.isoformat()}.log', 
+            filemode='w'
+        )
+        logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
         self.totalrows = 0
         self.cleanedrows = 0
