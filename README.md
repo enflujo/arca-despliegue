@@ -1,10 +1,25 @@
 # Despliegue Arca
 
+Conjunto de herramientas para cargar datos en la base de datos del proyecto Arca. 
 ## Intro
 
-Conjunto de herramientas para cargar datos en la base de datos del proyecto Arca. Los siguientes son los directorios y sus funciones:
+Los siguientes son los directorios del proyecto y sus funciones:
+### Directorios
 
-```cargador/```: Contiene los scripts de carga.  Se pueden ejecutar individualmente o en conjunto, ejecutando el script ```cargar.py```.
+```cargador/```: Contiene los scripts de carga.  Se pueden ejecutar individualmente o en conjunto, ejecutando el script ```cargar.py```.  Contiene los siguientes scripts:
+
+    -```cargar.py```: Ejecuta todos los scripts de carga en el orden correcto.  Genera logs en el directorio ```logs/```.
+
+    -```listas.py```: Carga las listas de control con los valores de los campos de la tabla/coleción Obra en Directus.
+
+    -```obra.py```: Crea las obras y llena los campos internos de la tabla Obra y las relaciones Many To One.
+
+    -```ubicacion.py```: Midifica las ubicaciones y crea relaciones ```ciudad->pais``` y ```ubicacion->ciudad```
+    -```obra_descriptores.py```: Crea las relaciones Many To Many ```obra->descriptores```.  Hace peticiones al recurso de la tabla intermedia de la relación.
+
+    -```obra_simbolos.py```: Crea las relaciones Many To Many ```obra->simbolos```.  Hace peticiones al recurso de la tabla intermedia de la relación.
+
+    -```obra_caracteristicas.py```: Crea las relaciones Many To Many ```obra->caracteristicas```.  Hace peticiones al recurso de la tabla intermedia de la relación.
 
 ```config/```: Archivos de configuración.  Son archivos json para configurar la aplicación.
 
@@ -18,6 +33,39 @@ Conjunto de herramientas para cargar datos en la base de datos del proyecto Arca
 
 ```notebooks/```:Versión de los scripts en notebooks interactivos de jupyter.  Se pueden usar para realizar una carga interactiva de los datos.
 
+### Cargador
+
+## Configuración
+
+En el directorio ```config/``` hay varios archivos de confuguración
+
+### Principal
+
+```config.json``` es el archivo de configuración principal. Las variables relevantes son:
+
+```baseurl```: La url base del api de directus al que se van a hacer los llamados o peticiones. Debe llevar ```/``` al final..
+
+```csv```: Tabla en csv con el listado de obras.  En el excel de arca se llama "Registro general.csv".
+
+```files_dir```: Directorio donde se encuentran las imágenes a subir.  Si el valor está vacío, el script no va a intentar subir imágenes.
+
+```dir_tablas```:Directorio donde se encuentran las tablas de entrada.  Por omisión es ```datos/entrada/csv/```.
+
+```fields_map```: Mapa de campos de la tabla/colección Obra. Es un objeto json en donde la llave o _key_ es el nombre del campo en la tabla de entrada (Registro general.csv) y el valor o _value_ es el nombre del campo en la coleción Obra en el api de directus.
+
+```m2o_map```: Mapa de campos Many To One. Es un array de objetos json.  Cada objeto tiene el nombre del campo en la colección Obra en la API de Directus (```field```), el nombre del recurso o endpoint relacionado (```resource```), el nombre de la columna con el ID del campo relacionado en la tabla de entrada (```arca_id```) y el nombre de la columna que contiene el valor del campo en la tabla de entrada (```value```).
+
+```m2m_map```: Mapa de campos Many To Many.  Array de objetos json que contiene el mapeo de campos.  ```field``` contiene el nombre del campo Many To Many en la tabla/colección obra. ```m2mresource``` es el nombre del recurso que contiene la tabla/colección intermedia que guarda las relaciones m2m en directus.```objects``` es un arreglo de objetos con los nombres de la columna con el ID de arca del objeto a subir ```arca_id``` y el nombre de la columna con el valor ```value```
+
+### Listas
+
+```listas_config.json``` contiene la configuración necesaria para sublir las tablas que van a ser listas controladas. Los siguientes son los campos:
+
+```table```: Nombre de la tabla en donde se encuentran los datos a subir.  A este nombre se le agrega la extensión ```csv``` para obtener el archivo.
+
+```resource```: Nombre del recurso o endpoint al que se le va a realizar la petición o llamado HTTP.
+
+```fields```: Objeto json en donde la llave o _key_ contiene el nombre de la columna con el ID de arca ```id```, y luego un listado con los nombres de las columnas con los valores, vs el nombre del campo en el API de Directus donde va ese valor.
 ## Uso
 
 Clonar el repositorio y entrar en el repo y crear el directorio ```logs/```/cargador.
@@ -60,6 +108,20 @@ Entrar en el directorio de scripts y ejecutar
 ```
 cd cargador
 python cargar.py
+```
+### Ejecución individual
+
+El script ```cargarpy``` ejecuta todos los procesos de carga mediante la importación de módulos y ejecucuión de la función ```cargar()``` en cada módulo.
+
+Es posible ejecutar cada módulo como un script independiente, pero para que funcione se deben ejecutar en el siguiente orden:
+
+```
+python listas.py
+python obra.py
+python ubicacion.py
+python obra_descriptores.py
+python obra_simbolos.py
+python obra_caracteristicas.py
 ```
 ## Notas
 
