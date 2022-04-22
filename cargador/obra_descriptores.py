@@ -129,7 +129,7 @@ class obraDescriptores:
             m2mid = obdesc_m2m['id'] 
             logging.debug(f'Creada relacion obra descriptor: {m2mid} arcaid: {m2m_arcaid}')
 
-
-obraDescriptor = obraDescriptores()
-
-obraDescriptor.cargar()
+if __name__ == '__main__':
+    obraDescriptor = obraDescriptores()
+    obraDescriptor.cargar()
+    sys.exit(0)

@@ -117,8 +117,9 @@ class obraCaracteristicas:
             obsim_m2m = r_obsim_m2m.json()['data']
             m2mid = obsim_m2m['id']
             logging.debug(f'Creada relacion obra caract: {m2mid} arcaid: {m2m_arcaid}')
-            
-obraCaracteristica = obraCaracteristicas()
-obraCaracteristica.cargar()
 
 
+if __name__ == '__main__':
+    obraCaracteristica = obraCaracteristicas()
+    obraCaracteristica.cargar()
+    sys.exit(0)

@@ -124,5 +124,8 @@ class obraSimbolos:
             logging.debug(f'Creada relacion obra simbolo: {m2mid} arcaid: {m2m_arcaid}')
             
 
-obraSimbolo = obraSimbolos()
-obraSimbolo.cargar()
+
+if __name__ == '__main__':
+    obraSimbolo = obraSimbolos()
+    obraSimbolo.cargar()
+    sys.exit()

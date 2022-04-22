@@ -202,8 +202,11 @@ class Ubicacion:
             logging.debug('Creada relacion ubicacion pais')
             
 
-ubicacion = Ubicacion()
 
-ubicacion.cargarCiudades()
-ubicacion.cargarUbicaciones()
+if __name__ == '__main__':
+        ubicacion = Ubicacion()
+
+        ubicacion.cargarCiudades()
+        ubicacion.cargarUbicaciones()
+        sys.exit(0)
 

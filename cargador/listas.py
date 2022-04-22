@@ -72,7 +72,8 @@ class Lista:
         logging.debug(f'total rows: {self.totalrows}')
 
 
-lista = Lista()
-lista.cargar()
-
+if __name__ == '__main__':
+    lista = Lista()
+    lista.cargar()
+    sys.exit(0)
 

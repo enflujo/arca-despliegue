@@ -109,7 +109,10 @@ class Obra:
                 except KeyError as e:
                     logging.error(f"Columna {idcol} no encontrada: {e}. Revisar nombres de columnas en tabla: {self.archivo}")
                     #Error grave, salimos del programa
-                    sys.exit()
+                    sys.exit(1)
+                except ValueError as e:
+                    logging.error(f"Problema con la columna: {idcol}, valor{data[idcol]}")
+                    sys.exit(1)
 
                 #nombre del recurso a relacionar
                 resourcename = m2ofield['resource']
@@ -245,6 +248,8 @@ class Obra:
 
                     print(f'-- OK UPDATE imagen-obra {arca_id}')
 
-#Instanciar y ejecutarobr   
-obra = Obra()
-obra.cargar()
+
+if __name__ == '__main__':
+    obra = Obra()
+    obra.cargar()
+    sys.exit(0)
