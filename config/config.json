@@ -1,8 +1,10 @@
 {
-    "baseurl": "http://localhost:8055",
+    "baseurl": "http://localhost:8056/",
     "csv": "../datos/entrada/csv/Registro general.csv",
     "filtro": "",
     "files_dir":"",
+    "logging":false,
+    "dir_tablas": "../datos/entrada/csv/",
     "fields_map" : {
         "t":"arca_id",
         "Fuente imagen":"fuente_imagen",
@@ -70,7 +72,7 @@
         {
             "field":"ubicacion_actual",
             "resource": "ubicacion",
-            "arca_id": "ubicacion_id",
+            "arca_id": "id_ubicacion",
             "value": "Ubicacion"
         },
         {
