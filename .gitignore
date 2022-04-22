@@ -55,5 +55,4 @@ node_modules
 .ipynb_checkpoints
 
 .env
-
-logs/*.log
+api/
