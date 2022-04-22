@@ -36,6 +36,12 @@ y
 Instalar dependencias
 
 ```pip install -r requirements.txt```
+
+### Crear archivo de entorno
+
+Crear un archivo ```.env``` con la llave del API (si aplica):
+
+```echo "KEY=LaLlaveDelApi" > .env```
 ### Cargar esquema
 
 Copiar el archivo en el directorio ```esquema``` en la carpeta compartida con la imagen de docker de directus.
