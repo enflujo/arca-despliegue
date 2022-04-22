@@ -1,7 +1,30 @@
 import { createReadStream } from 'fs';
 import { parse } from 'csv-parse';
+import { esNumero, logCambios, urlsAEnlacesHTML } from '../utilidades/ayudas';
+import { Directus, TransportError } from '@directus/sdk';
+import { ColeccionesArca } from '../aplicacion';
 
-export default async () => {
+const vacio = { fecha: null, anotacion: null };
+
+function procesarFechaActividad(fecha: string): { fecha: number | null; anotacion: string | null } {
+  if (!fecha) return vacio;
+  if (esNumero(fecha)) return { fecha: +fecha, anotacion: null };
+
+  if (fecha.includes('c')) {
+    const [anotacion, fechaDentro] = fecha.split(' ');
+    const fechaEn = procesarFechaActividad(fechaDentro);
+
+    if (fechaEn) {
+      return { fecha: fechaEn.fecha, anotacion: 'ca' };
+    }
+  }
+
+  if (fecha.includes('s')) return { fecha: null, anotacion: 'sf' };
+
+  return vacio;
+}
+
+export default async (directus: Directus<ColeccionesArca>) => {
   const flujo = createReadStream(`./datos/entrada/csv/Arca - Autores.csv`).pipe(
     parse({
       delimiter: ',',
@@ -10,35 +33,66 @@ export default async () => {
       encoding: 'utf-8',
       skipRecordsWithEmptyValues: true,
       cast: (valor, contexto) => {
+        if (!valor.length && contexto.column !== 'activity') return null;
         // Convertir URLS a enlaces de HTML
         if (contexto.column === 'reference' || contexto.column === 'biography') {
-          const urls = valor.match(/(((ftp|https?):\/\/)[\-\w@:%_\+.~#?,&\/\/=]+)/g);
-
-          if (urls) {
-            urls.forEach((url) => {
-              valor = valor.replace(url, `<a href="${url}" target="_blank">${url}</a>`);
-            });
-          }
-          return valor;
+          valor = urlsAEnlacesHTML(valor);
         }
 
         if (contexto.column === 'activity') {
-          console.log(
-            valor
-              .replace(/(–)/g, '-')
-              .split('-')
-              .map((v) => v.trim())
-          );
+          const fechas = valor
+            .replace(/(–)/g, '-')
+            .split('-')
+            .map((v) => v.trim())
+            .filter((v) => v.length);
 
-          // return valor.length ? valor.split('-') : null;
+          if (fechas.length) {
+            const [desde, hasta] = fechas;
+            return {
+              desde: procesarFechaActividad(desde),
+              hasta: procesarFechaActividad(hasta),
+            };
+          }
+
+          return { desde: vacio, hasta: vacio };
         }
 
         return valor;
       },
     })
   );
-
+  const limite = 100;
+  let procesados = [];
+  let contador = 0;
   for await (const autor of flujo) {
-    // console.log(autor);
+    procesados.push({
+      nombre: autor.name,
+      apellido: autor.lastname,
+      desde: autor.activity.desde.fecha,
+      desde_anotacion: autor.activity.desde.anotacion,
+      hasta: autor.activity.hasta.fecha,
+      hasta_anotacion: autor.activity.hasta.anotacion,
+      biografia: autor.biography,
+      referencia: autor.reference,
+      status: 'published',
+    });
+    contador = contador + 1;
+
+    if (contador >= limite) {
+      try {
+        await directus.items('autores').createMany(procesados);
+        procesados = [];
+        contador = 0;
+      } catch (err) {
+        const { errors } = err as TransportError;
+
+        if (errors) {
+          throw new Error(JSON.stringify(errors, null, 2));
+        }
+        console.error(err);
+      }
+    }
   }
+
+  console.log(logCambios('autores creados'));
 };
