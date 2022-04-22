@@ -8,18 +8,18 @@ Los siguientes son los directorios del proyecto y sus funciones:
 
 ```cargador/```: Contiene los scripts de carga.  Se pueden ejecutar individualmente o en conjunto, ejecutando el script ```cargar.py```.  Contiene los siguientes scripts:
 
-    -```cargar.py```: Ejecuta todos los scripts de carga en el orden correcto.  Genera logs en el directorio ```logs/```.
+- ```cargar.py```: Ejecuta todos los scripts de carga en el orden correcto.  Genera logs en el directorio ```logs/```.
 
-    -```listas.py```: Carga las listas de control con los valores de los campos de la tabla/coleción Obra en Directus.
+- ```listas.py```: Carga las listas de control con los valores de los campos de la tabla/coleción Obra en Directus.
 
-    -```obra.py```: Crea las obras y llena los campos internos de la tabla Obra y las relaciones Many To One.
+- ```obra.py```: Crea las obras y llena los campos internos de la tabla Obra y las relaciones Many To One.
 
-    -```ubicacion.py```: Midifica las ubicaciones y crea relaciones ```ciudad->pais``` y ```ubicacion->ciudad```
-    -```obra_descriptores.py```: Crea las relaciones Many To Many ```obra->descriptores```.  Hace peticiones al recurso de la tabla intermedia de la relación.
+- ```ubicacion.py```: Midifica las ubicaciones y crea relaciones ```ciudad->pais``` y ```ubicacion->ciudad```
+- ```obra_descriptores.py```: Crea las relaciones Many To Many ```obra->descriptores```.  Hace peticiones al recurso de la tabla intermedia de la relación.
 
-    -```obra_simbolos.py```: Crea las relaciones Many To Many ```obra->simbolos```.  Hace peticiones al recurso de la tabla intermedia de la relación.
+- ```obra_simbolos.py```: Crea las relaciones Many To Many ```obra->simbolos```.  Hace peticiones al recurso de la tabla intermedia de la relación.
 
-    -```obra_caracteristicas.py```: Crea las relaciones Many To Many ```obra->caracteristicas```.  Hace peticiones al recurso de la tabla intermedia de la relación.
+- ```obra_caracteristicas.py```: Crea las relaciones Many To Many ```obra->caracteristicas```.  Hace peticiones al recurso de la tabla intermedia de la relación.
 
 ```config/```: Archivos de configuración.  Son archivos json para configurar la aplicación.
 
