@@ -56,3 +56,5 @@ node_modules
 
 .env
 api/
+logs/
+*.log

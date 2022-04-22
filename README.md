@@ -14,17 +14,18 @@ Conjunto de herramientas para cargar datos en la base de datos del proyecto Arca
 
 ```imgs/```: Directorio para las imágenes de arca que se deben cargar en el cms.  Se debe configurar en ```config.files_dir``` si se quieren cargar imágenes.
 
-```logs/```:Aquí se guardan los logs generados por los scripts de carga.  El contenido de esta carpeta es ignorado por git.  Cada ejecución genera su log.
+```logs/```: El directorio y su contenido es ignorado por git, por lo que hay que crearlo antes de ejecutar el script.  Aquí se guardan los logs generados por los scripts de carga.    Cada ejecución genera su log.
 
 ```notebooks/```:Versión de los scripts en notebooks interactivos de jupyter.  Se pueden usar para realizar una carga interactiva de los datos.
 
 ## Uso
 
-Clonar el repositorio y entrar en el repo:
+Clonar el repositorio y entrar en el repo y crear el directorio ```logs/```/cargador.
 
 ```
 git clone git@github.com:enflujo/despliegue-arca.git
 cd despliegue-arca
+mkdir logs
 ``` 
 ### Crear entorno e instalar dependencias
 
@@ -41,6 +42,7 @@ Instalar dependencias
 ### Crear archivo de entorno
 
 Crear un archivo ```.env``` con la llave del API (si aplica):
+
 
 ```echo "KEY=LaLlaveDelApi" > .env```
 ### Cargar esquema
