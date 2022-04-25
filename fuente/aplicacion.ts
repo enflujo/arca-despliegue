@@ -1,53 +1,51 @@
 import 'dotenv/config';
-import { Directus, FileType, ID } from '@directus/sdk';
+import { Directus } from '@directus/sdk';
 import autores from './colecciones/autores';
-import settings from './colecciones/settings';
-import { logCambios, mensaje } from './utilidades/ayudas';
-
-export type Autor = {
-  id: ID;
-  nombre: string;
-  apellido: string;
-  desde: number;
-  desde_anotacion: string;
-  hasta: number;
-  hasta_anotacion: string;
-  biografia: string;
-  referencia: string;
-};
-
-export type Obra = {
-  id: ID;
-  titulo: string;
-  imagen: FileType;
-  autores: Autor[];
-};
-
-export type ColeccionesArca = {
-  autores: Autor;
-};
+import settings from './colecciones/_settings';
+import { logCambios, logSinCambios, mensaje } from './utilidades/ayudas';
+import { ColeccionesArca } from './tipos';
+import ubicaciones from './colecciones/ubicaciones';
+import paises from './colecciones/paises';
+import objetos from './colecciones/objetos';
+import escenarios from './colecciones/escenarios';
+import tecnicas from './colecciones/tecnicas';
+import fuentes from './colecciones/fuentes';
+import donantes from './colecciones/donantes';
+import relatos_visuales from './colecciones/relatos_visuales';
+import complejos_gestuales from './colecciones/complejos_gestuales';
 
 const directus = new Directus<ColeccionesArca>('http://localhost:8055', {
   auth: {
     staticToken: process.env.KEY,
   },
-  // transport: {
-  //   onUploadProgress: proceso
-  // },
 });
 
-async function inicio() {
-  const { meta: autoresMeta } = await directus.items('autores').readByQuery({ limit: 0, meta: 'total_count' });
+async function insertarDatosAColeccion(nombre: string, coleccion: string, procesador: any) {
+  const { meta } = await directus.items(coleccion).readByQuery({ limit: 0, meta: 'total_count' });
 
-  // await settings(directus);
-
-  if (autoresMeta) {
-    if (!autoresMeta.total_count) {
-      console.log(logCambios(mensaje('Autores', 'Iniciando carga de datos.')));
-      await autores(directus);
-      console.log(logCambios(mensaje('Autores', 'Finalizó carga.')));
+  if (meta) {
+    if (!meta.total_count) {
+      console.log(logCambios(mensaje(nombre, 'Iniciando carga de datos.')));
+      await procesador(directus);
+      console.log(logCambios(mensaje(nombre, 'Finalizó carga.')));
+    } else {
+      console.log(logSinCambios(mensaje(nombre, 'Sin cambios')));
     }
   }
+}
+
+async function inicio() {
+  await settings(directus);
+  await insertarDatosAColeccion('Autores', 'autores', autores);
+  await insertarDatosAColeccion('Ubicaciones', 'ubicaciones', ubicaciones);
+  await insertarDatosAColeccion('Países', 'paises', paises);
+  await insertarDatosAColeccion('Objetos', 'objetos', objetos);
+  await insertarDatosAColeccion('Escenarios', 'escenarios', escenarios);
+  await insertarDatosAColeccion('Técnicas', 'tecnicas', tecnicas);
+  await insertarDatosAColeccion('Fuentes', 'fuentes', fuentes);
+  await insertarDatosAColeccion('Donantes', 'donantes', donantes);
+  await insertarDatosAColeccion('Relatos Visuales', 'relatos_visuales', relatos_visuales);
+  await insertarDatosAColeccion('Complejos Gestuales', 'complejos_gestuales', complejos_gestuales);
 }
 
 inicio();

@@ -1,4 +1,9 @@
+import { Directus, TransportError } from '@directus/sdk';
 import colores from 'cli-color';
+import { CastingFunction, parse, Parser } from 'csv-parse';
+import { createReadStream, writeFileSync } from 'fs';
+import { ratio } from 'fuzzball';
+import { ColeccionesArca } from '../tipos';
 
 /**
  * Revisa si un Objeto de JS contiene elementos
@@ -38,4 +43,85 @@ export const urlsAEnlacesHTML = (valor: string): string => {
     });
   }
   return valor;
+};
+
+export const flujoCSV = (nombreArchivo: string, limpieza: CastingFunction) => {
+  return createReadStream(`./datos/entrada/csv/${nombreArchivo}.csv`).pipe(
+    parse({
+      delimiter: ',',
+      trim: true,
+      columns: true,
+      skipRecordsWithEmptyValues: true,
+      cast: limpieza,
+    })
+  );
+};
+
+export const guardar = async (nombreColeccion: string, directus: Directus<ColeccionesArca>, datos: any) => {
+  try {
+    await directus.items(nombreColeccion).createMany(datos);
+  } catch (err) {
+    const { errors } = err as TransportError;
+
+    if (errors) {
+      throw new Error(JSON.stringify(errors, null, 2));
+    }
+    console.error(err);
+  }
+};
+
+export const procesarCSV = async (
+  nombreColeccion: string,
+  directus: Directus<ColeccionesArca>,
+  flujo: Parser,
+  procesarEntrada: any
+) => {
+  const limite = 100;
+  let procesados = [];
+  let contador = 0;
+
+  for await (const entrada of flujo) {
+    procesados.push(procesarEntrada(entrada));
+    contador = contador + 1;
+
+    if (contador >= limite) {
+      await guardar(nombreColeccion, directus, procesados);
+      procesados = [];
+      contador = 0;
+    }
+  }
+
+  if (procesados.length) {
+    await guardar(nombreColeccion, directus, procesados);
+  }
+};
+
+/**
+ * Convierte texto: sin mayúsculas, tildes o espacios alrededor;
+ *
+ * @param texto Texto a convertir
+ * @returns Texto sin mayúsculas, tildes o espacios alrededor.
+ */
+export const normalizarTexto = (texto: string): string =>
+  texto
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .toLowerCase()
+    .trim();
+
+/**
+ * Usar fuzz para obtener un porcentaje de similitud (útil cuando hay errores tipográficos o de digitación)
+ * @param a Texto 1
+ * @param b Texto 2
+ * @returns {Boolean} true o false
+ */
+export const igualAprox = (a: string, b: string): boolean => ratio(a, b) > 85;
+
+/**
+ * Guardar datos localmente en archivo .json
+ * @param {Object} json Datos que se quieren guardar en formato JSON.
+ * @param {String} nombre Nombre del archivo, resulta en ${nombre}.json
+ */
+export const guardarJSON = (json: Object, nombre: string) => {
+  writeFileSync(`./datos/${nombre}.json`, JSON.stringify(json, null, 2));
 };
