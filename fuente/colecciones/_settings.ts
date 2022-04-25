@@ -2,9 +2,36 @@ import { Directus, SettingItem } from '@directus/sdk';
 import { AxiosError } from 'axios';
 import { createReadStream } from 'fs';
 import FormData from 'form-data';
-import { ColeccionesArca } from '../aplicacion';
 import { isEnum, logCambios, logResaltar, logSinCambios, mensaje } from '../utilidades/ayudas';
-import { ArcaSettings, datosSettings } from '../utilidades/modeloSettings';
+import { ColeccionesArca } from '../tipos';
+
+export type ImgArca = {
+  nombre: string;
+  ruta: string;
+};
+
+export type ArcaSettings = {
+  [key: keyof SettingItem]: string | number;
+};
+
+export type ModeloSettings = {
+  settings: ArcaSettings;
+  folders: string[];
+  imgsSistema: ImgArca[];
+};
+
+export const datosSettings: ModeloSettings = {
+  settings: {
+    project_name: 'Proyecto Arca',
+    project_url: 'https://arca.uniandes.edu.co',
+    project_color: '#af2828',
+    public_note: 'Administrador de contenido del proyecto ARCA.',
+    storage_asset_transform: 'presets',
+    project_descriptor: 'CMS',
+  },
+  folders: ['Sistema', 'Obras'],
+  imgsSistema: [{ nombre: 'Icono Arca', ruta: './imgs/arca-icono.svg' }],
+};
 
 async function crearCarpetas(directus: Directus<ColeccionesArca>) {
   const { folders } = directus;
@@ -105,7 +132,7 @@ async function alimentarSettings(directus: Directus<ColeccionesArca>) {
     },
   });
 
-  if (iconoArca) {
+  if (iconoArca?.length) {
     datosSettings.settings.project_logo = iconoArca[0].id;
   }
 
