@@ -1,12 +1,45 @@
-import { createReadStream } from 'fs';
-import { parse } from 'csv-parse';
-import { esNumero, logCambios, urlsAEnlacesHTML } from '../utilidades/ayudas';
-import { Directus, TransportError } from '@directus/sdk';
-import { ColeccionesArca } from '../aplicacion';
+import { CastingContext } from 'csv-parse';
+import { esNumero, flujoCSV, procesarCSV, urlsAEnlacesHTML } from '../utilidades/ayudas';
+import { Directus, ID } from '@directus/sdk';
+import { ColeccionesArca } from '../tipos';
+import { Obra } from './obras';
 
-const vacio = { fecha: null, anotacion: null };
+export type Autor = {
+  id?: ID;
+  nombre: string;
+  apellido: string;
+  desde: number | null;
+  desde_anotacion: string | null;
+  hasta: number | null;
+  hasta_anotacion: string | null;
+  biografia: string;
+  referencia: string;
+  status: string;
+  obras?: Obra[];
+};
 
-function procesarFechaActividad(fecha: string): { fecha: number | null; anotacion: string | null } {
+export type ActividadObjeto = {
+  fecha: number | null;
+  anotacion: string | null;
+};
+
+export type Actividad = {
+  desde: ActividadObjeto;
+  hasta: ActividadObjeto;
+};
+
+export type AutorOrigen = {
+  id: number;
+  name: string;
+  lastname: string;
+  activity: Actividad;
+  biography: string;
+  reference: string;
+};
+
+const vacio = { fecha: null, anotacion: null } as ActividadObjeto;
+
+function procesarFechaActividad(fecha: string): ActividadObjeto {
   if (!fecha) return vacio;
   if (esNumero(fecha)) return { fecha: +fecha, anotacion: null };
 
@@ -24,75 +57,52 @@ function procesarFechaActividad(fecha: string): { fecha: number | null; anotacio
   return vacio;
 }
 
-export default async (directus: Directus<ColeccionesArca>) => {
-  const flujo = createReadStream(`./datos/entrada/csv/Arca - Autores.csv`).pipe(
-    parse({
-      delimiter: ',',
-      trim: true,
-      columns: true,
-      encoding: 'utf-8',
-      skipRecordsWithEmptyValues: true,
-      cast: (valor, contexto) => {
-        if (!valor.length && contexto.column !== 'activity') return null;
-        // Convertir URLS a enlaces de HTML
-        if (contexto.column === 'reference' || contexto.column === 'biography') {
-          valor = urlsAEnlacesHTML(valor);
-        }
+function limpieza(valor: string, contexto: CastingContext): Actividad | null | string {
+  const columna = contexto.column as keyof AutorOrigen;
 
-        if (contexto.column === 'activity') {
-          const fechas = valor
-            .replace(/(–)/g, '-')
-            .split('-')
-            .map((v) => v.trim())
-            .filter((v) => v.length);
-
-          if (fechas.length) {
-            const [desde, hasta] = fechas;
-            return {
-              desde: procesarFechaActividad(desde),
-              hasta: procesarFechaActividad(hasta),
-            };
-          }
-
-          return { desde: vacio, hasta: vacio };
-        }
-
-        return valor;
-      },
-    })
-  );
-  const limite = 100;
-  let procesados = [];
-  let contador = 0;
-  for await (const autor of flujo) {
-    procesados.push({
-      nombre: autor.name,
-      apellido: autor.lastname,
-      desde: autor.activity.desde.fecha,
-      desde_anotacion: autor.activity.desde.anotacion,
-      hasta: autor.activity.hasta.fecha,
-      hasta_anotacion: autor.activity.hasta.anotacion,
-      biografia: autor.biography,
-      referencia: autor.reference,
-      status: 'published',
-    });
-    contador = contador + 1;
-
-    if (contador >= limite) {
-      try {
-        await directus.items('autores').createMany(procesados);
-        procesados = [];
-        contador = 0;
-      } catch (err) {
-        const { errors } = err as TransportError;
-
-        if (errors) {
-          throw new Error(JSON.stringify(errors, null, 2));
-        }
-        console.error(err);
-      }
-    }
+  // Si no es la columna de actividad y el valor esta vació, salir y devolver `null`.
+  if (!valor.length && columna !== 'activity') return null;
+  // Convertir URLS a enlaces de HTML
+  if (columna === 'reference' || columna === 'biography') {
+    return urlsAEnlacesHTML(valor);
   }
 
-  console.log(logCambios('autores creados'));
+  if (columna === 'activity') {
+    const fechas = valor
+      .replace(/(–)/g, '-')
+      .split('-')
+      .map((v) => v.trim())
+      .filter((v) => v.length);
+
+    if (fechas.length) {
+      const [desde, hasta] = fechas;
+      return {
+        desde: procesarFechaActividad(desde),
+        hasta: procesarFechaActividad(hasta),
+      };
+    }
+    // Si es la columna de actividad y no puede procesar las fechas
+    return { desde: vacio, hasta: vacio } as Actividad;
+  }
+
+  return valor;
+}
+
+function procesar(autor: AutorOrigen): Autor {
+  return {
+    status: 'published',
+    nombre: autor.name,
+    apellido: autor.lastname,
+    desde: autor.activity.desde.fecha,
+    desde_anotacion: autor.activity.desde.anotacion,
+    hasta: autor.activity.hasta.fecha,
+    hasta_anotacion: autor.activity.hasta.anotacion,
+    biografia: autor.biography,
+    referencia: autor.reference,
+  };
+}
+
+export default async (directus: Directus<ColeccionesArca>) => {
+  const flujo = flujoCSV('Arca - Autores', limpieza);
+  await procesarCSV('autores', directus, flujo, procesar);
 };
