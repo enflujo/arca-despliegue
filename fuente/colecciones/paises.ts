@@ -49,4 +49,3 @@ export default async (directus: Directus<ColeccionesArca>) => {
 
   await procesar(directus, paises);
 };
-// 193

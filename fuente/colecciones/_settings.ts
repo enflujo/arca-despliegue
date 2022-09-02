@@ -2,7 +2,7 @@ import { Directus, SettingItem } from '@directus/sdk';
 import { AxiosError } from 'axios';
 import { createReadStream } from 'fs';
 import FormData from 'form-data';
-import { isEnum, logCambios, logResaltar, logSinCambios, mensaje } from '../utilidades/ayudas';
+import { isEnum, logCambios, logResaltar, logSinCambios, manejarErroresAxios, mensaje } from '../utilidades/ayudas';
 import { ColeccionesArca } from '../tipos';
 
 export type ImgArca = {
@@ -34,21 +34,20 @@ export const datosSettings: ModeloSettings = {
 };
 
 async function crearCarpetas(directus: Directus<ColeccionesArca>) {
-  const { folders } = directus;
-  const { data } = await folders.readByQuery({ limit: -1 });
+  const { data } = await directus.folders.readByQuery({ limit: -1 });
   let nuevasCarpetas: string[] = [];
 
   if (data) {
     if (!data.length) {
       nuevasCarpetas = datosSettings.folders;
     } else {
-      nuevasCarpetas = datosSettings.folders.filter((nombre) => !data.some((obj) => obj.name === nombre));
+      nuevasCarpetas = datosSettings.folders.filter((nombre) => !data.some((obj) => obj?.name === nombre));
     }
   }
 
   if (nuevasCarpetas.length) {
     try {
-      folders.createMany(
+      await directus.folders.createMany(
         nuevasCarpetas.map((nombre) => {
           return { name: nombre };
         })
@@ -57,9 +56,7 @@ async function crearCarpetas(directus: Directus<ColeccionesArca>) {
       console.log(logCambios(`Nuevas carpetas creadas: ${logResaltar(nuevasCarpetas)}`));
     } catch (err) {
       const error = err as AxiosError;
-      if (error.response) {
-        throw new Error(error.response.data.message);
-      }
+      manejarErroresAxios(error);
     }
   } else {
     console.log(logSinCambios(mensaje('Folders', 'No hay carpetas por crear')));
@@ -71,7 +68,7 @@ async function subirImgsSistema(directus: Directus<ColeccionesArca>) {
   const { data: carpetasActuales } = await folders.readByQuery({ limit: -1 });
 
   if (carpetasActuales) {
-    const carpetaSistema = carpetasActuales.find((obj) => obj.name === 'Sistema');
+    const carpetaSistema = carpetasActuales.find((obj) => obj?.name === 'Sistema');
     if (!carpetaSistema) {
       throw new Error('La carpeta "Sistema" no existe');
     }
@@ -89,7 +86,7 @@ async function subirImgsSistema(directus: Directus<ColeccionesArca>) {
     if (!imgsActuales) {
       nuevasImgs = datosSettings.imgsSistema;
     } else {
-      nuevasImgs = datosSettings.imgsSistema.filter((img) => !imgsActuales.some((obj) => obj.title === img.nombre));
+      nuevasImgs = datosSettings.imgsSistema.filter((img) => !imgsActuales.some((obj) => obj?.title === img.nombre));
     }
 
     if (nuevasImgs.length) {
@@ -113,9 +110,7 @@ async function subirImgsSistema(directus: Directus<ColeccionesArca>) {
           console.log(logCambios(`Nueva img: ${logResaltar(img.nombre)}`));
         } catch (err) {
           const error = err as AxiosError;
-          if (error.response) {
-            throw new Error(error.response.data.message);
-          }
+          manejarErroresAxios(error);
         }
       });
     }
@@ -133,7 +128,9 @@ async function alimentarSettings(directus: Directus<ColeccionesArca>) {
   });
 
   if (iconoArca?.length) {
-    datosSettings.settings.project_logo = iconoArca[0].id;
+    if (iconoArca[0]) {
+      datosSettings.settings.project_logo = iconoArca[0].id;
+    }
   }
 
   const valoresActuales = (await settings.read()) as SettingItem;
@@ -148,7 +145,7 @@ async function alimentarSettings(directus: Directus<ColeccionesArca>) {
     }
 
     if (isEnum(nuevosValores)) {
-      settings.update(nuevosValores);
+      await settings.update(nuevosValores);
       console.log(
         logCambios(
           mensaje('Settings', `Se actualizaron los campos: ${JSON.stringify(Object.keys(nuevosValores).join(','))}`)

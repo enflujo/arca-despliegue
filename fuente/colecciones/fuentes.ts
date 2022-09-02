@@ -1,8 +1,7 @@
 import { Directus, ID } from '@directus/sdk';
 import { CastingContext } from 'csv-parse/.';
-import { ColeccionesArca } from '../tipos';
+import { ColeccionesArca, Obra } from '../tipos';
 import { flujoCSV, procesarCSV, urlsAEnlacesHTML } from '../utilidades/ayudas';
-import { Obra } from './obras';
 
 export type Fuente = {
   id?: ID;

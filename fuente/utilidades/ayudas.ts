@@ -1,4 +1,5 @@
 import { Directus, TransportError } from '@directus/sdk';
+import { AxiosError } from 'axios';
 import colores from 'cli-color';
 import { CastingFunction, parse, Parser } from 'csv-parse';
 import { createReadStream, writeFileSync } from 'fs';
@@ -81,7 +82,9 @@ export const procesarCSV = async (
   let contador = 0;
 
   for await (const entrada of flujo) {
-    procesados.push(procesarEntrada(entrada));
+    const entradaProcesada = await procesarEntrada(entrada, directus);
+    if (!entradaProcesada) return;
+    procesados.push(entradaProcesada);
     contador = contador + 1;
 
     if (contador >= limite) {
@@ -124,4 +127,17 @@ export const igualAprox = (a: string, b: string): boolean => ratio(a, b) > 85;
  */
 export const guardarJSON = (json: Object, nombre: string) => {
   writeFileSync(`./datos/${nombre}.json`, JSON.stringify(json, null, 2));
+};
+
+export const manejarErroresAxios = (error: AxiosError) => {
+  if (error.response) {
+    // console.log(error.response.data);
+    console.log(error.response.statusText);
+    console.log(error.response.status);
+    // console.log(error.response.headers);
+  } else if (error.request) {
+    console.log(error.request);
+  } else {
+    console.log('Error', error.message);
+  }
 };

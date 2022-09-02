@@ -1,8 +1,7 @@
 import { Directus, ID } from '@directus/sdk';
 import { CastingContext } from 'csv-parse/.';
-import { ColeccionesArca } from '../tipos';
+import { ColeccionesArca, Obra } from '../tipos';
 import { flujoCSV, procesarCSV } from '../utilidades/ayudas';
-import { Obra } from './obras';
 
 export type Tecnica = {
   id?: ID;

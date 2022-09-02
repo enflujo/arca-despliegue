@@ -1,8 +1,7 @@
 import { Directus, ID } from '@directus/sdk';
 import { CastingContext } from 'csv-parse';
-import { ColeccionesArca } from '../tipos';
+import { ColeccionesArca, Obra } from '../tipos';
 import { esNumero, flujoCSV, procesarCSV } from '../utilidades/ayudas';
-import { Obra } from './obras';
 
 export type Ubicacion = {
   id?: ID;
@@ -17,6 +16,8 @@ export type UbicacionOrigen = {
   Lugar: string;
   latitud: number;
   longitud: number;
+  'lugar/ubicación': string;
+  Anotación: string;
 };
 
 function limpieza(valor: string, contexto: CastingContext): string | number {

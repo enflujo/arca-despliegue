@@ -1,11 +1,11 @@
 import { CastingContext } from 'csv-parse';
 import { esNumero, flujoCSV, procesarCSV, urlsAEnlacesHTML } from '../utilidades/ayudas';
 import { Directus, ID } from '@directus/sdk';
-import { ColeccionesArca } from '../tipos';
-import { Obra } from './obras';
+import { ColeccionesArca, Obra } from '../tipos';
 
 export type Autor = {
   id?: ID;
+  id_fuente: number;
   nombre: string;
   apellido: string;
   desde: number | null;
@@ -88,9 +88,11 @@ function limpieza(valor: string, contexto: CastingContext): Actividad | null | s
   return valor;
 }
 
-function procesar(autor: AutorOrigen): Autor {
+async function procesar(autor: AutorOrigen): Promise<Autor | null> {
+  if (!autor.name && !autor.lastname) return null;
   return {
     status: 'published',
+    id_fuente: autor.id,
     nombre: autor.name,
     apellido: autor.lastname,
     desde: autor.activity.desde.fecha,

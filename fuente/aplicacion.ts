@@ -2,6 +2,7 @@ import 'dotenv/config';
 import { Directus } from '@directus/sdk';
 import autores from './colecciones/autores';
 import settings from './colecciones/_settings';
+import crearColecciones from './colecciones/crearColecciones';
 import { logCambios, logSinCambios, mensaje } from './utilidades/ayudas';
 import { ColeccionesArca } from './tipos';
 import ubicaciones from './colecciones/ubicaciones';
@@ -13,6 +14,8 @@ import fuentes from './colecciones/fuentes';
 import donantes from './colecciones/donantes';
 import relatos_visuales from './colecciones/relatos_visuales';
 import complejos_gestuales from './colecciones/complejos_gestuales';
+
+import obras from './colecciones/obras';
 
 const directus = new Directus<ColeccionesArca>('http://localhost:8055', {
   auth: {
@@ -36,16 +39,20 @@ async function insertarDatosAColeccion(nombre: string, coleccion: string, proces
 
 async function inicio() {
   await settings(directus);
-  await insertarDatosAColeccion('Autores', 'autores', autores);
-  await insertarDatosAColeccion('Ubicaciones', 'ubicaciones', ubicaciones);
-  await insertarDatosAColeccion('Países', 'paises', paises);
-  await insertarDatosAColeccion('Objetos', 'objetos', objetos);
-  await insertarDatosAColeccion('Escenarios', 'escenarios', escenarios);
-  await insertarDatosAColeccion('Técnicas', 'tecnicas', tecnicas);
-  await insertarDatosAColeccion('Fuentes', 'fuentes', fuentes);
+  await crearColecciones(directus);
+  await insertarDatosAColeccion('Autores', 'autores', autores); // LISTO
+  await insertarDatosAColeccion('Países', 'paises', paises); // LISTO
+  await insertarDatosAColeccion('Objetos', 'objetos', objetos); // LISTO
+  await insertarDatosAColeccion('Escenarios', 'escenarios', escenarios); // LISTO
+  await insertarDatosAColeccion('Técnicas', 'tecnicas', tecnicas); // LISTO
+  await insertarDatosAColeccion('Fuentes', 'fuentes', fuentes); // LISTO
   await insertarDatosAColeccion('Donantes', 'donantes', donantes);
   await insertarDatosAColeccion('Relatos Visuales', 'relatos_visuales', relatos_visuales);
   await insertarDatosAColeccion('Complejos Gestuales', 'complejos_gestuales', complejos_gestuales);
+
+  // await insertarDatosAColeccion('Ubicaciones', 'ubicaciones', ubicaciones);
+
+  await insertarDatosAColeccion('Obras', 'obras', obras);
 }
 
 inicio();
