@@ -32,6 +32,7 @@ export type AutorOrigen = {
   id: number;
   name: string;
   lastname: string;
+  fullname: string;
   activity: Actividad;
   biography: string;
   reference: string;
@@ -89,7 +90,7 @@ function limpieza(valor: string, contexto: CastingContext): Actividad | null | s
 }
 
 async function procesar(autor: AutorOrigen): Promise<Autor | null> {
-  if (!autor.name && !autor.lastname) return null;
+  if (!autor.fullname) return null;
   return {
     status: 'published',
     id_fuente: autor.id,

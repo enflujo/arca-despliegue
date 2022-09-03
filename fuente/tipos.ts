@@ -40,7 +40,7 @@ export type Obra = {
   /** Directo: Titulo de la obra */
   titulo: string;
   /** Directo: Imagen de la obra */
-  // imagen: FileItem;
+  imagen?: FileItem;
 
   /**
    * ..:: Relaciones "Many to One" (M2O) - Sólo se les puede asignar 1 valor ::..
@@ -57,17 +57,17 @@ export type Obra = {
   // /** M2O: Complejo gestual */
   // complejo_gestual: ComplejoGestual;
 
-  // /**
-  //  * ..:: Relaciones "Many to Many" (M2M) - Permite más de 1 valor ::..
-  //  */
-  // /** M2M: Autores de la obra */
-  autores?: ID[];
-  // /** M2M: Objetos Gestos */
-  // objetos: Objeto[];
-  // /** M2M: Escenario */
-  // escenarios: Escenario[];
-  // /** M2M: Técnicas */
-  // tecnicas: Tecnica[];
+  /**
+   * ..:: Relaciones "Many to Many" (M2M) - Permite más de 1 valor ::..
+   */
+  /** M2M: Autores de la obra */
+  autores?: { autores_id: ID }[];
+  /** M2M: Objetos Gestos */
+  objetos?: { objetos_id: ID }[];
+  /** M2M: Escenario */
+  escenarios?: { escenarios_id: ID }[];
+  /** M2M: Técnicas */
+  tecnicas?: { tecnicas_id: ID }[];
 };
 
 export type ObraFuente = {

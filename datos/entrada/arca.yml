@@ -1,27 +1,6 @@
 version: 1
 directus: 9.16.1
 collections:
-  - collection: arbol_categorias
-    meta:
-      accountability: all
-      archive_app_filter: true
-      archive_field: null
-      archive_value: null
-      collapse: open
-      collection: arbol_categorias
-      color: '#73D216'
-      display_template: null
-      group: archivo
-      hidden: false
-      icon: filter_list
-      item_duplication_fields: null
-      note: Grupos de categorías por jerarquía
-      singleton: false
-      sort: 5
-      sort_field: null
-      translations: null
-      unarchive_value: null
-    schema: null
   - collection: archivo
     meta:
       accountability: all
@@ -39,6 +18,51 @@ collections:
       note: null
       singleton: false
       sort: 2
+      sort_field: null
+      translations: null
+      unarchive_value: null
+    schema: null
+  - collection: ubicaciones
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: ubicaciones
+      color: null
+      display_template: '{{nombre}}'
+      group: archivo
+      hidden: false
+      icon: location_on
+      item_duplication_fields: null
+      note: null
+      singleton: false
+      sort: 4
+      sort_field: null
+      translations: null
+      unarchive_value: null
+    schema:
+      comment: null
+      name: ubicaciones
+      schema: public
+  - collection: arbol_categorias
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: arbol_categorias
+      color: '#73D216'
+      display_template: null
+      group: archivo
+      hidden: false
+      icon: filter_list
+      item_duplication_fields: null
+      note: Grupos de categorías por jerarquía
+      singleton: false
+      sort: 5
       sort_field: null
       translations: null
       unarchive_value: null
@@ -531,30 +555,7 @@ collections:
       comment: null
       name: tecnicas
       schema: public
-  - collection: ubicaciones
-    meta:
-      accountability: all
-      archive_app_filter: true
-      archive_field: null
-      archive_value: null
-      collapse: open
-      collection: ubicaciones
-      color: null
-      display_template: '{{nombre}}'
-      group: archivo
-      hidden: false
-      icon: location_on
-      item_duplication_fields: null
-      note: null
-      singleton: false
-      sort: 4
-      sort_field: null
-      translations: null
-      unarchive_value: null
-    schema:
-      comment: null
-      name: ubicaciones
-      schema: public
+
 fields:
   - collection: autores
     field: actividad

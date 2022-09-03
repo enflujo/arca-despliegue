@@ -1,10 +1,10 @@
 import 'dotenv/config';
-import { Directus } from '@directus/sdk';
+import { Directus, TransportError } from '@directus/sdk';
 import autores from './colecciones/autores';
 import settings from './colecciones/_settings';
 import crearColecciones from './colecciones/crearColecciones';
 import { logCambios, logSinCambios, mensaje } from './utilidades/ayudas';
-import { ColeccionesArca } from './tipos';
+import { ColeccionesArca, Obra } from './tipos';
 import ubicaciones from './colecciones/ubicaciones';
 import paises from './colecciones/paises';
 import objetos from './colecciones/objetos';
@@ -53,6 +53,16 @@ async function inicio() {
   // await insertarDatosAColeccion('Ubicaciones', 'ubicaciones', ubicaciones);
 
   await insertarDatosAColeccion('Obras', 'obras', obras);
+  // const datos: Obra[] = [{ titulo: 'prueba', autores: [{ autores_id: 1101 }] }];
+  // try {
+  //   await directus.items('obras').createMany(datos);
+  // } catch (err) {
+  //   const { errors } = err as TransportError;
+
+  //   if (errors) {
+  //     throw new Error(JSON.stringify(errors, null, 2));
+  //   }
+  // }
 }
 
 inicio();

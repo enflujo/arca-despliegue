@@ -8,13 +8,16 @@ function limpieza(valor: string, contexto: CastingContext): string {
 
   if (columna === 'título') {
     return valor.trim();
-  } else if (columna === 'Fuente_imagen') {
   }
 
   return valor;
 }
 
 async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>): Promise<Obra | null> {
+  const respuesta: Obra = {
+    titulo: fila.título,
+  };
+
   const { data: fuenteImagen } = await directus
     .items('fuentes')
     .readByQuery({ filter: { descripcion: { _eq: fila.Fuente_imagen } } });
@@ -23,21 +26,20 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>): 
     .items('autores')
     .readByQuery({ filter: { id_fuente: { _eq: fila.autores_id } } });
 
-  const respuesta: Obra = {
-    titulo: fila.título,
-  };
+  const { data: tecnica } = await directus.items('tecnicas').readByQuery({ filter: { nombre: { _eq: fila.Tecnica } } });
 
   if (fuenteImagen?.length) {
     respuesta.fuente = fuenteImagen[0]?.id;
   }
 
-  if (autor?.length) {
-    if (autor[0]?.id) {
-      respuesta.autores = [autor[0].id];
-    }
+  if (autor?.length && autor[0]?.id) {
+    respuesta.autores = [{ autores_id: autor[0].id }];
   }
 
-  // return null;
+  if (tecnica?.length && tecnica[0]?.id) {
+    respuesta.tecnicas = [{ tecnicas_id: tecnica[0].id }];
+  }
+
   return respuesta;
 }
 
