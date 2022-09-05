@@ -12,8 +12,8 @@ import escenarios from './colecciones/escenarios';
 import tecnicas from './colecciones/tecnicas';
 import fuentes from './colecciones/fuentes';
 import donantes from './colecciones/donantes';
-import relatos_visuales from './colecciones/relatos_visuales';
-import complejos_gestuales from './colecciones/complejos_gestuales';
+import relatos_visuales from './colecciones/relatosVisuales';
+import complejos_gestuales from './colecciones/complejosGestuales';
 
 import obras from './colecciones/obras';
 

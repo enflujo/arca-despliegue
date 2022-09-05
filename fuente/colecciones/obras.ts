@@ -27,6 +27,9 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>): 
     .readByQuery({ filter: { id_fuente: { _eq: fila.autores_id } } });
 
   const { data: tecnica } = await directus.items('tecnicas').readByQuery({ filter: { nombre: { _eq: fila.Tecnica } } });
+  const { data: complejoGestual } = await directus
+    .items('complejos_gestuales')
+    .readByQuery({ filter: { nombre: { _eq: fila.Complejo_gestual_lista } } });
 
   if (fuenteImagen?.length) {
     respuesta.fuente = fuenteImagen[0]?.id;
@@ -38,6 +41,10 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>): 
 
   if (tecnica?.length && tecnica[0]?.id) {
     respuesta.tecnicas = [{ tecnicas_id: tecnica[0].id }];
+  }
+
+  if (complejoGestual?.length && complejoGestual[0]?.id) {
+    respuesta.complejo_gestual = complejoGestual[0].id;
   }
 
   return respuesta;

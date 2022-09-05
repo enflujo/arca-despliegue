@@ -1,12 +1,12 @@
 import { Autor } from './colecciones/autores';
-import { ComplejoGestual } from './colecciones/complejos_gestuales';
+import { ComplejoGestual } from './colecciones/complejosGestuales';
 import { Pais } from './colecciones/paises';
 import { Ubicacion } from './colecciones/ubicaciones';
 import { Donante } from './colecciones/donantes';
 import { Escenario } from './colecciones/escenarios';
 import { Fuente } from './colecciones/fuentes';
 import { Objeto } from './colecciones/objetos';
-import { RelatoVisual } from './colecciones/relatos_visuales';
+import { RelatoVisual } from './colecciones/relatosVisuales';
 import { Tecnica } from './colecciones/tecnicas';
 import { FileItem, ID } from '@directus/sdk';
 
@@ -48,14 +48,14 @@ export type Obra = {
 
   /** M2O: Fuente de la imagen */
   fuente?: ID;
-  // /** M2O: Ubicación donde se encuentra la obra */
+  /** M2O: Ubicación donde se encuentra la obra */
   // ubicacion: Ubicacion;
-  // /** M2O: Tipo de donante de la obra */
+  /** M2O: Tipo de donante de la obra */
   donante?: ID;
-  // /** M2O: Categoría que describe el relato visual */
+  /** M2O: Categoría que describe el relato visual */
   // relato_visual: RelatoVisual;
-  // /** M2O: Complejo gestual */
-  // complejo_gestual: ComplejoGestual;
+  /** M2O: Complejos Gestuales */
+  complejo_gestual?: ID;
 
   /**
    * ..:: Relaciones "Many to Many" (M2M) - Permite más de 1 valor ::..
