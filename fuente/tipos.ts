@@ -9,6 +9,10 @@ import { Objeto } from './colecciones/objetos';
 import { RelatoVisual } from './colecciones/relatosVisuales';
 import { Tecnica } from './colecciones/tecnicas';
 import { FileItem, ID } from '@directus/sdk';
+import { Gesto } from './colecciones/gestos';
+import { Fisiognomica } from './colecciones/fisiognomicas';
+import { FisiognomicaImagen } from './colecciones/fisiognomicasImagen';
+import { Rostro } from './colecciones/rostros';
 
 export type ColeccionesArca = {
   autores: Autor;
@@ -20,6 +24,10 @@ export type ColeccionesArca = {
   donantes: Donante;
   relatos_visuales: RelatoVisual;
   complejos_gestuales: ComplejoGestual;
+  gestos: Gesto;
+  fisiognomicas: Fisiognomica;
+  fisiognomicas_imagen: FisiognomicaImagen;
+  rostros: Rostro;
   // EN PROCESO
   ubicaciones: Ubicacion;
 
@@ -40,7 +48,18 @@ export type Obra = {
   /** Directo: Titulo de la obra */
   titulo: string;
   /** Directo: Imagen de la obra */
-  imagen?: FileItem;
+  imagen?: string;
+  /** Directo: Síntesis */
+  sintesis?: string;
+
+  /** Directo: ¿la fecha es un periodo? permite hacer visible el campo fecha_final */
+  fecha_periodo: boolean;
+
+  /** Directo: Fecha inicial o exacta */
+  fecha_inicial?: number;
+
+  /** Directo: Fecha final (sólo cuando es periodo) */
+  fecha_final?: number;
 
   /**
    * ..:: Relaciones "Many to One" (M2O) - Sólo se les puede asignar 1 valor ::..
@@ -49,13 +68,19 @@ export type Obra = {
   /** M2O: Fuente de la imagen */
   fuente?: ID;
   /** M2O: Ubicación donde se encuentra la obra */
-  // ubicacion: Ubicacion;
+  ubicacion?: ID;
   /** M2O: Tipo de donante de la obra */
   donante?: ID;
   /** M2O: Categoría que describe el relato visual */
-  // relato_visual: RelatoVisual;
+  relato_visual?: ID;
   /** M2O: Complejos Gestuales */
   complejo_gestual?: ID;
+  /** M2O: Fisiognómicas */
+  fisiognomica?: ID;
+  /** M2O: Fisiognómicas Imagen */
+  fisiognomica_imagen?: ID;
+  /** M2O: Rostro */
+  rostro?: ID;
 
   /**
    * ..:: Relaciones "Many to Many" (M2M) - Permite más de 1 valor ::..
@@ -68,64 +93,12 @@ export type Obra = {
   escenarios?: { escenarios_id: ID }[];
   /** M2M: Técnicas */
   tecnicas?: { tecnicas_id: ID }[];
+  /** M2M: Gestos */
+  gestos?: { gestos_id: ID }[];
 };
 
 export type ObraFuente = {
   Id: number;
-
-  categorias_personajes_1_id: number;
-  categorias_personajes_1: string;
-  categorias_personajes_2_id: number;
-  categorias_personajes_2: string;
-  categorias_personajes_3_id: number;
-  categorias_personajes_3: string;
-
-  /** */
-  autores_id: number;
-  Autores: string;
-
-  /** */
-  escenario_2_id: number;
-  Escenario: string;
-
-  /** */
-  tecnica_id: number;
-  Tecnica: string;
-
-  /** */
-  fuente_imagen_1_id: number;
-  Fuente_imagen: string;
-
-  /** */
-  donante_1_id: number;
-  Donante: string;
-
-  Ciudades_origen_id: number;
-  Ciudad_Origen: string;
-  Ciudades_actual_id: number;
-  Ciudad_Actual: string;
-
-  Paises_origen_id: number;
-  Pais_Origen: string;
-  Paises_actual_id: number;
-  Pais_Actual: string;
-
-  /** */
-  ubicacion_id: number;
-  Ubicacion: string;
-
-  categoria_1_id: number;
-  Categoria_1: string;
-  categoria_2_id: number;
-  Categoria_2: string;
-  categoria_3_id: number;
-  Categoria_3: string;
-  categoria_4_id: number;
-  Categoria_4: string;
-  categoria_5_id: number;
-  Categoria_5: string;
-  categoria_6_id: number;
-  Categoria_6: string;
 
   /** ..:: Directos ::.. */
   título: string;
@@ -149,6 +122,31 @@ export type ObraFuente = {
   Complejo_gestual_id: number;
   Complejo_gestual_lista: string;
 
+  /** */
+  autores_id: number;
+  Autores: string;
+
+  /** */
+  escenario_2_id: number;
+  Escenario: string;
+
+  /** */
+  tecnica_id: number;
+  Tecnica: string;
+
+  /** */
+  fuente_imagen_1_id: number;
+  Fuente_imagen: string;
+
+  /** */
+  donante_1_id: number;
+  Donante: string;
+
+  /** */
+  ubicacion_id: number;
+  Ubicacion: string;
+
+  /** */
   Gesto_1_id: number;
   Gesto_1: string;
   Gesto_2_id: number;
@@ -156,17 +154,50 @@ export type ObraFuente = {
   Gesto_3_id: number;
   Gesto_3: string;
 
+  /** */
   Fisiognómica_id: number;
   Fisiognómica_lista: string;
 
+  /** */
   Fisiognomica_imagen_id: number;
   Fisiognomica_imagen_lista: string;
 
-  Cartela_filacteria_2_id: number;
-  Cartela_filacteria_2_lista: string;
-
+  /** */
   Rostro_id: number;
   Rostro_lista: string;
+
+  categorias_personajes_1_id: number;
+  categorias_personajes_1: string;
+  categorias_personajes_2_id: number;
+  categorias_personajes_2: string;
+  categorias_personajes_3_id: number;
+  categorias_personajes_3: string;
+
+  Ciudades_origen_id: number;
+  Ciudad_Origen: string;
+  Ciudades_actual_id: number;
+  Ciudad_Actual: string;
+
+  Paises_origen_id: number;
+  Pais_Origen: string;
+  Paises_actual_id: number;
+  Pais_Actual: string;
+
+  categoria_1_id: number;
+  Categoria_1: string;
+  categoria_2_id: number;
+  Categoria_2: string;
+  categoria_3_id: number;
+  Categoria_3: string;
+  categoria_4_id: number;
+  Categoria_4: string;
+  categoria_5_id: number;
+  Categoria_5: string;
+  categoria_6_id: number;
+  Categoria_6: string;
+
+  Cartela_filacteria_2_id: number;
+  Cartela_filacteria_2_lista: string;
 
   Anotación_gestual: string;
 };

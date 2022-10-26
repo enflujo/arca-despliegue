@@ -35,6 +35,8 @@ export const mensaje = (cabeza: string, mensaje: string) => {
  */
 export const esNumero = (valor: string): boolean => !isNaN(parseInt(valor));
 
+export const esNumero2 = (valor: number): boolean => !isNaN(valor);
+
 export const urlsAEnlacesHTML = (valor: string): string => {
   const urls = valor.match(/(((ftp|https?):\/\/)[\-\w@:%_\+.~#?,&\/\/=A-zÀ-ú]+)/g);
 

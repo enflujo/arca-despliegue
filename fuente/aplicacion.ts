@@ -16,6 +16,11 @@ import relatos_visuales from './colecciones/relatosVisuales';
 import complejos_gestuales from './colecciones/complejosGestuales';
 
 import obras from './colecciones/obras';
+import listaImgs from './utilidades/imgsObras';
+import gestos from './colecciones/gestos';
+import fisiognomicas from './colecciones/fisiognomicas';
+import fisiognomicasImagen from './colecciones/fisiognomicasImagen';
+import rostros from './colecciones/rostros';
 
 const directus = new Directus<ColeccionesArca>('http://localhost:8055', {
   auth: {
@@ -39,6 +44,7 @@ async function insertarDatosAColeccion(nombre: string, coleccion: string, proces
 
 async function inicio() {
   await settings(directus);
+
   await crearColecciones(directus);
   await insertarDatosAColeccion('Autores', 'autores', autores); // LISTO
   await insertarDatosAColeccion('Países', 'paises', paises); // LISTO
@@ -46,11 +52,15 @@ async function inicio() {
   await insertarDatosAColeccion('Escenarios', 'escenarios', escenarios); // LISTO
   await insertarDatosAColeccion('Técnicas', 'tecnicas', tecnicas); // LISTO
   await insertarDatosAColeccion('Fuentes', 'fuentes', fuentes); // LISTO
-  await insertarDatosAColeccion('Donantes', 'donantes', donantes);
-  await insertarDatosAColeccion('Relatos Visuales', 'relatos_visuales', relatos_visuales);
-  await insertarDatosAColeccion('Complejos Gestuales', 'complejos_gestuales', complejos_gestuales);
+  await insertarDatosAColeccion('Donantes', 'donantes', donantes); // LISTO
+  await insertarDatosAColeccion('Relatos Visuales', 'relatos_visuales', relatos_visuales); // LISTO
+  await insertarDatosAColeccion('Complejos Gestuales', 'complejos_gestuales', complejos_gestuales); // LISTO
+  await insertarDatosAColeccion('Gestos', 'gestos', gestos); // LISTO
+  await insertarDatosAColeccion('Fisiognómicas', 'fisiognomicas', fisiognomicas); // LISTO
+  await insertarDatosAColeccion('Fisiognómicas Imagen', 'fisiognomicas_imagen', fisiognomicasImagen); // LISTO
+  await insertarDatosAColeccion('Rostros', 'rostros', rostros); // LISTO
 
-  // await insertarDatosAColeccion('Ubicaciones', 'ubicaciones', ubicaciones);
+  await insertarDatosAColeccion('Ubicaciones', 'ubicaciones', ubicaciones);
 
   await insertarDatosAColeccion('Obras', 'obras', obras);
   // const datos: Obra[] = [{ titulo: 'prueba', autores: [{ autores_id: 1101 }] }];

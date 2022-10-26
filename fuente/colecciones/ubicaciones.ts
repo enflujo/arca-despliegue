@@ -5,7 +5,9 @@ import { esNumero, flujoCSV, procesarCSV } from '../utilidades/ayudas';
 
 export type Ubicacion = {
   id?: ID;
+  id_fuente: number;
   nombre: string;
+  anotacion: string | null;
   geo: string;
   obras?: Obra[];
 };
@@ -16,15 +18,15 @@ export type UbicacionOrigen = {
   Lugar: string;
   latitud: number;
   longitud: number;
-  'lugar/ubicación': string;
+  'lugar/ubicación': number;
   Anotación: string;
 };
 
 function limpieza(valor: string, contexto: CastingContext): string | number {
   const columna = contexto.column as keyof UbicacionOrigen;
 
-  if (columna === 'Lugar') {
-    console.log(valor);
+  if (columna === 'Lugar' || columna === 'lugar/ubicación') {
+    return valor.trim();
   } else if (columna === 'latitud' || columna === 'longitud') {
     if (esNumero(valor)) {
       return +valor;
@@ -35,7 +37,9 @@ function limpieza(valor: string, contexto: CastingContext): string | number {
 
 function procesar(lugar: UbicacionOrigen): Ubicacion {
   return {
+    id_fuente: lugar.id,
     nombre: lugar.Lugar,
+    anotacion: lugar.Anotación ? lugar.Anotación : null,
     geo: JSON.stringify({
       coordinates: [lugar.longitud, lugar.latitud],
       type: 'Point',
@@ -44,6 +48,6 @@ function procesar(lugar: UbicacionOrigen): Ubicacion {
 }
 
 export default async (directus: Directus<ColeccionesArca>) => {
-  const flujo = flujoCSV('ubicaciones', limpieza);
+  const flujo = flujoCSV('Arca - Ubicacion_1_ Lista', limpieza);
   await procesarCSV('ubicaciones', directus, flujo, procesar);
 };

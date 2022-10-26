@@ -1,6 +1,6 @@
 id,Nombre,Nombre de registro
-1,0 Desconocido,0 Desconocido
-2,0 Múltiples gestos,0 Múltiples gestos
+1,Desconocido,0 Desconocido
+2,Múltiples gestos,0 Múltiples gestos
 3,Suplico ora: implorar,"A01 Suplico ora, implorar"
 4,Oro: pedir misericordia,"A02 Manos oro, pedir misericordia"
 5,Ploro: condolerse,"A03 Ploro, condolerse"
@@ -251,4 +251,3 @@ id,Nombre,Nombre de registro
 252,Dedos forma señalar,N56 Dedos forma señalar
 253,Señalar: silencio bendecir,N57 Señalar silencio bendecir
 254,Mano una sobre otra: ,N58 Mano una sobre otra
-255,No,No
