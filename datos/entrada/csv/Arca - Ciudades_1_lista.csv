@@ -1,0 +1,694 @@
+id,name,pais
+999,Acajete,México
+161,Acámbaro,México
+683,Acapulco,México
+100,Acatzingo,México
+492,Acaxochitlán,México
+269,Accha,Perú
+666,Achocalla,Bolivia
+106,Acolman,México
+219,Acomayo,Perú
+253,Actopan,México
+108,Aculco,México
+76,Aguascalientes,México
+435,Ahuashuatepec,México
+375,Ahuatempa,México
+336,Albany,Estados Unidos
+469,Alexandria,Estados Unidos
+324,Allentown,Estados Unidos
+400,Amberes,Países Bajos
+177,Amecameca,México
+409,Ámsterdam,Países Bajos
+411,Andahuaylillas,Perú
+665,Andamarca,Bolivia
+528,Andenes,Perú
+685,Angahuan,México
+634,Annapolis,Estados Unidos
+514,Anta,Perú
+126,Antigua,Guatemala
+516,Apaseo el Grande,México
+493,Apetitlán,México
+293,Arani,Bolivia
+142,Araure,Venezuela
+123,Arequipa,Perú
+508,Arrollozarco,México
+115,Asunción,Paraguay
+597,Ate ,Perú
+578,Atenco,México
+474,Athens,Estados Unidos
+609,Atlihuetzía,México
+71,Atlixco,México
+185,Atotonilco,México
+329,Attard ,Malta
+470,Auch,Francia
+378,Austin,Estados Unidos
+105,Axapusco,México
+595,Axochiapan,México
+121,Ayacucho,Perú
+58,Ayapango,México
+186,Ayaviri,Perú
+524,Azángaro,México
+282,Azcapotzalco,México
+320,Baltimore,Estados Unidos
+466,Barcelona,España
+24,Barichara,Colombia
+671,Barquisimeto,Venezuela
+297,Baruta,Venezuela
+236,Belem,Brasil
+32,Belencito,Colombia
+390,Belo Horizonte,Brasil
+294,Belo Vale,Brasil
+505,Berlanga del Duero,México
+380,Berlín,Alemania
+339,Birmingham,Estados Unidos
+396,Bloomington,Estados Unidos
+544,Boconó,Venezuela
+1,Bogotá,Colombia
+38,Bojacá,Colombia
+33,Bonza,Colombia
+322,Boston,Estados Unidos
+687,Braintree,Estados Unidos
+285,Brasília,Brasil
+419,Brunswick,Estados Unidos
+429,Budapest,Hungría
+563,Buenavista,México
+159,Buenos Aires,Argentina
+13,Buga,Colombia
+52,Buriticá,Colombia
+598,Cacaotepec,México
+450,Cáceres,España
+541,Cachi,Argentina
+286,Cachoeira,Brasil
+655,Cádiz,España
+502,Caicay,Perú
+201,Cajamarca,Perú
+146,Calabozo,Venezuela
+150,Calamarca,Bolivia
+592,Calapuja,Perú
+613,Calca,Perú
+27,Cali,Colombia
+495,Calimaya,México
+457,Calpan,México
+571,Calpulalpan,México
+601,Calpulalpan de Méndez ,México
+334,Camagüey,Cuba
+423,Cambridge (Massach.),Estados Unidos
+91,Campeche,México
+490,Cangallo,Perú
+99,Capulhuac,México
+188,Caquiaviri,Bolivia
+548,Caquingora,Bolivia
+182,Carabuco,Bolivia
+68,Caracas,Venezuela
+504,Caracoto,Perú
+333,Cárdenas,Cuba
+50,Carmen de Viboral,Colombia
+675,Carora,Venezuela
+21,Cartagena,Colombia
+169,Casabindo,Argentina
+444,Castellón de la Plana,España
+278,Catamarca,Argentina
+239,Catas Altas,Brasil
+503,Cayma,Perú
+646,Ccorca,Perú
+77,Celaya,México
+37,Cerrito,Colombia
+462,Oxford,Reino Unido
+222,Chalchicomula de Cerdán,México
+624,Challabamba,Perú
+363,Chalma,México
+647,Chamartín,España
+277,Chapala,México
+506,Characato,Perú
+132,Charcas,Bolivia
+460,Epazoyucan,México
+168,Charleston,Estados Unidos
+341,Charlotte,Estados Unidos
+507,Checacupe,Perú
+496,Chelmsford,Reino Unido
+64,Chiautempan,México
+315,Chicago,Estados Unidos
+275,Chiclayo,Perú
+103,Chihuahua,México
+678,Chilpancingo de los Bravo,México
+573,Chinchaypuqyu,Perú
+500,Chinchero ,Perú
+368,Chinchilla,España
+34,Chiquinquirá,Colombia
+86,Cholula,México
+120,Chosica,Perú
+629,Chuquinga ,Perú
+590,Churo,México
+340,Cincinnatti,Estados Unidos
+658,Ciudad Juárez,México
+264,Coacalco de Berriozábal,México
+189,Cochabamba,Bolivia
+165,Cochinoca,Argentina
+509,Cocucho,México
+266,Cocula,México
+689,Bolivia (sin ubicación),Bolivia
+510,Cohoni,Bolivia
+136,Coixtlahuaca,México
+616,Colcha,Perú
+680,Colima,México
+369,Colorado Springs,Estados Unidos
+511,Colquepata,Perú
+455,Columbia,Estados Unidos
+28,Cómbita,Colombia
+141,Concepción,Chile
+599,Condoroma,Perú
+310,Congonhas,Brasil
+554,Contla,México
+220,Copacabana,Brasil
+465,Copenhague,Dinamarca
+167,Córdoba,Argentina
+51,Corinto,Colombia
+180,Coro,Venezuela
+305,Corrientes,Argentina
+468,Corsham,Reino Unido
+622,Coya,Perú
+537,Coyotepec,México
+137,Cuauhtinchán,México
+147,Cuautitlán,México
+518,Cuautlacingo,México
+440,Cucaita,Colombia
+39,Cucunubá,Colombia
+204,Cuenca,Ecuador
+663,Cuenca,Ecuador
+92,Cuernavaca,México
+160,Cuilapam,México
+30,Cuitiva,Colombia
+577,Cuitzeo,México
+199,Culhuacán,México
+432,Curahuara de Carangas,Bolivia
+619,Cusipata,Perú
+119,Cuzco,Perú
+323,Dallas,Estados Unidos
+353,Davenport,Estados Unidos
+497,Davis ,Estados Unidos
+331,Daytona Beach,Estados Unidos
+304,Denver,Estados Unidos
+420,Detroit,Estados Unidos
+238,Diamantina,Brasil
+640,Divina Pastora,Brasil
+682,Dolores,México
+373,Dublin,Irlanda
+6,Duitama,Colombia
+194,Durango,México
+424,Ecatepec,México
+458,Edimburgo,Reino Unido
+263,Ejutla,México
+439,El Cardonal,México
+79,El Carmen (Jujuy),Argentina
+102,El Cocuy,Colombia
+154,El Quinche,Ecuador
+49,El Retiro,Colombia
+604,El Tablazo,Colombia
+257,El Venado,México
+244,Embu,Brasil
+587,Encarnación de Díaz,México
+517,Epatlán,México
+584,Españita,México
+284,Esquipulas,Guatemala
+631,Etla,México
+94,Etzatlán,México
+254,Filadelfia,Estados Unidos
+441,Firavitova,Colombia
+395,Florencia,Italia
+337,Forth Worth,Estados Unidos
+31,Funza,Colombia
+29,Fúquene,Colombia
+301,"Garachico, Tenerife",España
+449,Greensburg,Estados Unidos
+72,Guadalajara,México
+231,Guadalupe,México
+74,Guanajuato,México
+46,Guane,Colombia
+313,Guaqui,Bolivia
+57,Guasca,Colombia
+354,Guatemala,Guatemala
+192,Guayaquil,Ecuador
+355,Gurabo,Puerto Rico
+690,Brasil (sin ubicación),Brasil
+381,Hannover,Alemania
+564,Santa Cruz,Chile
+392,Hartford,Estados Unidos
+299,Higüey,República Dominicana
+316,Houston,Estados Unidos
+643,Huachacalla,Bolivia
+206,Hualahoyo,Perú
+227,Huamanga,Perú
+133,Huamantla,México
+139,Huancané,Perú
+309,Huancavelica,Perú
+241,Huanoquite,Perú
+202,Huánuco,Perú
+101,Huaquechula,México
+172,Huaro,Perú
+408,Huarocondo,Perú
+628,Huayllabamba,Perú
+265,Huehuetoca,México
+73,Huejotzingo,México
+579,Hueyapan,México
+207,Humahuaca,Argentina
+242,Igaraçu,Brasil
+568,Ilave,Perú
+346,Indianapolis,Estados Unidos
+451,Ipiales,Colombia
+636,Irapuato,México
+519,Italaque,Bolivia
+308,Itapanhoacanga,Brasil
+249,Itaverava,Brasil
+453,Ithaca,Estados Unidos
+246,Itu São Paulo,Brasil
+60,Ixtaltepec,México
+638,Ixtapaluca,México
+388,Iza,México
+641,Izamal,México
+556,Izúcar de Matamoros,México
+292,Jaboatão dos Guararapes,Brasil
+415,Jaén,España
+55,Jardín Antioquia,Colombia
+325,Jerusalem,Israel
+603,Jesús de Machaca,Bolivia
+653,Jiménez,México
+274,Jiquipilco,México
+287,João Pessoa,Brasil
+487,Jolón,Estados Unidos
+125,Juchitán de Zaragoza,México
+260,Juitepec,México
+157,Juli,Perú
+171,Junín,Argentina
+421,Kansas City,Estados Unidos
+358,Kenilworth - Illi.,Estados Unidos
+576,Kobe,Japón
+23,La Calera,Colombia
+42,La Ceja,Colombia
+303,La Habana,Cuba
+144,La Paz,Bolivia
+349,La Serena,Chile
+483,La Soledad (Ca.),Estados Unidos
+659,La Valeta,Malta
+428,Santa Bárbara,Brasil
+539,Lagos de Moreno,México
+530,Lamay,Perú
+520,Lampa,Perú
+48,Las Lajas,Colombia
+639,Leeland,Estados Unidos
+89,León,México
+111,Lerma,México
+463,Lexington,Estados Unidos
+405,Lieja,Países Bajos
+118,Lima,Perú
+621,Limatambo,Perú
+318,Lincoln,Reino Unido
+379,Lisboa,Portugal
+667,Litchfield,Estados Unidos
+447,Littleton,Estados Unidos
+401,Liubliana,Eslovenia
+443,Lobatera,Venezuela
+181,Loja,Ecuador
+361,Londres,Reino Unido
+209,Loreto,Italia
+314,Los Angeles,Estados Unidos
+532,Lucre,Perú
+176,Luján,Argentina
+394,Maca,Perú
+372,Machetá,Colombia
+200,Madrid,España
+397,Maipú,Chile
+248,Malinalco,México
+328,Managua,Nicaragua
+583,Manizales,Colombia
+145,Maracaibo,Venezuela
+521,Maras,Perú
+234,Mariana,Brasil
+56,Marinilla,Colombia
+19,Medellín,Colombia
+232,Mérida,Venezuela
+691,Colombia (sin ubicación),Colombia
+62,Mérida,México
+586,Metepec,México
+61,Ciudad de México,México
+635,Mexquitic de Carmona,México
+175,Meztitlán,México
+364,Miami,Estados Unidos
+570,Milán,Italia
+438,Milpa Alta,México
+348,Minneapolis,Estados Unidos
+582,Mixco,México
+522,Molcaxac,México
+488,Molinos,Argentina
+382,Mongüa,Colombia
+3,Monguí,Colombia
+183,Montecarlo,Mónaco
+82,Monterrey,México
+684,Montevideo,Uruguay
+88,Morelia,México
+618,Mosocllacta,Perú
+523,Motavita,Colombia
+574,Nagasaki,Japón
+467,Nápoles,Italia
+593,Natívitas,Colombia
+417,Naucalupan,México
+416,Nazareth (Pennsylvannia),Estados Unidos
+591,Nealtican,México
+366,Nemocón,Colombia
+317,New Haven,Estados Unidos
+330,New Orleans,Estados Unidos
+332,Newark,Estados Unidos
+459,Newport,Estados Unidos
+473,Newport News,Estados Unidos
+240,Niteroi,Brasil
+345,North Kingston,Estados Unidos
+307,Nova Era,Brasil
+312,Nueva York,Estados Unidos
+686,Nurio,México
+66,Oaxaca,México
+615,Occoruro,Perú
+610,Oceanside,Estados Unidos
+433,Ocongate,Perú
+97,Ocotlán de Morelos,México
+233,Ohio,Estados Unidos
+25,Oiba,Colombia
+44,Oicatá,Colombia
+229,Olinda,Brasil
+533,Ollataytambo,Perú
+617,Omacha,Perú
+343,Omaha,Estados Unidos
+430,Oropesa,Perú
+218,Orosí,Perú
+203,Oruro,Perú
+179,Ospino,Venezuela
+471,Ottawa,Canadá
+196,Otumba,México
+296,Ouro Branco,Brasil
+148,Ouro Preto,Brasil
+692,Chile (sin ubicación),Chile
+681,Oxolotán,México
+498,Oxtotipac,México
+93,Ozumba,México
+352,Ozumbilla,
+656,Pabellón de Hidalgo,México
+531,Pacarectambo,Perú
+130,Pachuca,México
+456,Palma de Mallorca,España
+534,Pampatar,Venezuela
+18,Pamplona,Colombia
+410,Panamá,Panamá
+280,Paraná,Argentina
+205,Parinacota,Chile
+403,París,Francia
+594,Paruro,Perú
+486,Pasadena,Estados Unidos
+226,Pasto,Colombia
+535,Patzcuaro,México
+298,Paucartambo,Perú
+383,Paz del Río,Colombia
+,,
+230,Penedo,Brasil
+389,Phoenix,Estados Unidos
+608,Pichigua,Perú
+427,Pícuris,Estados Unidos
+258,Pinos (Zacatecas),México
+693,Ecuador (sin ubicación),Ecuador
+250,Pirapetinga,Brasil
+290,Pirenópolis,Brasil
+614,Pisaq,Perú
+384,Pisco,Perú
+338,Pittsfield,Estados Unidos
+525,Pitumarca,Perú
+620,Pomacanchi,Perú
+664,Pomata,Perú
+190,Ponce,Puerto Rico
+5,Popayán,Colombia
+669,Portsmouth,Estados Unidos
+149,Potosí,Bolivia
+422,Princenton,Estados Unidos
+342,Provo,Estados Unidos
+657,Pucarani,Bolivia
+526,Pucyura,Perú
+59,Puebla,México
+327,Puerto Príncipe,Haití
+155,Puno,Perú
+625,Qatqa,Perú
+273,Quecholac,México
+67,Querétaro,México
+652,Quetzaltenango,Guatemala
+216,Quíbor,Venezuela
+489,Quinua,Perú
+499,Quiquijana,Perú
+116,Quito,Ecuador
+637,Ramiriquí,Colombia
+351,Rancagua,Chile
+213,Rapaz,Perú
+35,Ráquira,Colombia
+15,Real de Catorce,México
+173,Recife,Brasil
+668,Rhode Island,Estados Unidos
+391,Richmond,Estados Unidos
+268,Rinconada,Argentina
+151,Rio de Janeiro,Brasil
+452,Riobamba,Ecuador
+17,Ríonegro,Colombia
+262,Roma,Italia
+210,Rosario,Argentina
+688,Roseau,Dominica
+69,Sabará,Brasil
+472,Saint George,Bermudas
+418,Saint Louis,Estados Unidos
+360,Salamanca,México
+224,Salas,Perú
+350,Salem,Estados Unidos
+225,Salta,Argentina
+187,Saltillo,México
+247,Salvador de Bahia,Brasil
+41,Samacá,Colombia
+113,San Andrés Cholula,México
+648,San Angelo,Estados Unidos
+367,San Antonio,Estados Unidos
+673,San Antonio Copayacuar,Venezuela
+512,San Antonio Pecos,Estados Unidos
+650,San Bartolomé Soyaltepec,México
+434,San Bernardino de Chalchihuapán,México
+138,San Cristóbal de las Casas,México
+654,San Cristóbal Suchixtlahuaca,México
+431,San Diego,Estados Unidos
+677,San Felipe,México
+513,San Fernando del Valle,Argentina
+223,San Francisco,Estados Unidos
+402,San Francisco de Yare,Venezuela
+399,San Javier,México
+414,San Jerónimo (Baja Verapaz),Guatemala
+407,San José Teotihuacán,México
+152,San Juan,Puerto Rico
+484,San Juan Bautista,Estados Unidos
+480,San Juan de los Lagos,México
+302,San Juan de Tilapa,México
+606,San Lucas el Verde,México
+589,San Lucas Totolmaloya,México
+271,San Lucas Xolox,México
+612,San Luis Coyotzingo,México
+107,San Luis Potosí,México
+542,San Luis Tehuiloyocan,México
+585,San Mateo Atenco,México
+602,San Mateo Peñasco,México
+425,San Mateo Xoloc,México
+109,San Miguel Allende,México
+562,San Miguel del Milagro,México
+546,San Miguel Octopan,México
+134,San Nicolás Peralta,México
+596,San Pablo del Monte,México
+547,San Pablo Villa de Mitla,México
+124,San Pedro Cholula,México
+54,San Pedro de los Milagros,Colombia
+557,San Pedro y San Pablo Tequixtepec,México
+195,San Petersburgo,Rusia
+387,San Petersburgo,Estados Unidos
+581,San Rafael ,Argentina
+611,San Salvador (Cuzco),Perú
+211,San Salvador de Jujuy,Argentina
+228,San Salvador el Verde,México
+501,Sangarará,Perú
+412,Santa Ana (I. Margarita),Venezuela
+295,Santa Bárbara,Estados Unidos
+122,Santa Cruz de la Sierra,Bolivia
+674,Santa Cruz de Tenerife,España
+191,Santa Fe,Argentina
+406,Santa Fe,Estados Unidos
+20,Santa Fe de Antioquia,Colombia
+550,Santa Isabel de Xiloxoxtla,México
+552,Santa María Acuexcomac,México
+649,Santa Maria Coatepec,México
+569,Santa Marta ,Colombia
+243,Santa Rita Durao,Brasil
+178,Santa Rosa de Lima ,Paraguay
+140,Santa Rosa de Ocopa,Perú
+306,Santana dos Montes,Brasil
+626,Santiago (Cuzco),Perú
+131,Santiago,Chile
+208,Santiago de Huata,Bolivia
+276,Santiago del Estero,Argentina
+311,Santo Domingo,República Dominicana
+114,Santuario,Colombia
+289,São Cristóvão,Brasil
+235,São João del Rei,Brasil
+158,São Paulo,Brasil
+245,São Roque,Brasil
+291,São Tomé das Letras,Brasil
+426,Sayula,México
+642,Serra,Brasil
+252,Serro,Brasil
+359,Sevilla,España
+47,Siachoque,Colombia
+16,Simijaca,Colombia
+607,Singuilucan,México
+540,Soltepec,México
+53,Sopetrán,Colombia
+9,Sopó,Colombia
+661,Sora,Colombia
+356,Soria,España
+321,Springfield,Estados Unidos
+347,Stanford,Estados Unidos
+694,Estados Unidos (sin ubicación),Estados Unidos
+633,Stonington,Estados Unidos
+344,Stratford,Estados Unidos
+11,Subachoque,Colombia
+153,Sucre,Bolivia
+627,Surimana,Perú
+529,Susques,Argentina
+7,Sutamerchán,Colombia
+22,Sutatausa,Colombia
+261,Tabasco (Zacatecas),México
+10,Tabio,Colombia
+676,San Cristóbal,Venezuela
+393,Talca,Chile
+135,Tamazulápam del Progreso,México
+376,Tasco,Colombia
+63,Taxco,México
+164,Tecalí,México
+527,Tecali de Herrera,México
+549,Tecámac de Felipe Villanueva,México
+112,Tecamachalco,México
+162,Tecaxic,México
+670,Tecozautla,México
+283,Tegucigalpa,Honduras
+78,Tehuacán,México
+184,Telixtlahuaca,México
+85,Tenancingo,México
+12,Tenjo,Colombia
+543,Teolocholco,México
+572,Teoloyucan,México
+256,Tepeaca,México
+75,Tepetlaoxtoc de Hidalgo,México
+494,Teposcolula,México
+87,Tepotzotlán,México
+156,Tetla,México
+198,Texcalyacac,México
+170,Texcoco,México
+95,Texmelucan,México
+14,Tibasosa,Colombia
+281,Tilcara,Argentina
+215,Tinta,Perú
+193,Tiradentes,Brasil
+80,Titiribí,Colombia
+538,Tlacochahuaya,México
+536,Tlacolula,México
+127,Tlacotepec,México
+270,Tlahuelilpan,México
+65,Tlalmanalco,México
+478,Tlalnepantla,México
+630,Tlanechicolpan,México
+98,Tlapa,México
+600,Tlapujahua,México
+212,Tlaquepaque,México
+90,Tlaxcala,México
+128,Tlayacapan,México
+695,Perú (sin ubicación),Perú
+45,Tobasía,Colombia
+96,Tochtepec,México
+143,Tocuyo,Venezuela
+163,Toluca,México
+404,Tomave-Uyuni,Bolivia
+255,Tonalá,México
+436,Tonanzintla,México
+40,Tópaga,Colombia
+398,Torreón,México
+386,Tota,Colombia
+437,Totolapan,México
+660,Transilvania,Estados Unidos
+662,Trinidad,Cuba
+217,Trinidad,Paraguay
+117,Trujillo,Perú
+214,Tucson,Estados Unidos
+365,Tudela,España
+481,Tula,México
+477,Tulancingo,México
+335,Tulsa,Estados Unidos
+237,Tultitlán,México
+558,Tumbaco,Ecuador
+559,Tumbaya,Argentina
+4,Tunja,Colombia
+377,Turabo,Puerto Rico
+2,Turmequé,Colombia
+43,Tuscaloosa,Estados Unidos
+385,Tuta,Colombia
+370,Tuxedo Park,Estados Unidos
+413,Tuxpan,México
+476,Tuxtla Gutiérrez,México
+221,Tzintzuntzan,México
+26,Ubaté,Colombia
+166,Uquía,Argentina
+272,Urcos,Perú
+300,Urquillos,Perú
+560,Urubamba,Perú
+454,Utica (NY),Estados Unidos
+575,Valencia,España
+672,Valencia (Vn),Venezuela
+357,Valladolid,España
+110,Valladolid,México
+371,Valle de Bravo,México
+588,Valle de la Pascua,Venezuela
+696,(Sin datos),
+104,Veracruz,México
+362,Viena,Austria
+288,Vila de Nova Almeida,Brasil
+605,Vila Velha,Brasil
+8,Villa de Leyva,Colombia
+644,"Villagarcía de campos, Valladolid",España
+561,Vilque,Perú
+251,Vitoriano Veloso,Brasil
+553,Vizarrón de Montes,México
+319,Washington,Estados Unidos
+651,Wellesley College,Estados Unidos
+326,Williamsburg,Estados Unidos
+632,Winchester,Reino Unido
+445,Winston-Salem,Estados Unidos
+485,Winters ,Estados Unidos
+446,Winterthur,Estados Unidos
+83,Worcester,Estados Unidos
+482,Xalapa,México
+442,Yanahuara,Perú
+565,Yanaoca,Perú
+174,Yanhuitlan,México
+555,Yauhquemehcan,México
+81,Yauri,Perú
+623,Yaurisque,Perú
+279,Yavi,Argentina
+515,Yecapixtla,México
+645,Yehualtepec,México
+566,Yucay,Perú
+679,Yuriria,México
+70,Zacatecas,México
+374,Zacatelco,México
+491,Zacatlán,México
+479,Zamora,México
+129,Zapopan,México
+567,Zimatlán de Álvarez,México
+197,San Miguel Zinacantepec,México
+84,Zinacatepec (Puebla),México
+259,Zumpango,México
+697,Venezuela (sin ubicación),Venezuela
+580,Alta Gracia,Argentina
+545,Güican,Colombia
+475,Fontibón,Colombia
