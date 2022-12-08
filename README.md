@@ -193,10 +193,29 @@ erDiagram
 ```mermaid
 erDiagram
     obras }o--|{ autores : M2M
+    autores {
+      string nombre
+      string apellido
+      number desde
+      string desde_anotacion
+      number hasta
+      string hasta_anotacion
+      string biografia
+      string referencia
+    }
 
     obras }o--|{ escenarios : M2M
+    escenarios {
+      string nombre
+    }
 
     obras }o--|{ objetos : M2M
+    objetos {
+      string nombre
+    }
 
     obras }o--|{ tecnicas : M2M
+    tecnicas {
+      string nombre
+    }
 ```

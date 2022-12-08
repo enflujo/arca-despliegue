@@ -7,6 +7,7 @@ export type RelatoVisual = {
   id?: ID;
   nombre: string;
   obras?: Obra[];
+  id_fuente: number;
 };
 
 export type RelatoVisualFuente = {
@@ -24,8 +25,8 @@ function limpieza(valor: string, contexto: CastingContext): string {
   return valor;
 }
 
-function procesar({ Nombre }: RelatoVisualFuente): RelatoVisual {
-  return { nombre: Nombre };
+function procesar({ id, Nombre }: RelatoVisualFuente): RelatoVisual {
+  return { id_fuente: id, nombre: Nombre };
 }
 
 export default async (directus: Directus<ColeccionesArca>) => {

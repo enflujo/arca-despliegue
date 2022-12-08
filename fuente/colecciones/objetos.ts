@@ -7,6 +7,7 @@ export type Objeto = {
   id?: ID;
   nombre: string;
   obras?: Obra[];
+  id_fuente: number;
 };
 
 export type ObjetoFuente = {
@@ -24,8 +25,8 @@ function limpieza(valor: string, contexto: CastingContext): string {
   return valor;
 }
 
-function procesar({ nombre }: ObjetoFuente): Objeto {
-  return { nombre };
+function procesar({ id, nombre }: ObjetoFuente): Objeto {
+  return { id_fuente: id, nombre };
 }
 
 export default async (directus: Directus<ColeccionesArca>) => {

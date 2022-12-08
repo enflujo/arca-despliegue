@@ -8,6 +8,7 @@ export type Gesto = {
   codigo: string | null;
   nombre: string;
   obras?: Obra[];
+  id_fuente: number;
 };
 
 export type GestoFuente = {
@@ -41,6 +42,7 @@ function limpieza(valor: string, contexto: CastingContext): string | null {
 
 function procesar(fila: GestoFuente): Gesto {
   return {
+    id_fuente: fila.id,
     nombre: fila.Nombre,
     codigo: fila['Nombre de registro'],
   };

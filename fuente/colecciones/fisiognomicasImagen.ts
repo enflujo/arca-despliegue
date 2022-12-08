@@ -8,6 +8,7 @@ export type FisiognomicaImagen = {
   id?: ID;
   nombre: string;
   obras?: Obra[];
+  id_fuente: number;
 };
 
 export type FisiognomicaImagenFuente = {
@@ -25,8 +26,8 @@ function limpieza(valor: string, contexto: CastingContext): string {
   return valor;
 }
 
-function procesar({ nombre }: FisiognomicaImagenFuente): FisiognomicaImagen {
-  return { nombre };
+function procesar({ id, nombre }: FisiognomicaImagenFuente): FisiognomicaImagen {
+  return { id_fuente: id, nombre };
 }
 
 export default async (directus: Directus<ColeccionesArca>) => {

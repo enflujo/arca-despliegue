@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { Directus, TransportError } from '@directus/sdk';
+import { Directus } from '@directus/sdk';
 import autores from './colecciones/autores';
 import settings from './colecciones/_settings';
 import crearColecciones from './colecciones/crearColecciones';
@@ -7,72 +7,87 @@ import { logCambios, logSinCambios, mensaje } from './utilidades/ayudas';
 import { ColeccionesArca, Obra } from './tipos';
 import ubicaciones from './colecciones/ubicaciones';
 import paises from './colecciones/paises';
+
 import objetos from './colecciones/objetos';
 import escenarios from './colecciones/escenarios';
 import tecnicas from './colecciones/tecnicas';
 import fuentes from './colecciones/fuentes';
 import donantes from './colecciones/donantes';
-import relatos_visuales from './colecciones/relatosVisuales';
-import complejos_gestuales from './colecciones/complejosGestuales';
+import relatosVisuales from './colecciones/relatosVisuales';
+import complejosGestuales from './colecciones/complejosGestuales';
 
 import obras from './colecciones/obras';
-import listaImgs from './utilidades/imgsObras';
 import gestos from './colecciones/gestos';
 import fisiognomicas from './colecciones/fisiognomicas';
 import fisiognomicasImagen from './colecciones/fisiognomicasImagen';
 import rostros from './colecciones/rostros';
+import ciudades from './colecciones/ciudades';
+import personajes from './colecciones/personajes';
+import tiposGestuales from './colecciones/tiposGestuales';
+import cartelasFilacterias from './colecciones/cartelasFilacterias';
+import categorias1 from './colecciones/categorias1';
+import categorias2 from './colecciones/categorias2';
+import categorias3 from './colecciones/categorias3';
+import categorias4 from './colecciones/categorias4';
+import categorias5 from './colecciones/categorias5';
+import categorias6 from './colecciones/categorias6';
 
 const directus = new Directus<ColeccionesArca>('http://localhost:8055', {
   auth: {
     staticToken: process.env.KEY,
   },
+  transport: {
+    maxBodyLength: Infinity,
+    maxContentLength: Infinity,
+  },
 });
 
 async function insertarDatosAColeccion(nombre: string, coleccion: string, procesador: any) {
-  const { meta } = await directus.items(coleccion).readByQuery({ limit: 0, meta: 'total_count' });
+  // const { meta } = await directus.items(coleccion).readByQuery({ limit: 0, meta: 'total_count' });
 
-  if (meta) {
-    if (!meta.total_count) {
-      console.log(logCambios(mensaje(nombre, 'Iniciando carga de datos.')));
-      await procesador(directus);
-      console.log(logCambios(mensaje(nombre, 'Finalizó carga.')));
-    } else {
-      console.log(logSinCambios(mensaje(nombre, 'Sin cambios')));
-    }
-  }
+  // if (meta) {
+  //   if (!meta.total_count) {
+  console.log(logCambios(mensaje(nombre, 'Iniciando carga de datos.')));
+  await procesador(directus);
+  console.log(logCambios(mensaje(nombre, 'Finalizó carga.')));
+  // }
+  //  else {
+  //   console.log(logSinCambios(mensaje(nombre, 'Sin cambios')));
+  // }
+  // }
 }
 
 async function inicio() {
   await settings(directus);
 
-  await crearColecciones(directus);
-  await insertarDatosAColeccion('Autores', 'autores', autores); // LISTO
-  await insertarDatosAColeccion('Países', 'paises', paises); // LISTO
-  await insertarDatosAColeccion('Objetos', 'objetos', objetos); // LISTO
-  await insertarDatosAColeccion('Escenarios', 'escenarios', escenarios); // LISTO
-  await insertarDatosAColeccion('Técnicas', 'tecnicas', tecnicas); // LISTO
-  await insertarDatosAColeccion('Fuentes', 'fuentes', fuentes); // LISTO
-  await insertarDatosAColeccion('Donantes', 'donantes', donantes); // LISTO
-  await insertarDatosAColeccion('Relatos Visuales', 'relatos_visuales', relatos_visuales); // LISTO
-  await insertarDatosAColeccion('Complejos Gestuales', 'complejos_gestuales', complejos_gestuales); // LISTO
-  await insertarDatosAColeccion('Gestos', 'gestos', gestos); // LISTO
-  await insertarDatosAColeccion('Fisiognómicas', 'fisiognomicas', fisiognomicas); // LISTO
-  await insertarDatosAColeccion('Fisiognómicas Imagen', 'fisiognomicas_imagen', fisiognomicasImagen); // LISTO
-  await insertarDatosAColeccion('Rostros', 'rostros', rostros); // LISTO
+  // await crearColecciones(directus);
+  // await insertarDatosAColeccion('Personajes', 'personajes', personajes); // LISTO Cols: B-G
+  // await insertarDatosAColeccion('Autores', 'autores', autores); // LISTO Cols: H-I
+  // await insertarDatosAColeccion('Escenarios', 'escenarios', escenarios); // LISTO Cols: J-K
+  // await insertarDatosAColeccion('Técnicas', 'tecnicas', tecnicas); // LISTO Cols: L-M
+  // await insertarDatosAColeccion('Fuentes', 'fuentes', fuentes); // LISTO Cols: N-O
+  // await insertarDatosAColeccion('Donantes', 'donantes', donantes); // LISTO Cols: P-Q
 
-  await insertarDatosAColeccion('Ubicaciones', 'ubicaciones', ubicaciones);
+  // await insertarDatosAColeccion('Objetos', 'objetos', objetos); // LISTO Cols: AW-AX
 
+  // await insertarDatosAColeccion('Relatos Visuales', 'relatos_visuales', relatosVisuales); // LISTO cols: AS-AT
+  // await insertarDatosAColeccion('Complejos Gestuales', 'complejos_gestuales', complejosGestuales); // LISTO Cols: AY-AZ
+  // await insertarDatosAColeccion('Gestos', 'gestos', gestos); // LISTO Cols: BA-BF
+  // await insertarDatosAColeccion('Fisiognómicas', 'fisiognomicas', fisiognomicas); // LISTO Cols: BG-BH
+  // await insertarDatosAColeccion('Fisiognómicas Imagen', 'fisiognomicas_imagen', fisiognomicasImagen); // LISTO Cols: BI-BJ
+  // await insertarDatosAColeccion('Rostros', 'rostros', rostros); // LISTO Cols: BM-BN
+  // await insertarDatosAColeccion('Países', 'paises', paises); // LISTO Cols: V-Y
+  // await insertarDatosAColeccion('Ciudades', 'ciudades', ciudades); // LISTO Cols: R-U
+  // await insertarDatosAColeccion('Ubicaciones', 'ubicaciones', ubicaciones); // LISTO
+  // await insertarDatosAColeccion('Tipos Gestuales', 'tipos_gestuales', tiposGestuales); //
+  // await insertarDatosAColeccion('Cartelas Filacterias', 'cartelas_filacterias', cartelasFilacterias); //
+  // await insertarDatosAColeccion('Categorías 1', 'categorias1', categorias1); //
+  // await insertarDatosAColeccion('Categorías 2', 'categorias2', categorias2); //
+  // await insertarDatosAColeccion('Categorías 3', 'categorias3', categorias3); //
+  // await insertarDatosAColeccion('Categorías 4', 'categorias4', categorias4); //
+  // await insertarDatosAColeccion('Categorías 5', 'categorias5', categorias5); //
+  // await insertarDatosAColeccion('Categorías 6', 'categorias6', categorias6); //
   await insertarDatosAColeccion('Obras', 'obras', obras);
-  // const datos: Obra[] = [{ titulo: 'prueba', autores: [{ autores_id: 1101 }] }];
-  // try {
-  //   await directus.items('obras').createMany(datos);
-  // } catch (err) {
-  //   const { errors } = err as TransportError;
-
-  //   if (errors) {
-  //     throw new Error(JSON.stringify(errors, null, 2));
-  //   }
-  // }
 }
 
 inicio();

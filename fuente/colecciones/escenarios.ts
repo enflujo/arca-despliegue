@@ -7,6 +7,7 @@ export type Escenario = {
   id?: ID;
   nombre: string;
   obras?: Obra[];
+  id_fuente: number;
 };
 
 export type EscenarioFuente = {
@@ -24,8 +25,8 @@ function limpieza(valor: string, contexto: CastingContext): string {
   return valor;
 }
 
-function procesar({ name }: EscenarioFuente): Escenario {
-  return { nombre: name };
+function procesar({ id, name }: EscenarioFuente): Escenario {
+  return { id_fuente: id, nombre: name };
 }
 
 export default async (directus: Directus<ColeccionesArca>) => {

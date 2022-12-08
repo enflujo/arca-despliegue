@@ -7,6 +7,7 @@ export type Fuente = {
   id?: ID;
   descripcion: string;
   obras?: Obra[];
+  id_fuente: ID;
 };
 
 export type FuenteFuente = {
@@ -24,8 +25,8 @@ function limpieza(valor: string, contexto: CastingContext): string {
   return valor;
 }
 
-function procesar({ name }: FuenteFuente): Fuente {
-  return { descripcion: name };
+function procesar({ id, name }: FuenteFuente): Fuente {
+  return { id_fuente: id, descripcion: name };
 }
 
 export default async (directus: Directus<ColeccionesArca>) => {

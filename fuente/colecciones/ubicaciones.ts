@@ -8,7 +8,8 @@ export type Ubicacion = {
   id_fuente: number;
   nombre: string;
   anotacion: string | null;
-  geo: string;
+  geo?: string;
+  ciudad?: ID;
   obras?: Obra[];
 };
 
@@ -18,7 +19,7 @@ export type UbicacionOrigen = {
   Lugar: string;
   latitud: number;
   longitud: number;
-  'lugar/ubicación': number;
+  'lugar/ubicación': string;
   Anotación: string;
 };
 
@@ -35,16 +36,37 @@ function limpieza(valor: string, contexto: CastingContext): string | number {
   return valor;
 }
 
-function procesar(lugar: UbicacionOrigen): Ubicacion {
-  return {
+async function procesar(lugar: UbicacionOrigen, directus: Directus<ColeccionesArca>): Promise<Ubicacion> {
+  const respuesta: Ubicacion = {
     id_fuente: lugar.id,
     nombre: lugar.Lugar,
     anotacion: lugar.Anotación ? lugar.Anotación : null,
-    geo: JSON.stringify({
+  };
+
+  if (lugar['lugar/ubicación'].length) {
+    const { data: ciudad } = await directus
+      .items('ciudades')
+      .readByQuery({ filter: { nombre: { _eq: lugar['lugar/ubicación'] } } });
+
+    if (ciudad?.length) {
+      respuesta.ciudad = ciudad[0]?.id;
+    } else {
+      console.log('No se encontró la ciudad', lugar);
+    }
+  } else {
+    console.log('La fila no tiene nada en el campo "lugar/ubicación"', lugar);
+  }
+
+  if (lugar.longitud && lugar.latitud) {
+    respuesta.geo = JSON.stringify({
       coordinates: [lugar.longitud, lugar.latitud],
       type: 'Point',
-    }),
-  };
+    });
+  } else if (lugar['lugar/ubicación'] !== '(Sin datos)') {
+    console.log('Problemas con las coordenadas', lugar);
+  }
+
+  return respuesta;
 }
 
 export default async (directus: Directus<ColeccionesArca>) => {

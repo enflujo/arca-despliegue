@@ -13,10 +13,21 @@ import { Gesto } from './colecciones/gestos';
 import { Fisiognomica } from './colecciones/fisiognomicas';
 import { FisiognomicaImagen } from './colecciones/fisiognomicasImagen';
 import { Rostro } from './colecciones/rostros';
+import { Ciudad } from './colecciones/ciudades';
+import { Personaje } from './colecciones/personajes';
+import { TipoGestual } from './colecciones/tiposGestuales';
+import { CartelaFilacteria } from './colecciones/cartelasFilacterias';
+import { Categoria1 } from './colecciones/categorias1';
+import { Categoria2 } from './colecciones/categorias2';
+import { Categoria3 } from './colecciones/categorias3';
+import { Categoria4 } from './colecciones/categorias4';
+import { Categoria5 } from './colecciones/categorias5';
+import { Categoria6 } from './colecciones/categorias6';
 
 export type ColeccionesArca = {
   autores: Autor;
   paises: Pais;
+  ciudades: Ciudad;
   objetos: Objeto;
   escenarios: Escenario;
   tecnicas: Tecnica;
@@ -24,12 +35,20 @@ export type ColeccionesArca = {
   donantes: Donante;
   relatos_visuales: RelatoVisual;
   complejos_gestuales: ComplejoGestual;
+  tipos_gestuales: TipoGestual;
   gestos: Gesto;
   fisiognomicas: Fisiognomica;
   fisiognomicas_imagen: FisiognomicaImagen;
   rostros: Rostro;
-  // EN PROCESO
   ubicaciones: Ubicacion;
+  personajes: Personaje;
+  cartelas_filacterias: CartelaFilacteria;
+  categorias1: Categoria1;
+  categorias2: Categoria2;
+  categorias3: Categoria3;
+  categorias4: Categoria4;
+  categorias5: Categoria5;
+  categorias6: Categoria6;
 
   obras: Obra;
 };
@@ -51,6 +70,10 @@ export type Obra = {
   imagen?: string;
   /** Directo: Síntesis */
   sintesis?: string;
+  /** Directo: Comentario Bibliográfico */
+  comentario_bibliografico?: string;
+  /** Iconotexto */
+  iconotexto?: string;
 
   /** Directo: ¿la fecha es un periodo? permite hacer visible el campo fecha_final */
   fecha_periodo: boolean;
@@ -75,12 +98,30 @@ export type Obra = {
   relato_visual?: ID;
   /** M2O: Complejos Gestuales */
   complejo_gestual?: ID;
+  /** M2O: Tipos Gestuales */
+  tipo_gestual?: ID;
   /** M2O: Fisiognómicas */
   fisiognomica?: ID;
   /** M2O: Fisiognómicas Imagen */
   fisiognomica_imagen?: ID;
   /** M2O: Rostro */
   rostro?: ID;
+  /** M2O: Ciudad Origen */
+  ciudad_origen?: ID;
+  /** M2O: Cartela Filacteria */
+  cartela_filacteria?: ID;
+  /** M2O: Categoria 1 */
+  categoria1?: ID;
+  /** M2O: Categoria 2 */
+  categoria2?: ID;
+  /** M2O: Categoria 3 */
+  categoria3?: ID;
+  /** M2O: Categoria 4 */
+  categoria4?: ID;
+  /** M2O: Categoria 5 */
+  categoria5?: ID;
+  /** M2O: Categoria 6 */
+  categoria6?: ID;
 
   /**
    * ..:: Relaciones "Many to Many" (M2M) - Permite más de 1 valor ::..
@@ -95,6 +136,8 @@ export type Obra = {
   tecnicas?: { tecnicas_id: ID }[];
   /** M2M: Gestos */
   gestos?: { gestos_id: ID }[];
+  /** M2M: Personajes */
+  personajes?: { personajes_id: ID }[];
 };
 
 export type ObraFuente = {
@@ -200,4 +243,14 @@ export type ObraFuente = {
   Cartela_filacteria_2_lista: string;
 
   Anotación_gestual: string;
+};
+
+export type Actividad = {
+  desde: ActividadObjeto;
+  hasta: ActividadObjeto;
+};
+
+export type ActividadObjeto = {
+  fecha: number | null;
+  anotacion: string | null;
 };

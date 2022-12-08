@@ -4,8 +4,7 @@ import colores from 'cli-color';
 import { CastingFunction, parse, Parser } from 'csv-parse';
 import { createReadStream, writeFileSync } from 'fs';
 import { ratio } from 'fuzzball';
-import { ColeccionesArca } from '../tipos';
-
+import { ActividadObjeto, ColeccionesArca } from '../tipos';
 /**
  * Revisa si un Objeto de JS contiene elementos
  * https://stackoverflow.com/a/69100805/3661186
@@ -69,7 +68,7 @@ export const guardar = async (nombreColeccion: string, directus: Directus<Colecc
     if (errors) {
       throw new Error(JSON.stringify(errors, null, 2));
     }
-    console.error(err);
+    console.error(nombreColeccion, err);
   }
 };
 
@@ -82,18 +81,28 @@ export const procesarCSV = async (
   const limite = 100;
   let procesados = [];
   let contador = 0;
+  let fila = 2;
 
   for await (const entrada of flujo) {
-    const entradaProcesada = await procesarEntrada(entrada, directus);
-    if (!entradaProcesada) return;
-    procesados.push(entradaProcesada);
-    contador = contador + 1;
+    if (fila > 22400) {
+      const entradaProcesada = await procesarEntrada(entrada, directus, fila);
+      if (entradaProcesada) {
+        procesados.push(entradaProcesada);
+        contador = contador + 1;
+      }
 
-    if (contador >= limite) {
-      await guardar(nombreColeccion, directus, procesados);
-      procesados = [];
-      contador = 0;
+      if (contador >= limite) {
+        try {
+          await guardar(nombreColeccion, directus, procesados);
+        } catch (error) {
+          console.error(nombreColeccion, procesados);
+        }
+
+        procesados = [];
+        contador = 0;
+      }
     }
+    fila++;
   }
 
   if (procesados.length) {
@@ -142,4 +151,24 @@ export const manejarErroresAxios = (error: AxiosError) => {
   } else {
     console.log('Error', error.message);
   }
+};
+
+export const vacio = { fecha: null, anotacion: null } as ActividadObjeto;
+
+export const procesarFechaActividad = (fecha: string): ActividadObjeto => {
+  if (!fecha) return vacio;
+  if (esNumero(fecha)) return { fecha: +fecha, anotacion: null };
+
+  if (fecha.includes('c')) {
+    const [anotacion, fechaDentro] = fecha.split(' ');
+    const fechaEn = procesarFechaActividad(fechaDentro);
+
+    if (fechaEn) {
+      return { fecha: fechaEn.fecha, anotacion: 'ca' };
+    }
+  }
+
+  if (fecha.includes('s')) return { fecha: null, anotacion: 'sf' };
+
+  return vacio;
 };
