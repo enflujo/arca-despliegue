@@ -5,7 +5,6 @@ import { Actividad, ColeccionesArca, Obra } from '../tipos';
 
 export type Autor = {
   id?: ID;
-  id_fuente: number;
   nombre: string;
   apellido: string;
   desde: number | null;
@@ -14,7 +13,6 @@ export type Autor = {
   hasta_anotacion: string | null;
   biografia: string;
   referencia: string;
-  status: string;
   obras?: Obra[];
 };
 
@@ -63,8 +61,7 @@ function limpieza(valor: string, contexto: CastingContext): Actividad | null | s
 async function procesar(autor: AutorOrigen): Promise<Autor | null> {
   if (!autor.fullname) return null;
   return {
-    status: 'published',
-    id_fuente: autor.id,
+    id: autor.id,
     nombre: autor.name,
     apellido: autor.lastname,
     desde: autor.activity.desde.fecha,

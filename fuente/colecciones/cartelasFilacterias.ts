@@ -6,7 +6,6 @@ import { flujoCSV, procesarCSV } from '../utilidades/ayudas';
 export type CartelaFilacteria = {
   id?: ID;
   nombre: string;
-  id_fuente: number;
   obras?: Obra[];
 };
 
@@ -28,7 +27,7 @@ function limpieza(valor: string, contexto: CastingContext): string | null {
 function procesar(fila: CartelaFilacteriaFuente): CartelaFilacteria {
   return {
     nombre: fila.name,
-    id_fuente: fila.id,
+    id: fila.id,
   };
 }
 

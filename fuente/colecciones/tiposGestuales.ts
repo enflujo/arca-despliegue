@@ -6,7 +6,6 @@ import { flujoCSV, procesarCSV } from '../utilidades/ayudas';
 export type TipoGestual = {
   id?: ID;
   nombre: string;
-  id_fuente: number;
   obras?: Obra[];
 };
 
@@ -25,10 +24,10 @@ function limpieza(valor: string, contexto: CastingContext): string | null {
   return valor;
 }
 
-function procesar(fila: TiposGestualFuente): TipoGestual {
+function procesar({ id, nombre }: TiposGestualFuente): TipoGestual {
   return {
-    nombre: fila.nombre,
-    id_fuente: fila.id,
+    id,
+    nombre,
   };
 }
 

@@ -8,7 +8,6 @@ export type Categoria1 = {
   nombre: string;
   descripcion?: string;
   obras?: Obra[];
-  id_fuente: number;
 };
 
 export type Categoria1Fuente = {
@@ -37,7 +36,7 @@ function limpieza(valor: string, contexto: CastingContext): string | boolean {
 
 async function procesar({ id, name, ancestry }: Categoria1Fuente): Promise<Categoria1 | null> {
   if (!ancestry) return null;
-  return { nombre: name, id_fuente: id };
+  return { id, nombre: name };
 }
 
 export default async (directus: Directus<ColeccionesArca>) => {

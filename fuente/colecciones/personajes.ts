@@ -14,7 +14,6 @@ export type Personaje = {
   beatificacion_canonizacion_hasta: number | string | null;
   beatificacion_canonizacion_hasta_anotacion: string | null;
   fuente: string;
-  id_fuente: number;
 };
 
 export type PersonajeFuente = {
@@ -78,11 +77,11 @@ function limpieza(
 
   return valor;
 }
-let conteo = 0;
+
 async function procesar(personaje: PersonajeFuente): Promise<Personaje | null> {
   if (!personaje.id) return null;
   return {
-    id_fuente: personaje.id,
+    id: personaje.id,
     nombre: personaje.name,
     muerte: personaje['Fecha muerte'].fecha,
     muerte_anotacion: personaje['Fecha muerte'].anotacion,

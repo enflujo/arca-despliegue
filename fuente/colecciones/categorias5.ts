@@ -9,7 +9,6 @@ export type Categoria5 = {
   descripcion?: string;
   obras?: Obra[];
   ancestro: ID;
-  id_fuente: number;
 };
 
 export type Categoria5Fuente = {
@@ -44,11 +43,11 @@ function limpieza(valor: string, contexto: CastingContext): string | boolean | s
 async function procesar(fila: Categoria5Fuente, directus: Directus<ColeccionesArca>): Promise<Categoria5 | null> {
   if (!fila.ancestry) return null;
 
-  const respuesta = { nombre: fila.name, id_fuente: fila.id } as Categoria5;
+  const respuesta = { nombre: fila.name, id: fila.id } as Categoria5;
 
   const { data: categoria4 } = await directus
     .items('categorias4')
-    .readByQuery({ filter: { id_fuente: { _eq: fila.ancestry[3] } } });
+    .readByQuery({ filter: { id: { _eq: fila.ancestry[3] } } });
 
   if (categoria4?.length && categoria4[0]?.id) {
     respuesta.ancestro = categoria4[0].id;

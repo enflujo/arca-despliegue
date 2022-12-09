@@ -8,7 +8,6 @@ export type ComplejoGestual = {
   nombre: string;
   descripcion?: string;
   obras?: Obra[];
-  id_fuente: number;
 };
 
 export type ComplejoGestualFuente = {
@@ -27,7 +26,7 @@ function limpieza(valor: string, contexto: CastingContext): string {
 }
 
 function procesar({ id, nombre }: ComplejoGestualFuente): ComplejoGestual {
-  return { id_fuente: id, nombre };
+  return { id, nombre };
 }
 
 export default async (directus: Directus<ColeccionesArca>) => {

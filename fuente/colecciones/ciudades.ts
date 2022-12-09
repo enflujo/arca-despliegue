@@ -5,7 +5,6 @@ import { flujoCSV, procesarCSV } from '../utilidades/ayudas';
 
 export type Ciudad = {
   id?: ID;
-  id_fuente: number;
   nombre: string;
   pais?: ID;
 };
@@ -27,7 +26,7 @@ function limpieza(valor: string, contexto: CastingContext): string {
 }
 
 async function procesar(fila: CiudadFuente, directus: Directus<ColeccionesArca>): Promise<Ciudad> {
-  const respuesta: Ciudad = { nombre: fila.name, id_fuente: fila.id };
+  const respuesta: Ciudad = { nombre: fila.name, id: fila.id };
 
   if (fila.pais.length) {
     const { data: pais } = await directus.items('paises').readByQuery({ filter: { nombre: { _eq: fila.pais } } });

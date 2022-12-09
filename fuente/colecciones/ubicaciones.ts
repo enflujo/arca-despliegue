@@ -5,7 +5,6 @@ import { esNumero, flujoCSV, procesarCSV } from '../utilidades/ayudas';
 
 export type Ubicacion = {
   id?: ID;
-  id_fuente: number;
   nombre: string;
   anotacion: string | null;
   geo?: string;
@@ -38,7 +37,7 @@ function limpieza(valor: string, contexto: CastingContext): string | number {
 
 async function procesar(lugar: UbicacionOrigen, directus: Directus<ColeccionesArca>): Promise<Ubicacion> {
   const respuesta: Ubicacion = {
-    id_fuente: lugar.id,
+    id: lugar.id,
     nombre: lugar.Lugar,
     anotacion: lugar.Anotación ? lugar.Anotación : null,
   };

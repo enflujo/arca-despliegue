@@ -43,50 +43,49 @@ const directus = new Directus<ColeccionesArca>('http://localhost:8055', {
 });
 
 async function insertarDatosAColeccion(nombre: string, coleccion: string, procesador: any) {
-  // const { meta } = await directus.items(coleccion).readByQuery({ limit: 0, meta: 'total_count' });
+  const { meta } = await directus.items(coleccion).readByQuery({ limit: 0, meta: 'total_count' });
 
-  // if (meta) {
-  //   if (!meta.total_count) {
-  console.log(logCambios(mensaje(nombre, 'Iniciando carga de datos.')));
-  await procesador(directus);
-  console.log(logCambios(mensaje(nombre, 'Finalizó carga.')));
-  // }
-  //  else {
-  //   console.log(logSinCambios(mensaje(nombre, 'Sin cambios')));
-  // }
-  // }
+  if (meta) {
+    if (!meta.total_count) {
+      console.log(logCambios(mensaje(nombre, 'Iniciando carga de datos.')));
+      await procesador(directus);
+      console.log(logCambios(mensaje(nombre, 'Finalizó carga.')));
+    } else {
+      console.log(logSinCambios(mensaje(nombre, 'Sin cambios')));
+    }
+  }
 }
 
 async function inicio() {
   await settings(directus);
 
   // await crearColecciones(directus);
-  // await insertarDatosAColeccion('Personajes', 'personajes', personajes); // LISTO Cols: B-G
-  // await insertarDatosAColeccion('Autores', 'autores', autores); // LISTO Cols: H-I
-  // await insertarDatosAColeccion('Escenarios', 'escenarios', escenarios); // LISTO Cols: J-K
-  // await insertarDatosAColeccion('Técnicas', 'tecnicas', tecnicas); // LISTO Cols: L-M
-  // await insertarDatosAColeccion('Fuentes', 'fuentes', fuentes); // LISTO Cols: N-O
-  // await insertarDatosAColeccion('Donantes', 'donantes', donantes); // LISTO Cols: P-Q
+  await insertarDatosAColeccion('Personajes', 'personajes', personajes); // LISTO Cols: B-G
+  await insertarDatosAColeccion('Autores', 'autores', autores); // LISTO Cols: H-I
+  await insertarDatosAColeccion('Escenarios', 'escenarios', escenarios); // LISTO Cols: J-K
+  await insertarDatosAColeccion('Técnicas', 'tecnicas', tecnicas); // LISTO Cols: L-M
+  await insertarDatosAColeccion('Fuentes', 'fuentes', fuentes); // LISTO Cols: N-O
+  await insertarDatosAColeccion('Donantes', 'donantes', donantes); // LISTO Cols: P-Q
 
-  // await insertarDatosAColeccion('Objetos', 'objetos', objetos); // LISTO Cols: AW-AX
+  await insertarDatosAColeccion('Objetos', 'objetos', objetos); // LISTO Cols: AW-AX
 
-  // await insertarDatosAColeccion('Relatos Visuales', 'relatos_visuales', relatosVisuales); // LISTO cols: AS-AT
-  // await insertarDatosAColeccion('Complejos Gestuales', 'complejos_gestuales', complejosGestuales); // LISTO Cols: AY-AZ
-  // await insertarDatosAColeccion('Gestos', 'gestos', gestos); // LISTO Cols: BA-BF
-  // await insertarDatosAColeccion('Fisiognómicas', 'fisiognomicas', fisiognomicas); // LISTO Cols: BG-BH
-  // await insertarDatosAColeccion('Fisiognómicas Imagen', 'fisiognomicas_imagen', fisiognomicasImagen); // LISTO Cols: BI-BJ
-  // await insertarDatosAColeccion('Rostros', 'rostros', rostros); // LISTO Cols: BM-BN
-  // await insertarDatosAColeccion('Países', 'paises', paises); // LISTO Cols: V-Y
-  // await insertarDatosAColeccion('Ciudades', 'ciudades', ciudades); // LISTO Cols: R-U
-  // await insertarDatosAColeccion('Ubicaciones', 'ubicaciones', ubicaciones); // LISTO
-  // await insertarDatosAColeccion('Tipos Gestuales', 'tipos_gestuales', tiposGestuales); //
-  // await insertarDatosAColeccion('Cartelas Filacterias', 'cartelas_filacterias', cartelasFilacterias); //
-  // await insertarDatosAColeccion('Categorías 1', 'categorias1', categorias1); //
-  // await insertarDatosAColeccion('Categorías 2', 'categorias2', categorias2); //
-  // await insertarDatosAColeccion('Categorías 3', 'categorias3', categorias3); //
-  // await insertarDatosAColeccion('Categorías 4', 'categorias4', categorias4); //
-  // await insertarDatosAColeccion('Categorías 5', 'categorias5', categorias5); //
-  // await insertarDatosAColeccion('Categorías 6', 'categorias6', categorias6); //
+  await insertarDatosAColeccion('Relatos Visuales', 'relatos_visuales', relatosVisuales); // LISTO cols: AS-AT
+  await insertarDatosAColeccion('Complejos Gestuales', 'complejos_gestuales', complejosGestuales); // LISTO Cols: AY-AZ
+  await insertarDatosAColeccion('Gestos', 'gestos', gestos); // LISTO Cols: BA-BF
+  await insertarDatosAColeccion('Fisiognómicas', 'fisiognomicas', fisiognomicas); // LISTO Cols: BG-BH
+  await insertarDatosAColeccion('Fisiognómicas Imagen', 'fisiognomicas_imagen', fisiognomicasImagen); // LISTO Cols: BI-BJ
+  await insertarDatosAColeccion('Rostros', 'rostros', rostros); // LISTO Cols: BM-BN
+  await insertarDatosAColeccion('Países', 'paises', paises); // LISTO Cols: V-Y
+  await insertarDatosAColeccion('Ciudades', 'ciudades', ciudades); // LISTO Cols: R-U
+  await insertarDatosAColeccion('Ubicaciones', 'ubicaciones', ubicaciones); // LISTO
+  await insertarDatosAColeccion('Tipos Gestuales', 'tipos_gestuales', tiposGestuales); //
+  await insertarDatosAColeccion('Cartelas Filacterias', 'cartelas_filacterias', cartelasFilacterias); //
+  await insertarDatosAColeccion('Categorías 1', 'categorias1', categorias1); //
+  await insertarDatosAColeccion('Categorías 2', 'categorias2', categorias2); //
+  await insertarDatosAColeccion('Categorías 3', 'categorias3', categorias3); //
+  await insertarDatosAColeccion('Categorías 4', 'categorias4', categorias4); //
+  await insertarDatosAColeccion('Categorías 5', 'categorias5', categorias5); //
+  await insertarDatosAColeccion('Categorías 6', 'categorias6', categorias6); //
   await insertarDatosAColeccion('Obras', 'obras', obras);
 }
 

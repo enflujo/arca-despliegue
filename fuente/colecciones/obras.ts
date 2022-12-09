@@ -125,7 +125,7 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>, n
   if (fila.fuente_imagen_1_id) {
     const { data: fuenteImagen } = await directus
       .items('fuentes')
-      .readByQuery({ filter: { id_fuente: { _eq: fila.fuente_imagen_1_id } } });
+      .readByQuery({ filter: { id: { _eq: fila.fuente_imagen_1_id } } });
 
     if (fuenteImagen?.length) {
       respuesta.fuente = fuenteImagen[0]?.id;
@@ -139,7 +139,7 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>, n
   if (fila.Complejo_gestual_id) {
     const { data: complejoGestual } = await directus
       .items('complejos_gestuales')
-      .readByQuery({ filter: { id_fuente: { _eq: fila.Complejo_gestual_id } } });
+      .readByQuery({ filter: { id: { _eq: fila.Complejo_gestual_id } } });
 
     if (complejoGestual?.length && complejoGestual[0]?.id) {
       respuesta.complejo_gestual = complejoGestual[0].id;
@@ -153,7 +153,7 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>, n
   if (fila.ubicacion_id) {
     const { data: ubicacion } = await directus
       .items('ubicaciones')
-      .readByQuery({ filter: { id_fuente: { _eq: fila.ubicacion_id } } });
+      .readByQuery({ filter: { id: { _eq: fila.ubicacion_id } } });
 
     if (ubicacion?.length && ubicacion[0]?.id) {
       respuesta.ubicacion = ubicacion[0].id;
@@ -167,7 +167,7 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>, n
   if (fila.Relato_visual_id) {
     const { data: relatoVisual } = await directus
       .items('relatos_visuales')
-      .readByQuery({ filter: { id_fuente: { _eq: fila.Relato_visual_id } } });
+      .readByQuery({ filter: { id: { _eq: fila.Relato_visual_id } } });
 
     if (relatoVisual?.length && relatoVisual[0]?.id) {
       respuesta.relato_visual = relatoVisual[0].id;
@@ -181,7 +181,7 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>, n
   if (fila.donante_1_id) {
     const { data: donante } = await directus
       .items('donantes')
-      .readByQuery({ filter: { id_fuente: { _eq: fila.donante_1_id } } });
+      .readByQuery({ filter: { id: { _eq: fila.donante_1_id } } });
 
     if (donante?.length && donante[0]?.id) {
       respuesta.donante = donante[0].id;
@@ -195,7 +195,7 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>, n
   if (fila['Fisiognómica_id']) {
     const { data: fisiognomica } = await directus
       .items('fisiognomicas')
-      .readByQuery({ filter: { id_fuente: { _eq: fila['Fisiognómica_id'] } } });
+      .readByQuery({ filter: { id: { _eq: fila['Fisiognómica_id'] } } });
 
     if (fisiognomica?.length && fisiognomica[0]?.id) {
       respuesta.fisiognomica = fisiognomica[0].id;
@@ -209,7 +209,7 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>, n
   if (fila.Fisiognomica_imagen_id) {
     const { data: fisiognomicaImagen } = await directus
       .items('fisiognomicas_imagen')
-      .readByQuery({ filter: { id_fuente: { _eq: fila.Fisiognomica_imagen_id } } });
+      .readByQuery({ filter: { id: { _eq: fila.Fisiognomica_imagen_id } } });
 
     if (fisiognomicaImagen?.length && fisiognomicaImagen[0]?.id) {
       respuesta.fisiognomica_imagen = fisiognomicaImagen[0].id;
@@ -222,9 +222,7 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>, n
 
   if (fila.Rostro_id) {
     if (esNumero2(fila.Rostro_id)) {
-      const { data: rostro } = await directus
-        .items('rostros')
-        .readByQuery({ filter: { id_fuente: { _eq: fila.Rostro_id } } });
+      const { data: rostro } = await directus.items('rostros').readByQuery({ filter: { id: { _eq: fila.Rostro_id } } });
 
       if (rostro?.length && rostro[0]?.id) {
         respuesta.rostro = rostro[0].id;
@@ -241,7 +239,7 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>, n
   if (fila.Ciudades_origen_id) {
     const { data: ciudadOrigen } = await directus
       .items('ciudades')
-      .readByQuery({ filter: { id_fuente: { _eq: fila.Ciudades_origen_id } } });
+      .readByQuery({ filter: { id: { _eq: fila.Ciudades_origen_id } } });
 
     if (ciudadOrigen?.length && ciudadOrigen[0]?.id) {
       respuesta.ciudad_origen = ciudadOrigen[0].id;
@@ -255,7 +253,7 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>, n
   if (fila.Tipo_gestual_id) {
     const { data: tipoGestual } = await directus
       .items('tipos_gestuales')
-      .readByQuery({ filter: { id_fuente: { _eq: fila.Tipo_gestual_id } } });
+      .readByQuery({ filter: { id: { _eq: fila.Tipo_gestual_id } } });
 
     if (tipoGestual?.length && tipoGestual[0]?.id) {
       respuesta.tipo_gestual = tipoGestual[0].id;
@@ -269,7 +267,7 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>, n
   if (fila.Cartela_filacteria_2_id) {
     const { data: cartelaFilacteria } = await directus
       .items('cartelas_filacterias')
-      .readByQuery({ filter: { id_fuente: { _eq: fila.Cartela_filacteria_2_id } } });
+      .readByQuery({ filter: { id: { _eq: fila.Cartela_filacteria_2_id } } });
 
     if (cartelaFilacteria?.length && cartelaFilacteria[0]?.id) {
       respuesta.cartela_filacteria = cartelaFilacteria[0].id;
@@ -285,7 +283,7 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>, n
   if (fila.categoria_1_id) {
     const { data: categoria1 } = await directus
       .items('categorias1')
-      .readByQuery({ filter: { id_fuente: { _eq: fila.categoria_1_id } } });
+      .readByQuery({ filter: { id: { _eq: fila.categoria_1_id } } });
 
     if (categoria1?.length && categoria1[0]?.id) {
       respuesta.categoria1 = categoria1[0].id;
@@ -299,7 +297,7 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>, n
   if (fila.categoria_2_id) {
     const { data: categoria2 } = await directus
       .items('categorias2')
-      .readByQuery({ filter: { id_fuente: { _eq: fila.categoria_2_id } } });
+      .readByQuery({ filter: { id: { _eq: fila.categoria_2_id } } });
 
     if (categoria2?.length && categoria2[0]?.id) {
       respuesta.categoria2 = categoria2[0].id;
@@ -313,7 +311,7 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>, n
   if (fila.categoria_3_id) {
     const { data: categoria3 } = await directus
       .items('categorias3')
-      .readByQuery({ filter: { id_fuente: { _eq: fila.categoria_3_id } } });
+      .readByQuery({ filter: { id: { _eq: fila.categoria_3_id } } });
 
     if (categoria3?.length && categoria3[0]?.id) {
       respuesta.categoria3 = categoria3[0].id;
@@ -327,7 +325,7 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>, n
   if (fila.categoria_4_id) {
     const { data: categoria4 } = await directus
       .items('categorias4')
-      .readByQuery({ filter: { id_fuente: { _eq: fila.categoria_4_id } } });
+      .readByQuery({ filter: { id: { _eq: fila.categoria_4_id } } });
 
     if (categoria4?.length && categoria4[0]?.id) {
       respuesta.categoria4 = categoria4[0].id;
@@ -341,7 +339,7 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>, n
   if (fila.categoria_5_id) {
     const { data: categoria5 } = await directus
       .items('categorias5')
-      .readByQuery({ filter: { id_fuente: { _eq: fila.categoria_5_id } } });
+      .readByQuery({ filter: { id: { _eq: fila.categoria_5_id } } });
 
     if (categoria5?.length && categoria5[0]?.id) {
       respuesta.categoria5 = categoria5[0].id;
@@ -355,7 +353,7 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>, n
   if (fila.categoria_6_id) {
     const { data: categoria6 } = await directus
       .items('categorias6')
-      .readByQuery({ filter: { id_fuente: { _eq: fila.categoria_6_id } } });
+      .readByQuery({ filter: { id: { _eq: fila.categoria_6_id } } });
 
     if (categoria6?.length && categoria6[0]?.id) {
       respuesta.categoria6 = categoria6[0].id;
@@ -371,9 +369,7 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>, n
    * M2M
    */
   if (fila.autores_id) {
-    const { data: autor } = await directus
-      .items('autores')
-      .readByQuery({ filter: { id_fuente: { _eq: fila.autores_id } } });
+    const { data: autor } = await directus.items('autores').readByQuery({ filter: { id: { _eq: fila.autores_id } } });
 
     if (autor?.length && autor[0]?.id) {
       respuesta.autores = [{ autores_id: autor[0].id }];
@@ -387,7 +383,7 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>, n
   if (fila.tecnica_id) {
     const { data: tecnica } = await directus
       .items('tecnicas')
-      .readByQuery({ filter: { id_fuente: { _eq: fila.tecnica_id } } });
+      .readByQuery({ filter: { id: { _eq: fila.tecnica_id } } });
 
     if (tecnica?.length && tecnica[0]?.id) {
       respuesta.tecnicas = [{ tecnicas_id: tecnica[0].id }];
@@ -401,7 +397,7 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>, n
   if (fila.escenario_2_id) {
     const { data: escenario } = await directus
       .items('escenarios')
-      .readByQuery({ filter: { id_fuente: { _eq: fila.escenario_2_id } } });
+      .readByQuery({ filter: { id: { _eq: fila.escenario_2_id } } });
 
     if (escenario?.length && escenario[0]?.id) {
       respuesta.escenarios = [{ escenarios_id: escenario[0].id }];
@@ -415,7 +411,7 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>, n
   if (fila.Objetos_gestos_id) {
     const { data: objeto } = await directus
       .items('objetos')
-      .readByQuery({ filter: { id_fuente: { _eq: fila.Objetos_gestos_id } } });
+      .readByQuery({ filter: { id: { _eq: fila.Objetos_gestos_id } } });
 
     if (objeto?.length && objeto[0]?.id) {
       respuesta.objetos = [{ objetos_id: objeto[0].id }];
@@ -429,9 +425,7 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>, n
   const gestos = [];
 
   if (fila.Gesto_1_id) {
-    const { data: gesto1 } = await directus
-      .items('gestos')
-      .readByQuery({ filter: { id_fuente: { _eq: fila.Gesto_1_id } } });
+    const { data: gesto1 } = await directus.items('gestos').readByQuery({ filter: { id: { _eq: fila.Gesto_1_id } } });
     if (gesto1?.length && gesto1[0]?.id) {
       gestos.push({ gestos_id: gesto1[0].id });
     } else {
@@ -442,9 +436,7 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>, n
   }
 
   if (fila.Gesto_2_id) {
-    const { data: gesto2 } = await directus
-      .items('gestos')
-      .readByQuery({ filter: { id_fuente: { _eq: fila.Gesto_2_id } } });
+    const { data: gesto2 } = await directus.items('gestos').readByQuery({ filter: { id: { _eq: fila.Gesto_2_id } } });
     if (gesto2?.length && gesto2[0]?.id) {
       gestos.push({ gestos_id: gesto2[0].id });
     } else {
@@ -455,9 +447,7 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>, n
   }
 
   if (fila.Gesto_3_id) {
-    const { data: gesto3 } = await directus
-      .items('gestos')
-      .readByQuery({ filter: { id_fuente: { _eq: fila.Gesto_3_id } } });
+    const { data: gesto3 } = await directus.items('gestos').readByQuery({ filter: { id: { _eq: fila.Gesto_3_id } } });
 
     if (gesto3?.length && gesto3[0]?.id) {
       gestos.push({ gestos_id: gesto3[0].id });
@@ -477,7 +467,7 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>, n
   if (fila.categorias_personajes_1_id) {
     const { data: personaje1 } = await directus
       .items('personajes')
-      .readByQuery({ filter: { id_fuente: { _eq: fila.categorias_personajes_1_id } } });
+      .readByQuery({ filter: { id: { _eq: fila.categorias_personajes_1_id } } });
 
     if (personaje1?.length && personaje1[0]?.id) {
       personajes.push({ personajes_id: personaje1[0].id });
@@ -491,7 +481,7 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>, n
   if (fila.categorias_personajes_2_id) {
     const { data: personaje2 } = await directus
       .items('personajes')
-      .readByQuery({ filter: { id_fuente: { _eq: fila.categorias_personajes_2_id } } });
+      .readByQuery({ filter: { id: { _eq: fila.categorias_personajes_2_id } } });
 
     if (personaje2?.length && personaje2[0]?.id) {
       personajes.push({ personajes_id: personaje2[0].id });
@@ -504,7 +494,7 @@ async function procesar(fila: ObraFuente, directus: Directus<ColeccionesArca>, n
   if (fila.categorias_personajes_3_id) {
     const { data: personaje3 } = await directus
       .items('personajes')
-      .readByQuery({ filter: { id_fuente: { _eq: fila.categorias_personajes_3_id } } });
+      .readByQuery({ filter: { id: { _eq: fila.categorias_personajes_3_id } } });
 
     if (personaje3?.length && personaje3[0]?.id) {
       personajes.push({ personajes_id: personaje3[0].id });

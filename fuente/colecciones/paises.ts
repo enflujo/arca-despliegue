@@ -7,6 +7,7 @@ import { guardar } from '../utilidades/ayudas';
 export type Pais = {
   id?: ID;
   nombre: string;
+  slug?: string;
   geo: object;
 };
 

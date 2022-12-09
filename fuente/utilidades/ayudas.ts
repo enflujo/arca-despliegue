@@ -84,24 +84,23 @@ export const procesarCSV = async (
   let fila = 2;
 
   for await (const entrada of flujo) {
-    if (fila > 22400) {
-      const entradaProcesada = await procesarEntrada(entrada, directus, fila);
-      if (entradaProcesada) {
-        procesados.push(entradaProcesada);
-        contador = contador + 1;
-      }
-
-      if (contador >= limite) {
-        try {
-          await guardar(nombreColeccion, directus, procesados);
-        } catch (error) {
-          console.error(nombreColeccion, procesados);
-        }
-
-        procesados = [];
-        contador = 0;
-      }
+    const entradaProcesada = await procesarEntrada(entrada, directus, fila);
+    if (entradaProcesada) {
+      procesados.push(entradaProcesada);
+      contador = contador + 1;
     }
+
+    if (contador >= limite) {
+      try {
+        await guardar(nombreColeccion, directus, procesados);
+      } catch (error) {
+        console.error(nombreColeccion, procesados);
+      }
+
+      procesados = [];
+      contador = 0;
+    }
+
     fila++;
   }
 

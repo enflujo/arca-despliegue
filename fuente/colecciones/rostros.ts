@@ -8,7 +8,6 @@ export type Rostro = {
   id?: ID;
   nombre: string;
   obras?: Obra[];
-  id_fuente: number;
 };
 
 export type RostroFuente = {
@@ -27,7 +26,7 @@ function limpieza(valor: string, contexto: CastingContext): string {
 }
 
 function procesar({ id, Nombre: nombre }: RostroFuente): Rostro {
-  return { id_fuente: id, nombre };
+  return { id, nombre };
 }
 
 export default async (directus: Directus<ColeccionesArca>) => {
