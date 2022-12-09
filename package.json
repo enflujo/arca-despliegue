@@ -5,7 +5,9 @@
   "author": "Juan Camilo González <j.gonzalezj@uniandes.edu.co>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon ./fuente/aplicacion.ts"
+    "start": "nodemon ./fuente/aplicacion.ts",
+    "slugs": "nodemon ./fuente/crearSlugs.ts",
+    "slugs:servidor": "AMBIENTE=produccion ts-node ./fuente/crearSlugs.ts"
   },
   "dependencies": {
     "@directus/sdk": "^10.3.0",
@@ -24,6 +26,7 @@
     "@types/node": "^18.11.11",
     "dotenv": "^16.0.3",
     "nodemon": "^2.0.20",
+    "slugify": "^1.6.5",
     "typescript": "^4.9.3"
   },
   "nodemonConfig": {

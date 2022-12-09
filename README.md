@@ -105,30 +105,6 @@ Conectarse a la imagen de directus: `docker exec -it <containerID> /bin/sh`.
 
 Aplicar el esquema o snapshot: `npx directus schema apply ./path/to/snapshot.yaml`
 
-### Ejecutar
-
-Entrar en el directorio de scripts y ejecutar
-
-```
-cd cargador
-python cargar.py
-```
-
-### Ejecución individual
-
-El script `cargarpy` ejecuta todos los procesos de carga mediante la importación de módulos y ejecución de la función `cargar()` en cada módulo.
-
-Es posible ejecutar cada módulo como un script independiente, pero para que funcione se deben ejecutar en el siguiente orden:
-
-```
-python listas.py
-python obra.py
-python ubicacion.py
-python obra_descriptores.py
-python obra_simbolos.py
-python obra_caracteristicas.py
-```
-
 ## Notas
 
 - Durante la configuración, desactivar cache (Redis) en docker-compose para que las respuestas del API estén inmediatamente actualizadas durante despliegue.
