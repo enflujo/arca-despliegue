@@ -61,6 +61,7 @@ export type ColeccionesArca = {
 export type Obra = {
   /** Asignado automáticamente por Directus (Primary Key) */
   id?: ID;
+  registro?: string;
   /**
    * ..:: Se asignan directamente en el registro ::..
    */

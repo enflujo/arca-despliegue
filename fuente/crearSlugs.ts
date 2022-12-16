@@ -87,26 +87,31 @@ async function inicio() {
   let conteoProcesados = 0;
 
   const coleccionesSlugsUnicos = [
-    'paises',
-    'objetos',
-    'escenarios',
-    'tecnicas',
-    'donantes',
-    'relatos_visuales',
-    'complejos_gestuales',
-    'tipos_gestuales',
-    'gestos',
-    'fisiognomicas',
-    'fisiognomicas_imagen',
-    'rostros',
-    'personajes',
-    'cartelas_filacterias',
-    'categorias1',
-    'categorias2',
-    'categorias3',
-    'categorias4',
-    'categorias5',
-    'categorias6',
+    // 'obras',
+    // 'autores',
+    // 'personajes', //
+    // 'fuentes',
+    // 'ubicaciones',
+    // 'ciudades',
+    // 'paises', //
+    // 'categorias1', //
+    // 'categorias2', //
+    // 'categorias3', //
+    // 'categorias4', //
+    // 'categorias5', //
+    // 'categorias6', //
+    // 'objetos', //
+    // 'escenarios', //
+    // 'tecnicas', //
+    // 'donantes', //
+    // 'relatos_visuales', //
+    // 'complejos_gestuales', //
+    // 'tipos_gestuales', //
+    'gestos', //
+    // 'fisiognomicas', //
+    // 'fisiognomicas_imagen', //
+    // 'cartelas_filacterias', //
+    // 'rostros', //
   ];
 
   coleccionesSlugsUnicos.forEach(async (tabla) => {

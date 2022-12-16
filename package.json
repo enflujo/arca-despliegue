@@ -7,7 +7,9 @@
   "scripts": {
     "start": "nodemon ./fuente/aplicacion.ts",
     "slugs": "nodemon ./fuente/crearSlugs.ts",
-    "slugs:servidor": "AMBIENTE=produccion ts-node ./fuente/crearSlugs.ts"
+    "slugs:servidor": "AMBIENTE=produccion ts-node ./fuente/crearSlugs.ts",
+    "registros": "nodemon ./fuente/crearRegistros.ts",
+    "registros:servidor": "AMBIENTE=produccion ts-node ./fuente/crearRegistros.ts"
   },
   "dependencies": {
     "@directus/sdk": "^10.3.0",
@@ -31,7 +33,8 @@
   },
   "nodemonConfig": {
     "ignore": [
-      "datos/*"
+      "datos/*",
+      "node_modules/*"
     ]
   }
 }
