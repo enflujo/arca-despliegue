@@ -1,6 +1,6 @@
 import { Directus, ID } from '@directus/sdk';
 import { ColeccionesArca } from '../tipos';
-import paisesEs from 'world_countries_lists/data/countries/es/countries.json';
+import paisesEs from 'world_countries_lists/data/countries/es/world.json';
 import { features as geos } from '../datos/paises.json';
 import { guardar } from '../utilidades/ayudas';
 
