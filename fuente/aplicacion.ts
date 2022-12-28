@@ -31,8 +31,13 @@ import categorias3 from './colecciones/categorias3';
 import categorias4 from './colecciones/categorias4';
 import categorias5 from './colecciones/categorias5';
 import categorias6 from './colecciones/categorias6';
+import simbolos from './colecciones/simbolos';
+import descriptores from './colecciones/descriptores';
+import caracteristicas from './colecciones/caracteristicas';
 
-const directus = new Directus<ColeccionesArca>('http://localhost:8055', {
+const url = process.env.AMBIENTE === 'produccion' ? 'https://apiarca.uniandes.edu.co' : 'http://localhost:8055';
+
+const directus = new Directus<ColeccionesArca>(url, {
   auth: {
     staticToken: process.env.KEY,
   },
@@ -86,6 +91,9 @@ async function inicio() {
   await insertarDatosAColeccion('Categorías 4', 'categorias4', categorias4); //
   await insertarDatosAColeccion('Categorías 5', 'categorias5', categorias5); //
   await insertarDatosAColeccion('Categorías 6', 'categorias6', categorias6); //
+  await insertarDatosAColeccion('Símbolos', 'simbolos', simbolos);
+  await insertarDatosAColeccion('Descriptores', 'descriptores', descriptores);
+  await insertarDatosAColeccion('Características', 'caracteristicas', caracteristicas);
   await insertarDatosAColeccion('Obras', 'obras', obras);
 }
 

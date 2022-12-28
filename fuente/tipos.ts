@@ -23,15 +23,27 @@ import { Categoria3 } from './colecciones/categorias3';
 import { Categoria4 } from './colecciones/categorias4';
 import { Categoria5 } from './colecciones/categorias5';
 import { Categoria6 } from './colecciones/categorias6';
+import { Simbolo } from './colecciones/simbolos';
+import { Descriptor } from './colecciones/descriptores';
+import { Caracteristica } from './colecciones/caracteristicas';
 
 export type ColeccionesArca = {
+  obras: Obra;
   autores: Autor;
-  paises: Pais;
+  personajes: Personaje;
+  fuentes: Fuente;
+  ubicaciones: Ubicacion;
   ciudades: Ciudad;
+  paises: Pais;
+  categorias1: Categoria1;
+  categorias2: Categoria2;
+  categorias3: Categoria3;
+  categorias4: Categoria4;
+  categorias5: Categoria5;
+  categorias6: Categoria6;
   objetos: Objeto;
   escenarios: Escenario;
   tecnicas: Tecnica;
-  fuentes: Fuente;
   donantes: Donante;
   relatos_visuales: RelatoVisual;
   complejos_gestuales: ComplejoGestual;
@@ -39,18 +51,11 @@ export type ColeccionesArca = {
   gestos: Gesto;
   fisiognomicas: Fisiognomica;
   fisiognomicas_imagen: FisiognomicaImagen;
-  rostros: Rostro;
-  ubicaciones: Ubicacion;
-  personajes: Personaje;
   cartelas_filacterias: CartelaFilacteria;
-  categorias1: Categoria1;
-  categorias2: Categoria2;
-  categorias3: Categoria3;
-  categorias4: Categoria4;
-  categorias5: Categoria5;
-  categorias6: Categoria6;
-
-  obras: Obra;
+  rostros: Rostro;
+  simbolos: Simbolo;
+  descriptores: Descriptor;
+  caracteristicas: Caracteristica;
 };
 
 /**
@@ -61,7 +66,7 @@ export type ColeccionesArca = {
 export type Obra = {
   /** Asignado automáticamente por Directus (Primary Key) */
   id?: ID;
-  registro?: string;
+  registro?: number;
   /**
    * ..:: Se asignan directamente en el registro ::..
    */
@@ -139,6 +144,12 @@ export type Obra = {
   gestos?: { gestos_id: ID }[];
   /** M2M: Personajes */
   personajes?: { personajes_id: ID }[];
+  /** M2M: Símbolos */
+  simbolos?: (ID | { simbolos_id: ID })[];
+  /** M2M: Descriptores */
+  descriptores?: (ID | { descriptores_id: ID })[];
+  /** M2M: Características Particulares */
+  caracteristicas?: (ID | { caracteristicas_id: ID })[];
 };
 
 export type ObraFuente = {
