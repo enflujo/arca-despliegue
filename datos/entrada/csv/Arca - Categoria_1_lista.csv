@@ -1,0 +1,1013 @@
+id,name,ancestry
+21,Alegorías órdenes y vida religiosa,1/1002
+27,Naves,1/1002
+28,Triunfos,1/1002
+389,Iglesia y vida cristiana,1/1002
+15,Alegorías Cristo adulto,1/1003
+16,Alegorías Cristo niño,1/1003
+23,Sibilas,1/1003
+26,Zodiaco,1/1003
+910,Alegorías Eucarísticas,1/1003
+12,Alegorías de la Virgen,1/1004
+13,Alegorías de la Virgen inmaculada,1/1004
+20,Letanías,1/1004
+24,Triunfos de la Virgen,1/1004
+987,Alegorías sagrada familia,1/1004
+993,Alegorías coronación,1/1004
+14,Alegorías bíblicas,1
+17,Alegorías al corazón,1
+18,Emblemas,1
+387,Alegorías académicas y seculares,1
+1002,Alegorías a la Iglesia y la vida cristiana,1
+1003,Alegorías cristológicas,1
+1004,Alegorías marianas,1
+32,Primer coro angélico,2
+33,Segundo coro angélico,2
+35,Tercer coro angélico,2
+430,Conjunto de ángeles y alegóricos,2
+36,Ciclo Libros históricos,3
+37,Ciclo Pentateuco,3
+38,Ciclo Profetas,3
+39,Escenas bíblicas varias,3
+50,Ciclo libros sapienciales,3
+52,Imágenes devocionales,4
+53,Ciclo Pasión,4
+54,Ciclo Vida Pública,4
+56,Postrimerías,5
+57,Sacramentos,5
+58,Trinidad,5
+461,"Credo, mandamientos y alabado",5
+466,Escatología y series,5
+59,Santas,6
+381,Santos Masculinos,6
+791,Venerables y beatos,6
+63,Historia de la conquista,7
+64,Historia de los indígenas,7
+65,Historia universal,7
+66,Historia eclesiástica,7
+68,Retrato de familias,8
+69,Retrato masculino,8
+71,Retrato femenino,8
+72,Retrato de niños,8
+60,Advocaciones,9
+61,Vida de la Virgen,9
+62,Relatos vida virgen conjunto,9
+74,Biombos,10
+75,Barcos,10
+76,Cacería y animales,10
+77,Castas,10
+78,Clásicos y mitológicos,10
+79,Escenas cotidiana,10
+80,Escudos,10
+81,Naturaleza muerta,10
+82,Paisaje,10
+83,Vistas urbanas,10
+467,Defensas de tesis,10
+468,Dibujos y cuerpo,10
+938,Pintura en objetos,10
+25,Alegoría a las virtudes,11
+29,Mística y devociones,11
+30,Moral pecado y redención,11
+181,Monja Agreda,11/29
+913,Estados del alma,11/30
+914,Pecado y pecador,11/30
+915,Redención,11/30
+155,Lagar,1/1003/15
+309,Alegoría nacimiento inmaculado nueva Eva,1/1004/13
+19,"Estaciones, continentes y países",1/387
+22,Alegorías no religiosas,1/387
+388,Alegorías imperiales y políticas,1/387
+1005,Ciencias y artes liberales,1/387
+1006,"Universidad, santos Tomás y Agustín",1/387
+959,Biombos alegóricos y simbólicos,10/74
+960,Biombos cotidianos y urbanos,10/74
+961,Biombos históricos y mitológicos,10/74
+481,04 Chamilo - Castizo mestiza,10/77
+483,01 Mestizo - español india,10/77
+484,06 zambo - negro mulata,10/77
+485,02 castiza - mestiza español,10/77
+486,03 español - castizo español,10/77
+487,07 cuarteron mulato tornatras - mulato mestiza,10/77
+488,15 cuarteron chino -español china,10/77
+489,05 mulato - español negra,10/77
+490,21 chino alvarasado - barsino mulata,10/77
+491,08 morisco - español mulata,10/77
+508,Conjunto castas,10/77
+515,22 Genizaro - barcino sambaiga,10/77
+516,09 albino - español - morisca,10/77
+519,25 chamicoyote - indio y jibaro,10/77
+520,26 Veroina y zambago - español chamizo - castiza india,10/77
+521,27 Gibaro - campamulato india,10/77
+522,Casta por razas y trajes,10/77
+523,12 lobo - india negra mulato,10/77
+525,28 indios,10/77
+526,10 tornatrás - español albina,10/77
+527,23 coyote chola - indio mestiza,10/77
+529,13 chino - lobo negra mulato,10/77
+545,16 cambujo - chino lobo india negro,10/77
+563,"18 albarasado - tente mulata, coyote morisca",10/77
+566,24 chamizo - coyote india,10/77
+567,19 barsino - albarrasado india mulata,10/77
+569,14 sambaigo - lobo barcina india,10/77
+570,20 campamulato - barsino mulato india,10/77
+571,17 tenteenelaire - india cambujo blanco,10/77
+896,"11 grifo, tornatrás - albina, chino y mulato",10/77
+962,"Cotidianas conventuales, eclesiásticas y religiosas",10/79
+963,Cotidianas decorativas y alimentación,10/79
+964,Cotidianas interiores e intimidad,10/79
+965,Cotidianas marítimas,10/79
+966,"Cotidianas música, paseo y diversión",10/79
+967,Cotidianas oficios y labores,10/79
+968,Cotidianas sobre política,10/79
+969,Cotidianas rurales e indígenas,10/79
+970,Cotidianas urbanas,10/79
+433,Jerarquía serafines,2/32
+434,Jerarquía querubines,2/32
+435,Jerarquía tronos,2/32
+431,Jerarquía virtudes,2/33
+436,Jerarquía dominaciones,2/33
+437,Jerarquía potestades,2/33
+229,Jerarquía ángeles,2/35
+393,Jerarquía arcángeles,2/35
+438,Jerarquía principados,2/35
+390,Ángel de la Guarda,2/35/229
+403,Ángeles músicos,2/35/229
+404,Ángeles,2/35/229
+405,Ángeles militares,2/35/229
+432,Ángeles de la Pasión,2/35/229
+145,Gabriel,2/35/393
+146,Miguel,2/35/393
+147,Rafael,2/35/393
+402,Arcángeles de Palermo,2/35/393
+472,Arcángeles apócrifos,2/35/393
+277,Miguel con balanza,2/35/393/146
+278,Miguel con cadena,2/35/393/146
+279,Miguel con cruz - estandarte,2/35/393/146
+280,Miguel con escudo,2/35/393/146
+281,Miguel con lanza,2/35/393/146
+282,Miguel con palma,2/35/393/146
+283,Miguel con rollo,2/35/393/146
+284,Otras representaciones,2/35/393/146
+285,Miguel con brazo abierto,2/35/393/146
+396,Miguel con espada,2/35/393/146
+394,Apócrifos de las Escrituras,2/35/393/472
+395,Apócrifos de otras Tradiciones,2/35/393/472
+397,Uriel,2/35/393/472/394
+398,Baraquiel,2/35/393/472/394
+399,Jehudiel,2/35/393/472/394
+400,Sealtiel,2/35/393/472/394
+469,Osiel,2/35/393/472/395
+470,Hadriel,2/35/393/472/395
+471,Leteliel,2/35/393/472/395
+473,Eliel,2/35/393/472/395
+474,Ariel,2/35/393/472/395
+475,Asiel,2/35/393/472/395
+477,Zadquiel,2/35/393/472/395
+979,Esriel,2/35/393/472/395
+999,Piel,2/35/393/472/395
+1000,Salamiel,2/35/393/472/395
+1001,Yeriel y Leahd,2/35/393/472/395
+49,Eliseo,3/36
+407,Conquista de Canaán,3/36
+408,Elías,3/36
+409,Escenas bíblicas históricas,3/36
+410,Esther,3/36
+411,Jael y Císara,3/36
+412,Jericó,3/36
+413,Judith y Holofernes,3/36
+414,Reyes de Israel,3/36
+415,Sansón,3/36
+416,Macabeos,3/36
+782,Ezequías,3/36/414
+1008,Josafat,3/36/414
+417,"Adán, Eva y paraíso",3/37
+418,Caín y Abel,3/37
+419,La creación,3/37
+420,Escenas varias del Pentateuco,3/37
+421,Moisés,3/37
+422,Historia de Abraham e Isaac,3/37
+423,Jacob,3/37
+424,Noé y el diluvio,3/37
+425,Saúl y David,3/37
+426,Serie Gerson,3/37
+427,Tribus de Israel,3/37
+439,Salomón,3/37
+1007,Historias de José (Antiguo testamento),3/37
+428,Expulsión,3/37/417
+440,David y Goliat,3/37/425
+45,Esdras,3/38
+441,Abdías,3/38
+443,Ageo,3/38
+444,Amos,3/38
+445,Baruc,3/38
+446,Daniel,3/38
+447,Ezequiel,3/38
+448,Habacuc,3/38
+449,Isaías,3/38
+450,Jeremías,3/38
+451,Joel,3/38
+452,Jonás,3/38
+453,Malaquías,3/38
+454,Miqueas,3/38
+455,Nahum,3/38
+456,Oseas,3/38
+457,Profetas y Sacerdotes,3/38
+458,Samuel,3/38
+459,Sofonías,3/38
+460,Zacarías,3/38
+478,Susana,3/38/446
+479,Banquete Belhazar,3/38/446
+51,Job,3/50
+178,Buen Pastor,4/52
+179,Salvador,4/52
+180,Otras cristológicas devocionales,4/52
+582,Salvador niño,4/52
+583,Cristo Redentor,4/52/179
+584,Cristo Salvador,4/52/179
+585,Cristo Salvador y Eucarístico,4/52/179
+586,Salvador Visión de Mariana Escobar,4/52/179
+185,Pasión,4/53
+186,Resurrección y glorificacion,4/53
+187,Devociones Pasión,4/53
+188,Viacrucis,4/53
+806,Series de la Pasión,4/53
+296,Coronación espinas,4/53/185
+297,Ecce homo,4/53/185
+298,Entrada Jerusalén,4/53/185
+299,Flagelación,4/53/185
+300,Oración en el huerto,4/53/185
+301,Juicio de Jesús,4/53/185
+302,Lavado de pies,4/53/185
+303,Prendimiento de Jesús,4/53/185
+304,Sentencia,4/53/185
+305,Tentación consuelo,4/53/185
+306,Última Cena,4/53/185
+934,Burlas,4/53/185
+935,Despedida y recibimiento de la cruz,4/53/185
+349,Señor de caña sentado,4/53/185/297
+350,Ecce homo de pie,4/53/185/297
+351,Ecce homo presentado,4/53/185/297
+804,Ecce homo de medio cuerpo,4/53/185/297
+34,Consolado por ángeles,4/53/185/299
+359,Cristo caído,4/53/185/299
+360,Atado a columna,4/53/185/299
+361,Pedro arrepentido,4/53/185/299
+362,Cristo preso,4/53/185/299
+363,Recogiendo vestiduras,4/53/185/299
+805,Flagelación de Cristo,4/53/185/299
+31,Beso de Judas,4/53/185/303
+292,Apariciones posteriores,4/53/186
+293,Ascensión,4/53/186
+294,Pentecostés,4/53/186
+295,Resurrección,4/53/186
+923,Transfiguración,4/53/186
+927,Descenso Infierno Limbo,4/53/186
+904,Noli me tangere,4/53/186/292
+906,Cena de Emaús,4/53/186/292
+157,Cristo carga la cruz,4/53/188
+324,Despojo de las vestiduras,4/53/188
+325,Caídas de camino al calvario,4/53/188
+326,Cirineo,4/53/188
+327,Crucifixión,4/53/188
+328,Descendimiento de la cruz,4/53/188
+329,Encuentro con la Virgen y mujeres,4/53/188
+330,Entierro,4/53/188
+331,Lamentación,4/53/188
+332,Nazareno,4/53/188
+333,Verónica,4/53/188
+46,Clavado en cruz,4/53/188/327
+55,Devociones al crucificado,4/53/188/327
+343,Calvario acompañado,4/53/188/327
+344,Crucificado,4/53/188/327
+345,Cristo muerto,4/53/188/327
+346,Lanzada,4/53/188/327
+347,Levantamiento de la cruz,4/53/188/327
+67,Cristo de Chalma,4/53/188/327/55
+70,Cristo de Malta,4/53/188/327/55
+73,Señor de santa Teresa o Ixmiquilpan,4/53/188/327/55
+156,Otras devociones crucifixión,4/53/188/327/55
+348,Señor de los Temblores,4/53/188/327/55
+581,Milagros cristológicos,4/54
+587,Bautismo de Jesús,4/54
+588,Predicación,4/54
+589,Bodas Canaán,4/54/581
+590,Resurrección de Lázaro,4/54/581
+591,Multiplicación de los panes,4/54/581
+592,Otros milagros cristológicos,4/54/581
+924,Salva a Pedro,4/54/581
+593,Escenas con Pedro,4/54/588
+594,Expulsión del templo,4/54/588
+595,Hijo pródigo,4/54/588
+596,"Jesús, Marta y las mujeres",4/54/588
+597,Magdalena y lavatorio pies,4/54/588
+598,Mujer adúltera,4/54/588
+599,Otras escenas de predicación,4/54/588
+600,La samaritana,4/54/588
+462,Credo,5/461
+463,Alabado,5/461
+908,Mandamientos,5/461
+912,Juicio final,5/466
+190,Infierno,5/56
+191,Purgatorio,5/56
+464,Muerte,5/56
+465,"Gloria, corte y trono celestial",5/56
+911,Juicio particular,5/56
+158,Ánimas en purgatorio,5/56/191
+159,Virgen intercesora purgatorio,5/56/191
+160,San Miguel intercesor purgatorio,5/56/191
+161,Cristo redentor purgatorio,5/56/191
+162,Santos intercesores purgatorio,5/56/191
+194,Bautismo,5/57
+195,Confesión,5/57
+197,Eucaristía,5/57
+198,Matrimonio,5/57
+199,Otros sacramentos,5/57
+240,Defensas de la eucaristía,5/57/197
+241,Adoración de Eucaristía,5/57/197
+517,Eucaristía e iglesia docente,5/57/197
+203,Compatio Patris,5/58
+204,Otras formas de trinidades,5/58
+205,Padre eterno,5/58
+206,Trinidad tricefálica,5/58
+207,Padre y crucificado,5/58
+208,Tres personas,5/58
+382,Fundadores,6/381
+383,Santos de Iglesia Primitiva,6/381
+386,Mártires hombres,6/381
+735,Santos de órdenes y tradiciones,6/381
+738,Benito,6/381/382
+739,Bruno,6/381/382
+740,Juan de Matta y Félix de Valois,6/381/382
+741,Bernardo de Claraval,6/381/382
+742,Camilo de Lelis,6/381/382
+743,Cayetano,6/381/382
+744,Domingo,6/381/382
+745,Domingo y Francisco,6/381/382
+746,Felipe Neri,6/381/382
+747,Francisco de Asís,6/381/382
+759,Francisco de Paula,6/381/382
+760,Ignacio de Loyola,6/381/382
+765,Juan de Dios,6/381/382
+766,Pedro Nolasco,6/381/382
+767,Romualdo,6/381/382
+897,San Juan de Matta,6/381/382/740
+898,San Félix de Valois,6/381/382/740
+503,Bernardo atributos y vida,6/381/382/741
+504,Lactación de Bernardo,6/381/382/741
+500,Cayetano atributos,6/381/382/743
+501,Cayetano vida mística,6/381/382/743
+502,Lactación Cayetano,6/381/382/743
+256,Lactación Domingo,6/381/382/744
+505,Domingo milagro Soriano,6/381/382/744
+836,Domingo escena de vida,6/381/382/744
+837,Milagros Domingo,6/381/382/744
+838,Series Domingo,6/381/382/744
+841,Retratos y atributos Domingo,6/381/382/744
+842,Visiones Domingo,6/381/382/744
+748,Apariciones y visiones Francisco,6/381/382/747
+749,Estigmas de Francisco,6/381/382/747
+750,Escenas vida Francisco Asís,6/381/382/747
+751,Muerte y milagros de Francisco,6/381/382/747
+752,Rostro y atributos de Francisco,6/381/382/747
+753,Series franciscanas,6/381/382/747
+761,Atributos de Loyola,6/381/382/760
+762,Series ignacianas,6/381/382/760
+763,Escenas ignacianas,6/381/382/760
+764,Visiones y milagros ignacianos,6/381/382/760
+859,Juan de Dios con enfermo,6/381/382/765
+883,Juan de Dios escenas de vida,6/381/382/765
+884,Atributos Juan de Dios,6/381/382/765
+253,Lactación San Nolasco,6/381/382/766
+506,Nolasco atributos,6/381/382/766
+507,Nolasco escenas y series,6/381/382/766
+384,Apóstoles,6/381/383
+385,Evangelistas,6/381/383
+683,Padres del desierto,6/381/383
+685,Padres de la Iglesia,6/381/383
+686,Otros santos Iglesia Primitiva,6/381/383
+704,Andrés,6/381/383/384
+705,Bartolomé,6/381/383/384
+706,Felipe,6/381/383/384
+707,Judas Tadeo,6/381/383/384
+708,Matías,6/381/383/384
+709,Apóstoles conjunto y no identificadios,6/381/383/384
+710,Pablo,6/381/383/384
+711,Pedro,6/381/383/384
+712,Pablo y Pedro,6/381/383/384
+713,Simón,6/381/383/384
+714,Tomás,6/381/383/384
+715,Santiago,6/381/383/384
+936,Bernabé,6/381/383/384
+937,Santiago el Menor,6/381/383/384
+511,Pablo atributo-vida,6/381/383/384/710
+512,Pablo conversión,6/381/383/384/710
+514,Santiago matamoros/mataindios,6/381/383/384/715
+716,Atributos de Santiago,6/381/383/384/715
+679,Mateo,6/381/383/385
+680,Marcos,6/381/383/385
+681,Lucas,6/381/383/385
+682,Juan,6/381/383/385
+684,Evangelistas en conjunto,6/381/383/385
+700,Antonio,6/381/383/683
+701,Onofre,6/381/383/683
+702,Pablo ermitaño,6/381/383/683
+703,Anacoretas y ermitaños,6/381/383/683
+509,Antonio atributo,6/381/383/683/700
+510,Antonio tentaciones vida,6/381/383/683/700
+153,Gregorio Nascianceno,6/381/383/685
+689,Agustín,6/381/383/685
+690,Anselmo,6/381/383/685
+691,Ambrosio,6/381/383/685
+692,Basilio,6/381/383/685
+693,Cirilio,6/381/383/685
+695,Gregorio,6/381/383/685
+696,Jerónimo,6/381/383/685
+697,Doctores de la Iglesia conjunto y otros,6/381/383/685
+889,Juan Crisontomo,6/381/383/685
+518,"Agustín vida, visiones, milagros",6/381/383/685/689
+698,Atributos Agustinos,6/381/383/685/689
+699,Series Agustinas,6/381/383/685/689
+513,Gregorio atributos,6/381/383/685/695
+528,Misa de Gregorio,6/381/383/685/695
+688,Dimas,6/381/383/686
+530,Anastasio,6/381/386
+564,Martirologio masculino moderno,6/381/386
+717,Alejo,6/381/386
+718,Blas,6/381/386
+719,Cosme y Damián,6/381/386
+720,Crispín Crispino,6/381/386
+721,Esteban,6/381/386
+722,Emigdio,6/381/386
+723,Eustoquio,6/381/386
+724,Felipe de Jesús,6/381/386
+725,Gelasio,6/381/386
+726,Juan el Bautista,6/381/386
+727,Justo y pastor,6/381/386
+728,Laureano,6/381/386
+729,Lorenzo,6/381/386
+730,Sebastián,6/381/386
+731,Martirologio masculino antiguo,6/381/386
+732,Fermín,6/381/386
+733,Jorge,6/381/386
+734,Hipólito,6/381/386
+737,Ángelo,6/381/386
+823,Pedro Verona,6/381/386
+891,Serapión,6/381/386
+920,Cristóbal,6/381/386
+540,Cabeza decapitación Juan bautista,6/381/386/726
+546,Juan Bautista niño,6/381/386/726
+548,Juan bautista vida,6/381/386/726
+556,Juan Bautista retrato atributo,6/381/386/726
+756,Obispos Cristiandad Temprana,6/381/735
+774,Santos Franciscanos,6/381/735
+779,Santos Agustínos,6/381/735
+784,Santos benedictinos,6/381/735
+785,Santos Carmelitas,6/381/735
+786,Santos dominicos,6/381/735
+787,Santos jesuitas,6/381/735
+788,Santos mercedarios,6/381/735
+789,Santos seculares medievales y de cruzada,6/381/735
+790,Santos sin identificar,6/381/735
+846,Papas,6/381/735
+565,Posidio,6/381/735/756
+568,Varios obispos y abades tempranos,6/381/735/756
+757,Eloy Obispo,6/381/735/756
+758,Idelfonso Obispo,6/381/735/756
+772,Fulgencio de Ruspe,6/381/735/756
+773,Isidoro,6/381/735/756
+776,Nicolás de Bari,6/381/735/756
+777,Liborio,6/381/735/756
+778,Martín Tours,6/381/735/756
+890,Alipio,6/381/735/756
+152,Bernardino de Siena,6/381/735/774
+572,Conjunto santos franciscanos,6/381/735/774
+775,Antonio de Padua,6/381/735/774
+876,Diego Alcalá,6/381/735/774
+877,Felipe Benicio,6/381/735/774
+878,Francisco Solano,6/381/735/774
+879,Pascual Bailón,6/381/735/774
+880,Pedro Regalado,6/381/735/774
+881,Pedro Alcántara,6/381/735/774
+882,Juan Capistrano,6/381/735/774
+919,Buenaventura,6/381/735/774
+580,Antonio Virgen y niño,6/381/735/774/775
+601,Antonio y niño,6/381/735/774/775
+602,Antonio predicación y milagros,6/381/735/774/775
+687,Santos varios agustinos,6/381/735/779
+780,Juan de Sahagun,6/381/735/779
+816,Tomás Villanueva,6/381/735/779
+817,Nicolás Tolentino,6/381/735/779
+694,Santos varios carmelitas,6/381/735/785
+843,Alberto de Sicilia,6/381/735/785
+844,Juan de la Cruz,6/381/735/785
+845,Simon Stock,6/381/735/785
+736,Santos varios dominicos,6/381/735/786
+818,Alberto Magno,6/381/735/786
+819,Luis Beltrán,6/381/735/786
+821,Jacinto,6/381/735/786
+827,Tomás de Aquino,6/381/735/786
+834,Vicente Ferrer,6/381/735/786
+754,Tomas Aquino retrato atributo,6/381/735/786/827
+755,Tomas Aquino vida,6/381/735/786/827
+794,Santos Varios jesuitas,6/381/735/787
+848,Francisco de Regis,6/381/735/787
+849,Francisco Javier,6/381/735/787
+853,Estanislao de Kotska,6/381/735/787
+856,Luis Gonzaga,6/381/735/787
+857,Francisco Borja,6/381/735/787
+822,Francisco Javier atributo,6/381/735/787/849
+839,Francisco Javier escenas vida,6/381/735/787/849
+840,Francisco Javier milagro,6/381/735/787/849
+854,Francisco Javier muerte,6/381/735/787/849
+875,Francisco Javier predicación,6/381/735/787/849
+892,Francisco Javier visión,6/381/735/787/849
+873,Pedro Pacual,6/381/735/788
+874,Ramon Nonato,6/381/735/788
+893,Guillermo san Julián,6/381/735/788
+851,Juan Nepomuceno,6/381/735/789
+860,Eleazario de sabrano,6/381/735/789
+861,Carlos Borromeo,6/381/735/789
+862,Fernando,6/381/735/789
+863,Guillermo,6/381/735/789
+864,Luis de Francia,6/381/735/789
+865,Luis de Tolosa,6/381/735/789
+866,Francisco de Sales,6/381/735/789
+867,Norberto,6/381/735/789
+868,Toribio Mongrovejo,6/381/735/789
+869,Roque,6/381/735/789
+870,Peregrino Servitas,6/381/735/789
+871,Isidro,6/381/735/789
+894,Benito de palermo,6/381/735/789
+895,Santos reyes medievales,6/381/735/789
+925,Santos varios medievales,6/381/735/789
+926,Domingo de la calzada,6/381/735/789
+945,Ivon (Ibon),6/381/735/789
+940,Juan Nepomuceno en alegorías,6/381/735/789/851
+941,Juan Nepomuceno enaltecido,6/381/735/789/851
+942,Juan Nepomuceno vida y muerte,6/381/735/789/851
+943,Juan Nepomuceno retrato y atributos,6/381/735/789/851
+944,Juan Nepomuceno con la Virgen,6/381/735/789/851
+847,Pío V,6/381/735/846
+946,Varia santos papas,6/381/735/846
+200,Mártires mujeres,6/59
+201,Santas mujeres,6/59
+202,Santas mujeres Iglesia primitiva,6/59
+667,Santas Fundadoras de órdenes,6/59
+244,Santa Marta,6/59/200
+262,Bárbara,6/59/200
+263,Agueda,6/59/200
+264,Apolonia,6/59/200
+265,Catalina de Alejandría,6/59/200
+266,Cecilia,6/59/200
+267,Cristina,6/59/200
+268,Dorotea,6/59/200
+269,Elena,6/59/200
+270,Inés - Agnes mártir,6/59/200
+271,Lucía,6/59/200
+272,Margarita,6/59/200
+273,Orosia,6/59/200
+274,Otras mártires,6/59/200
+275,Tecla,6/59/200
+276,Úrsula,6/59/200
+909,Leocadia,6/59/200
+939,Casilda,6/59/200
+291,Bárbara atributo,6/59/200/262
+317,Bárbara vida- martirio,6/59/200/262
+318,Catalina atributo,6/59/200/265
+319,Catalina vida-martirio,6/59/200/265
+495,Santas de órdenes religiosas,6/59/201
+496,Santas reinas,6/59/201
+497,Santas seculares y medievales,6/59/201
+544,Otras Santas,6/59/201
+154,Coleta,6/59/201/495
+375,María Cervelló,6/59/201/495
+391,Clara de Montefalco,6/59/201/495
+392,Catalina de Bolonia,6/59/201/495
+406,Lutgarda,6/59/201/495
+442,Limbania,6/59/201/495
+533,Catalina de Ricci,6/59/201/495
+534,Catalina de Siena,6/59/201/495
+535,Gertrudis,6/59/201/495
+536,Inés de Asis,6/59/201/495
+538,María Magdalena de Pazzi,6/59/201/495
+539,Margarita de Cortona,6/59/201/495
+541,Rosa de Lima,6/59/201/495
+675,Inés de Montepulciano,6/59/201/495
+320,Catalina Siena atributo,6/59/201/495/534
+321,Catalina Siena vida,6/59/201/495/534
+322,Catalina Siena serie Arequipa,6/59/201/495/534
+323,Catalina Siena serie Córdoba,6/59/201/495/534
+373,Gertrudis atributos,6/59/201/495/535
+374,Gertrudis vida,6/59/201/495/535
+676,Atributos de Rosa de Lima,6/59/201/495/541
+677,Series de Rosa de Lima,6/59/201/495/541
+781,Vida y mística de Rosa de Lima,6/59/201/495/541
+401,Isabel de Portugal,6/59/201/496
+482,Brigida,6/59/201/496
+537,Isabel de Hungría,6/59/201/496
+476,Eduviges,6/59/201/497
+492,Ifigenia,6/59/201/497
+493,Juana,6/59/201/497
+498,Escolástica,6/59/201/497
+542,Rosa de Viterbo,6/59/201/497
+543,Rosalía de Palermo,6/59/201/497
+249,María Magdalena,6/59/202
+250,María Egipciaca,6/59/202
+251,Mónica,6/59/202
+252,Santas eremitas Iglesia primitiva,6/59/202
+668,Teresa,6/59/667
+674,Clara de Asís,6/59/667
+669,Atributos de la santa,6/59/667/668
+670,Escenas de vida,6/59/667/668
+671,Series teresianas,6/59/667/668
+672,Transverberación,6/59/667/668
+673,Visiones de Teresa,6/59/667/668
+499,Clara vida y mística,6/59/667/674
+678,Clara atributos,6/59/667/674
+494,Princesa Juana de Portugal,6/791
+792,Salvador Horta,6/791
+793,Beatos,6/791
+795,Francisco Niño,6/791
+796,Gregorio López,6/791
+797,Historia de venerables,6/791
+798,Juan Diego,6/791
+799,Mariana de Jesús,6/791
+800,Mártires del Japón y Jerusalen,6/791
+801,Juan de Palafox,6/791
+802,Pedro de Betancourt,6/791
+803,Sebastián de Aparicio,6/791
+858,Alonso Rodriguez,6/791
+905,Francisco Bolaños,6/791
+916,Duns Escoto,6/791
+917,Beatas,6/791
+918,Maria de Jesús Tomelin,6/791
+921,Rita de Casia,6/791
+922,Martín de Porres,6/791
+947,Ana Monteagudo,6/791
+124,Conquista otros territorios y Caribe,7/63
+163,Conquista Nueva España,7/63
+164,Conquista Perú,7/63
+165,Conquista Brasil,7/63
+169,Escenas conquista Nueva España,7/63/163
+171,Enconchado Museo de America,7/63/163
+175,Enconchado Mayer-Tepotzotlán,7/63/163
+182,Enconchado 3,7/63/163
+183,Enconchado Buenos Aires,7/63/163
+189,Lienzos Library of Congress,7/63/163
+192,Serie conquista Museo America,7/63/163
+573,Costumbres,7/64
+574,Cristianización,7/64
+575,Política e intercambio,7/64
+576,Historia antigua,7/65
+577,Historia medieval,7/65
+578,Historia moderna,7/65
+579,Historia norteamericana,7/65
+166,Árbol genealógico,7/66
+167,Exvotos,7/66
+168,Historia Eclesiástica,7/66
+170,Iglesias retablos,7/66
+172,Milagros,7/66
+173,Procesiones,7/66
+193,Milagros Virgen Ocotlán,7/66/172
+196,Milagros Virgen Guápulo,7/66/172
+243,Milagros Virgen Pomata,7/66/172
+286,Milagros Virgen Cayma,7/66/172
+287,Milagros Virgen Guadalupe,7/66/172
+288,Milagros san Miguel,7/66/172
+289,Milagros de la Virgen,7/66/172
+290,Varios milagros eclesiásticos,7/66/172
+549,Grupo familiar,8/68
+550,Madre-hijo,8/68
+551,Padre-hijo,8/68
+552,Parejas,8/68
+174,Hombres Indígenas,8/69
+176,Europeos y criollos,8/69
+177,Virreyes,8/69
+612,Miniaturas masculinas,8/69
+628,Funerario masculino,8/69
+629,Reyes,8/69
+634,Autoretrato,8/69/176
+635,Clerigos,8/69/176
+636,Laicos,8/69/176
+637,Ecuestre,8/69/176
+638,Obispos,8/69/176/635
+639,Papa,8/69/176/635
+640,Sacerdotes y clérigos,8/69/176/635
+641,Bendición episcopal,8/69/176/635/638
+642,Libro y documento,8/69/176/635/638
+643,Sombrero y guantes,8/69/176/635/638
+644,Busto eclesiástico y otros,8/69/176/635/638
+645,"Académicos, bachilleres y rectores",8/69/176/635/640
+646,Cofundadores y provinciales de órdenes,8/69/176/635/640
+647,Vidas Ejemplares,8/69/176/635/640
+648,Retrato intelectual,8/69/176/635/640
+649,Sacerdotes piadosos,8/69/176/635/640
+650,Retratos varios y clérigos,8/69/176/635/640
+651,Sombrero y libro,8/69/176/635/640
+652,Laico con bastón,8/69/176/636
+653,Laico con bastón y documento,8/69/176/636
+654,Laico busto masculino,8/69/176/636
+655,Laico devocional masculino,8/69/176/636
+656,Laico con documento,8/69/176/636
+657,Laico en escenario exterior,8/69/176/636
+658,Laico interior con escena exterior,8/69/176/636
+659,Laico guante,8/69/176/636
+660,Retrato laicos con Libro,8/69/176/636
+661,Laicos con libro y documentos,8/69/176/636
+662,Laicos mano al pecho,8/69/176/636
+663,Laico objetos y oficios,8/69/176/636
+664,Laico sin símbolos y actitud corporal,8/69/176/636
+665,Laico Reloj,8/69/176/636
+666,Laico hombres sentados,8/69/176/636
+630,Nueva España,8/69/177
+631,Nueva Granada,8/69/177
+632,Perú,8/69/177
+633,Río de la Plata,8/69/177
+950,Portugal,8/69/629
+951,España,8/69/629
+952,Inglaterra,8/69/629
+953,Otros reyes,8/69/629
+954,Reyes Carlos de España,8/69/629/951
+955,Reyes Felipe de España,8/69/629/951
+956,Reyes Fernando de España,8/69/629/951
+184,Europeas y criollas,8/71
+604,Mujeres indígenas,8/71
+605,Miniaturas femeninas,8/71
+627,Reinas,8/71
+603,Monjas,8/71/184
+957,Laicas,8/71/184
+606,Coronadas vivas,8/71/184/603
+607,Coronadas muertas,8/71/184/603
+608,Monjas cuerpo entero,8/71/184/603
+609,Monjas medio cuerpo,8/71/184/603
+610,Abanico,8/71/184/957
+611,Abanico y joyas,8/71/184/957
+614,Abanico y libro,8/71/184/957
+615,Abanico y pañuelo,8/71/184/957
+616,Abanico y Flor,8/71/184/957
+617,Animales,8/71/184/957
+618,Busto femenino,8/71/184/957
+619,Mujeres con cartas y documentos,8/71/184/957
+620,Flor,8/71/184/957
+621,Joyas y joyeros,8/71/184/957
+622,Libro,8/71/184/957
+623,Objetos varios,8/71/184/957
+624,Retratos piadosos,8/71/184/957
+625,Mujeres sentadas,8/71/184/957
+626,Posición sin objetos,8/71/184/957
+958,Pañuelo,8/71/184/957
+553,Grupo de niños,8/72
+554,Retrato individual infantil,8/72
+555,Niños muertos,8/72
+948,Infantil femenino,8/72/554
+949,Infantil masculino,8/72/554
+47,Virgen de la sabiduría,9/60
+84,Antigua,9/60
+85,Almudena,9/60
+86,Virgen de los Apóstoles,9/60
+87,Aránzazu,9/60
+88,Belén,9/60
+89,Candelaria,9/60
+90,Caridad,9/60
+91,Carmen,9/60
+92,Cayma,9/60
+93,Cerro,9/60
+94,Chiquinquirá,9/60
+95,Cocharcas,9/60
+96,Copacabana,9/60
+97,Cueva,9/60
+98,Desamparados,9/60
+99,Dolorosa,9/60
+100,Encarnación,9/60
+101,Virgen de la pobreza,9/60
+102,Gozos,9/60
+103,Guadalupe,9/60
+104,Guápulo,9/60
+105,Guía,9/60
+106,Inmaculada,9/60
+107,Virgen de la leche,9/60
+108,Loreto,9/60
+109,Luz,9/60
+110,Merced,9/60
+111,Misericordia,9/60
+112,Monserrat,9/60
+113,Nieves,9/60
+114,Obediencia,9/60
+115,Ocotlán,9/60
+117,Devociones virgenes arborícolas,9/60
+118,Varias advocaciones Maria,9/60
+119,Pastora,9/60
+121,Peregrina,9/60
+122,Piedad,9/60
+123,Pilar,9/60
+125,Porciúncula,9/60
+126,Protección,9/60
+127,Providencia,9/60
+128,Refugio,9/60
+129,Pueblo o Santa María la Mayor,9/60
+130,Remedios,9/60
+131,Madre salvadora,9/60
+132,Rosario,9/60
+133,Rostros Virgen,9/60
+134,Nuestra Señora de la Redonda,9/60
+135,Sabaya,9/60
+136,Soledad,9/60
+137,Sunturhuasi o Virgen de la Descensión,9/60
+138,Salud - Amparo,9/60
+139,Socorro,9/60
+140,Soterraña,9/60
+141,Toledo,9/60
+142,Trono o Silla,9/60
+143,Valvanera,9/60
+144,Virgen y niño,9/60
+150,Virgen de la rosa,9/60
+237,Tzocuilac,9/60
+248,Guadalupe de Extremadura,9/60
+257,Virgen de Caracas,9/60
+429,Buen Consejo,9/60
+480,Virgen de los Ángeles,9/60
+613,Virgen del buen suceso,9/60
+768,Monguí,9/60
+783,Macana,9/60
+815,Pomata,9/60
+820,Oración,9/60
+824,Nuestra Señora de Trapana,9/60
+825,Virgen de los Corazones,9/60
+826,Lajas,9/60
+829,Zapopan,9/60
+830,Maravillas,9/60
+831,Quinche,9/60
+832,Peña,9/60
+850,Consolación,9/60
+855,Virgen de la Cabeza o del Silencio,9/60
+885,Virgen de los reyes,9/60
+886,Virgen de la Paz o los pobres,9/60
+887,Madre de Dios,9/60
+888,Virgen de Guicán,9/60
+899,Virgen Reina,9/60
+900,Virgen de la correa,9/60
+901,Begoña,9/60
+902,Escalera,9/60
+971,Virgen del Pueblito,9/60
+998,Expectación,9/60
+245,Dios Pinta,9/60/103
+246,Guadalupe con composición de milagros,9/60/103
+247,Guadalupe sola,9/60/103
+547,Guadalupe escudo de monja,9/60/103
+337,Guadalupe: escenas grandes,9/60/103/246
+338,Guadalupe: escenas varias,9/60/103/246
+339,Guadalupe con indígenas y donantes,9/60/103/246
+340,Patronatos Guadalupe,9/60/103/246
+341,Guadalupe: relatos de aparición,9/60/103/246
+342,Guadalupe con santos,9/60/103/246
+364,Relatos mixto flores ángeles,9/60/103/246/341
+558,Relatos con ángeles,9/60/103/246/341
+559,Relatos con flores,9/60/103/246/341
+907,Relatos sin ornamentación,9/60/103/246/341
+1009,Relatos con santos y advocaciones,9/60/103/246/341
+365,Guadalupe sin ornamentación,9/60/103/247
+366,Guadalupe sola con inscripción,9/60/103/247
+557,Guadalupe sola con ángeles,9/60/103/247
+929,Guadalupe sola con flores,9/60/103/247
+254,Defensas,9/60/106
+255,Tota Pulchra,9/60/106
+560,Virgen del Apocalipsis,9/60/106
+562,Virgen Inmaculada,9/60/106
+376,Coronada,9/60/106/255
+377,Tota con ángeles,9/60/106/255
+378,Tota con santos,9/60/106/255
+379,Donantes,9/60/106/255
+380,Con símbolos,9/60/106/255
+561,Inmaculada en escudos de monja,9/60/106/562
+807,Inmaculada de brazo cruzado,9/60/106/562
+808,Inmaculada en oración,9/60/106/562
+809,Brazo al pecho y extendido,9/60/106/562
+810,Inmaculada con Trinidad,9/60/106/562
+811,Inmaculada con Trinidad y santos,9/60/106/562
+812,Inmaculada y Eucaristía,9/60/106/562
+813,Inmaculada coronada,9/60/106/562
+814,Inmaculada con Santos,9/60/106/562
+258,Cinta,9/60/109
+259,Escenas,9/60/109
+260,Santos y/o donantes,9/60/109
+261,Tipo sin cinta,9/60/109
+769,Virgen de la Merced y Niño,9/60/110
+770,Mercedes santos y donantes,9/60/110
+771,Patrocinio mercedes,9/60/110
+833,Angustias,9/60/122
+307,Rosario con santos o donante,9/60/132
+308,Rosario con niño,9/60/132
+930,Misterios y rosarios,9/60/132
+972,Rosario y purgatorio,9/60/132
+973,Entrega del rosario,9/60/132
+974,Escenas virgen del rosario,9/60/132
+48,Mater Amabilis,9/60/144
+116,Varias advocaciones Virgen y niño,9/60/144
+148,"Virgen, niño, Juan",9/60/144
+149,Virgen del pajarito,9/60/144
+151,Devociones virgen con niño S.I 1,9/60/144
+334,Passaviensis,9/60/144
+335,Devociones virgen con niño S.I 2,9/60/144
+336,Virgen y niño santos y donantes,9/60/144
+835,Virgen del silencio o con niño dormido,9/60/144
+40,Carmen con niño,9/60/91
+41,Carmen protectora,9/60/91
+42,Carmen y purgatorio,9/60/91
+43,Carmen con santos,9/60/91
+44,Carmen sin niño,9/60/91
+234,Dolores sin cuchillo,9/60/99
+235,Siete dolores,9/60/99
+242,Dolores un cuchillo,9/60/99
+531,Virgen de la Soledad,9/60/99
+532,Topo,9/60/99
+209,Concepción de la Virgen,9/61
+210,Sagrada familia de la Virgen,9/61
+211,Nacimiento de la Virgen,9/61
+212,Presentación de la Virgen,9/61
+213,Hilandera,9/61
+214,Educación,9/61
+215,Desposorios,9/61
+216,Anunciación,9/61
+217,Visitación,9/61
+218,Nacimiento de Jesús,9/61
+219,Adoración de los Pastores,9/61
+220,Adoración de los Reyes,9/61
+221,Circuncisión,9/61
+222,Presentación del niño Jesús,9/61
+224,Niño de la Espina,9/61
+225,Santos Inocentes,9/61
+226,Egipto,9/61
+227,Sagrada Familia,9/61
+228,Entre Doctores,9/61
+230,Tránsito de la Virgen y Dormición,9/61
+231,Asunción,9/61
+232,Coronación y Eucaristía,9/61
+233,Sacramentos de la virgen,9/61
+852,Creación alma de la Virgen,9/61/209
+931,Árbol de Jesé,9/61/209
+312,San Joaquín y la Virgen,9/61/210
+313,San Joaquín y Santa Ana,9/61/210
+314,San Joaquín,9/61/210
+315,Santa Ana y Virgen,9/61/210
+316,Santa Ana,9/61/210
+524,"San Joaquín, Ana y la Virgen",9/61/210
+933,Anunciación y purificación santa Ana,9/61/210
+872,Enseñanza de Ana,9/61/214
+903,Educación costura templo,9/61/214
+975,Enseñanza familia Virgen,9/61/214
+976,Anunciación dios presente,9/61/216
+977,Anunciación Espíritu santo,9/61/216
+978,Escudo y donantes anunciación,9/61/216
+236,Descanso,9/61/226
+238,Huida a Egipto,9/61/226
+239,Regreso,9/61/226
+980,Doble Trinidad,9/61/226/239
+981,Regreso Egipto y Espiritu santo,9/61/226/239
+982,Regreso del exilio,9/61/226/239
+310,San José,9/61/227
+311,Escenas Sagrada Familia,9/61/227
+367,Sueño y anunciación a san José,9/61/227/310
+368,San José y el niño,9/61/227/310
+369,Muerte de San José,9/61/227/310
+370,Otras San José,9/61/227/310
+371,Coronación de San José,9/61/227/310
+372,Patrocinio de San José,9/61/227/310
+932,Aflicción y Duda/José y María,9/61/227/310
+983,San José: alegóricas y devocionales,9/61/227/310/368
+984,San José: Corona de flores y/o E.S,9/61/227/310/368
+985,San José con Jesús adolescente,9/61/227/310/368
+986,San José con Jesús en brazos,9/61/227/310/368
+352,Familia,9/61/227/311
+353,Cinco señores,9/61/227/311
+358,Buscando posada,9/61/227/311
+928,Empadronamiento,9/61/227/311
+354,Familia y san Juan,9/61/227/311/352
+355,Sueño de Jesús,9/61/227/311/352
+356,Mesa familiar,9/61/227/311/352
+357,Taller,9/61/227/311/352
+988,"José, Maria y Jesús",9/61/227/311/352
+989,Infancia de Jesús,9/61/227/311/352
+990,Asunción con ángeles,9/61/231
+991,Asunción desde tumba,9/61/231
+992,Asunción con trinidad,9/61/231
+994,Coronacion con santos y donantes,9/61/232
+995,Coronacion solo Trinidad,9/61/232
+996,Coronación escudos,9/61/232
+997,Coronación eucarística,9/61/232
+1,Alegorías y Emblemas,
+2,Ángeles,
+3,Antiguo Testamento,
+4,Cristológico,
+5,Dogma,
+6,Santos,
+7,Historia,
+8,Retrato,
+9,Mariología,
+10,Temas seculares,
+11,Mística y Moral,
+120,"Cirilo de Constantinopla, san",6/381/735/785
+223,Mercedes sin niño,9/60/110
+828,Eulalia,6/59/200
+1010,Agustín Itúrbide,8/69/629
+1011,Virgen de la Regla,9/60
+1012,Otros fundadores,6/381/382

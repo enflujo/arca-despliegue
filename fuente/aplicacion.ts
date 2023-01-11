@@ -1,150 +1,100 @@
 import 'dotenv/config';
-import { createReadStream } from 'fs';
-import { Directus, SettingItem } from '@directus/sdk';
-import FormData from 'form-data';
-import { AxiosError } from 'axios';
-import { isEnum, logCambios, logSinCambios, logResaltar, mensaje } from './utilidades/ayudas';
-import { ArcaSettings, datosSettings, ModeloSettings } from './utilidades/modeloSettings';
+import { Directus } from '@directus/sdk';
 import autores from './colecciones/autores';
+import settings from './colecciones/_settings';
+import crearColecciones from './colecciones/crearColecciones';
+import { logCambios, logSinCambios, mensaje } from './utilidades/ayudas';
+import { ColeccionesArca, Obra } from './tipos';
+import ubicaciones from './colecciones/ubicaciones';
+import paises from './colecciones/paises';
 
-const { settings, folders, files } = new Directus('http://localhost:8055', {
+import objetos from './colecciones/objetos';
+import escenarios from './colecciones/escenarios';
+import tecnicas from './colecciones/tecnicas';
+import fuentes from './colecciones/fuentes';
+import donantes from './colecciones/donantes';
+import relatosVisuales from './colecciones/relatosVisuales';
+import complejosGestuales from './colecciones/complejosGestuales';
+
+import obras from './colecciones/obras';
+import gestos from './colecciones/gestos';
+import fisiognomicas from './colecciones/fisiognomicas';
+import fisiognomicasImagen from './colecciones/fisiognomicasImagen';
+import rostros from './colecciones/rostros';
+import ciudades from './colecciones/ciudades';
+import personajes from './colecciones/personajes';
+import tiposGestuales from './colecciones/tiposGestuales';
+import cartelasFilacterias from './colecciones/cartelasFilacterias';
+import categorias1 from './colecciones/categorias1';
+import categorias2 from './colecciones/categorias2';
+import categorias3 from './colecciones/categorias3';
+import categorias4 from './colecciones/categorias4';
+import categorias5 from './colecciones/categorias5';
+import categorias6 from './colecciones/categorias6';
+import simbolos from './colecciones/simbolos';
+import descriptores from './colecciones/descriptores';
+import caracteristicas from './colecciones/caracteristicas';
+
+const url = process.env.AMBIENTE === 'produccion' ? 'https://apiarca.uniandes.edu.co' : 'http://localhost:8055';
+
+const directus = new Directus<ColeccionesArca>(url, {
   auth: {
     staticToken: process.env.KEY,
   },
-  // transport: {
-  //   onUploadProgress: proceso
-  // },
+  transport: {
+    maxBodyLength: Infinity,
+    maxContentLength: Infinity,
+  },
 });
 
+async function insertarDatosAColeccion(nombre: string, coleccion: string, procesador: any) {
+  const { meta } = await directus.items(coleccion).readByQuery({ limit: 0, meta: 'total_count' });
+
+  if (meta) {
+    if (!meta.total_count) {
+      console.log(logCambios(mensaje(nombre, 'Iniciando carga de datos.')));
+      await procesador(directus);
+      console.log(logCambios(mensaje(nombre, 'Finalizó carga.')));
+    } else {
+      console.log(logSinCambios(mensaje(nombre, 'Sin cambios')));
+    }
+  }
+}
+
 async function inicio() {
-  await autores();
-  // await crearCarpetas();
-  // await subirImgsSistema();
-  // await alimentarSettings();
+  await settings(directus);
+
+  // await crearColecciones(directus);
+  await insertarDatosAColeccion('Personajes', 'personajes', personajes); // LISTO Cols: B-G
+  await insertarDatosAColeccion('Autores', 'autores', autores); // LISTO Cols: H-I
+  await insertarDatosAColeccion('Escenarios', 'escenarios', escenarios); // LISTO Cols: J-K
+  await insertarDatosAColeccion('Técnicas', 'tecnicas', tecnicas); // LISTO Cols: L-M
+  await insertarDatosAColeccion('Fuentes', 'fuentes', fuentes); // LISTO Cols: N-O
+  await insertarDatosAColeccion('Donantes', 'donantes', donantes); // LISTO Cols: P-Q
+
+  await insertarDatosAColeccion('Objetos', 'objetos', objetos); // LISTO Cols: AW-AX
+
+  await insertarDatosAColeccion('Relatos Visuales', 'relatos_visuales', relatosVisuales); // LISTO cols: AS-AT
+  await insertarDatosAColeccion('Complejos Gestuales', 'complejos_gestuales', complejosGestuales); // LISTO Cols: AY-AZ
+  await insertarDatosAColeccion('Gestos', 'gestos', gestos); // LISTO Cols: BA-BF
+  await insertarDatosAColeccion('Fisiognómicas', 'fisiognomicas', fisiognomicas); // LISTO Cols: BG-BH
+  await insertarDatosAColeccion('Fisiognómicas Imagen', 'fisiognomicas_imagen', fisiognomicasImagen); // LISTO Cols: BI-BJ
+  await insertarDatosAColeccion('Rostros', 'rostros', rostros); // LISTO Cols: BM-BN
+  await insertarDatosAColeccion('Países', 'paises', paises); // LISTO Cols: V-Y
+  await insertarDatosAColeccion('Ciudades', 'ciudades', ciudades); // LISTO Cols: R-U
+  await insertarDatosAColeccion('Ubicaciones', 'ubicaciones', ubicaciones); // LISTO
+  await insertarDatosAColeccion('Tipos Gestuales', 'tipos_gestuales', tiposGestuales); //
+  await insertarDatosAColeccion('Cartelas Filacterias', 'cartelas_filacterias', cartelasFilacterias); //
+  await insertarDatosAColeccion('Categorías 1', 'categorias1', categorias1); //
+  await insertarDatosAColeccion('Categorías 2', 'categorias2', categorias2); //
+  await insertarDatosAColeccion('Categorías 3', 'categorias3', categorias3); //
+  await insertarDatosAColeccion('Categorías 4', 'categorias4', categorias4); //
+  await insertarDatosAColeccion('Categorías 5', 'categorias5', categorias5); //
+  await insertarDatosAColeccion('Categorías 6', 'categorias6', categorias6); //
+  await insertarDatosAColeccion('Símbolos', 'simbolos', simbolos);
+  await insertarDatosAColeccion('Descriptores', 'descriptores', descriptores);
+  await insertarDatosAColeccion('Características', 'caracteristicas', caracteristicas);
+  await insertarDatosAColeccion('Obras', 'obras', obras);
 }
 
 inicio();
-
-async function crearCarpetas() {
-  const { data } = await folders.readByQuery({ limit: -1 });
-  let nuevasCarpetas: string[] = [];
-
-  if (data) {
-    if (!data.length) {
-      nuevasCarpetas = datosSettings.folders;
-    } else {
-      nuevasCarpetas = datosSettings.folders.filter((nombre) => !data.some((obj) => obj.name === nombre));
-    }
-  }
-
-  if (nuevasCarpetas.length) {
-    try {
-      folders.createMany(
-        nuevasCarpetas.map((nombre) => {
-          return { name: nombre };
-        })
-      );
-
-      console.log(logCambios(`Nuevas carpetas creadas: ${logResaltar(nuevasCarpetas)}`));
-    } catch (err) {
-      const error = err as AxiosError;
-      if (error.response) {
-        throw new Error(error.response.data.message);
-      }
-    }
-  } else {
-    console.log(logSinCambios(mensaje('Folders', 'No hay carpetas por crear')));
-  }
-}
-
-async function subirImgsSistema() {
-  const { data: carpetasActuales } = await folders.readByQuery({ limit: -1 });
-
-  if (carpetasActuales) {
-    const carpetaSistema = carpetasActuales.find((obj) => obj.name === 'Sistema');
-    if (!carpetaSistema) {
-      throw new Error('La carpeta "Sistema" no existe');
-    }
-
-    const { data: imgsActuales } = await files.readByQuery({
-      filter: {
-        folder: {
-          _eq: carpetaSistema.id,
-        },
-      },
-    });
-
-    let nuevasImgs = [];
-
-    if (!imgsActuales) {
-      nuevasImgs = datosSettings.imgsSistema;
-    } else {
-      nuevasImgs = datosSettings.imgsSistema.filter((img) => !imgsActuales.some((obj) => obj.title === img.nombre));
-    }
-
-    if (nuevasImgs.length) {
-      nuevasImgs.forEach(async (img) => {
-        const form = new FormData();
-        form.append('folder', carpetaSistema.id);
-        form.append('title', img.nombre);
-        form.append('file', createReadStream(img.ruta));
-
-        try {
-          await files.createOne(
-            form,
-            {},
-            {
-              requestOptions: {
-                headers: { ...form.getHeaders() },
-              },
-            }
-          );
-
-          console.log(logCambios(`Nueva img: ${logResaltar(img.nombre)}`));
-        } catch (err) {
-          const error = err as AxiosError;
-          if (error.response) {
-            throw new Error(error.response.data.message);
-          }
-        }
-      });
-    }
-  } else {
-    console.log(logSinCambios(mensaje('Files', 'No hay imágenes de "Sistema" por subir.')));
-  }
-}
-
-async function alimentarSettings() {
-  const { data: iconoArca } = await files.readByQuery({
-    filter: {
-      title: { _eq: 'Icono Arca' },
-    },
-  });
-
-  if (iconoArca) {
-    datosSettings.settings.project_logo = iconoArca[0].id;
-  }
-
-  const valoresActuales = (await settings.read()) as SettingItem;
-
-  if (valoresActuales) {
-    const nuevosValores: ArcaSettings = {};
-
-    for (let llave in valoresActuales) {
-      if (datosSettings.settings.hasOwnProperty(llave) && datosSettings.settings[llave] !== valoresActuales[llave]) {
-        nuevosValores[llave] = datosSettings.settings[llave];
-      }
-    }
-
-    if (isEnum(nuevosValores)) {
-      settings.update(nuevosValores);
-      console.log(
-        logCambios(
-          mensaje('Settings', `Se actualizaron los campos: ${JSON.stringify(Object.keys(nuevosValores).join(','))}`)
-        )
-      );
-    } else {
-      console.log(logSinCambios(mensaje('Settings', `Sin actualizar`)));
-    }
-  }
-}

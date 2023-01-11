@@ -58,3 +58,4 @@ node_modules
 api/
 logs/
 *.log
+datos/entrada/imgs
