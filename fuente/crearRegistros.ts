@@ -33,7 +33,6 @@ function limpieza(valor: string, contexto: CastingContext): string {
       ruta = imagenes[llaveImg];
 
       if (!ruta) {
-        // throw new Error(`La imagen con ID ${id} no existe.`);
         console.error(`La imagen con ID ${valor} no existe.`);
       }
     }
@@ -67,9 +66,8 @@ async function procesarEntrada(fila: ObraFuente, directus: Directus<ColeccionesA
     // if (entrada.titulo === fila.título) {
     try {
       await coleccion.updateOne(entrada.id as ID, {
-        registro: id,
+        registro: +id,
       });
-      console.log('entrada', id);
     } catch (error) {
       console.log(fila);
       throw new Error(JSON.stringify(error, null, 2));

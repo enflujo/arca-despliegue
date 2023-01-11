@@ -97,7 +97,7 @@ export type Obra = {
   /** M2O: Fuente de la imagen */
   fuente?: ID;
   /** M2O: Ubicación donde se encuentra la obra */
-  ubicacion?: ID;
+  ubicacion?: ID | null;
   /** M2O: Tipo de donante de la obra */
   donante?: ID;
   /** M2O: Categoría que describe el relato visual */

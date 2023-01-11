@@ -30,7 +30,6 @@ import { logCambios, logResaltar } from './utilidades/ayudas';
 type ColeccionesConSlugUnicos = {
   autores: Autor;
   paises: Pais;
-
   objetos: Objeto;
   escenarios: Escenario;
   tecnicas: Tecnica;
@@ -91,7 +90,6 @@ async function inicio() {
     // 'autores',
     // 'personajes', //
     // 'fuentes',
-    // 'ubicaciones',
     // 'ciudades',
     // 'paises', //
     // 'categorias1', //
@@ -107,21 +105,21 @@ async function inicio() {
     // 'relatos_visuales', //
     // 'complejos_gestuales', //
     // 'tipos_gestuales', //
-    'gestos', //
+    // 'gestos', //
     // 'fisiognomicas', //
     // 'fisiognomicas_imagen', //
     // 'cartelas_filacterias', //
     // 'rostros', //
   ];
 
-  coleccionesSlugsUnicos.forEach(async (tabla) => {
-    await actualizarSlugsUnicos(tabla as keyof ColeccionesConSlugUnicos);
-    console.log(`Slugs de ${tabla} actualizados`);
-    conteoProcesados++;
-    if (conteoProcesados === coleccionesSlugsUnicos.length) {
-      console.log(logCambios('..:: FIN ::..'));
-    }
-  });
+  // for await (const coleccion of coleccionesSlugsUnicos) {
+  //   await actualizarSlugsUnicos(coleccion as keyof ColeccionesConSlugUnicos);
+  //   console.log(`Slugs de ${coleccion} actualizados`);
+  //   conteoProcesados++;
+  //   if (conteoProcesados === coleccionesSlugsUnicos.length) {
+  //     console.log(logCambios('..:: FIN ::..'));
+  //   }
+  // }
 }
 
 inicio();
