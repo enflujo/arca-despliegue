@@ -15,7 +15,8 @@
     "paises:servidor": "AMBIENTE=produccion ts-node ./fuente/actualizarPaises.ts",
     "info": "nodemon ./fuente/infoColeccion.ts",
     "flow": "nodemon ./fuente/flow.ts",
-    "flow:servidor": "AMBIENTE=produccion nodemon ./fuente/flow.ts"
+    "flow:servidor": "AMBIENTE=produccion nodemon ./fuente/flow.ts",
+    "diagrama": "mmdc -i modelado.mmd -o modelado.svg"
   },
   "dependencies": {
     "@directus/sdk": "^10.3.1",
@@ -29,6 +30,7 @@
     "world_countries_lists": "^2.6.0"
   },
   "devDependencies": {
+    "@mermaid-js/mermaid-cli": "^9.3.0",
     "@types/cli-color": "^2.0.2",
     "@types/js-yaml": "^4.0.5",
     "@types/node": "^18.11.17",
