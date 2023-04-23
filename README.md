@@ -27,7 +27,7 @@ Aplicar el esquema o snapshot: `npx directus schema apply ./path/to/snapshot.yam
 
 ![Modelado](./modelado.svg)
 
-#### Esportar imagen de modelado en SVG
+#### Exportar imagen de modelado en SVG
 
 ```bash
 yarn diagrama
