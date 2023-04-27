@@ -25,7 +25,6 @@ import { Categoria3 } from './colecciones/categorias3';
 import { Categoria4 } from './colecciones/categorias4';
 import { Categoria5 } from './colecciones/categorias5';
 import { Categoria6 } from './colecciones/categorias6';
-import { logCambios, logResaltar } from './utilidades/ayudas';
 
 type ColeccionesConSlugUnicos = {
   autores: Autor;

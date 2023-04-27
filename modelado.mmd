@@ -23,7 +23,28 @@ erDiagram
       boolean fecha_periodo
       number fecha_inicial
       number fecha_final
+      number gesto1
+      number gesto2
+      number gesto3
       number donante
+      number ciudad_origen
+      number ubicacion
+      number relato_visual
+      array escenarios
+      array objetos
+      array tecnicas
+      number tipo_gestual
+      number complejo_gestual
+      number fisiognomica 
+      number fisiognomica_imagen 
+      number cartela_filacteria 
+      number rostro 
+      array personajes 
+      array simbolos
+      array descriptores 
+      array caracteristicas
+      number ciudad 
+      number pais
     }
 
     autores {
@@ -200,7 +221,9 @@ erDiagram
       string nombre
       string slug
       string descripcion
-      array obras
+      array obras_gesto_1
+      array obras_gesto_2
+      array obras_gesto_3
     }
 
     fisiognomicas {
@@ -295,13 +318,15 @@ erDiagram
     obras }o--o| donantes : M2O_donante
     obras }o--o| ciudades : M2O_ciudad_origen
     obras }o--o| ubicaciones : M2O_ubicacion
+    obras }o--o| gestos : M2O_gesto1
+    obras }o--o| gestos : M2O_gesto2
+    obras }o--o| gestos : M2O_gesto3
     obras }o--o| relatos_visuales : M2O_relato_visual
     obras }o--o{ escenarios : M2M_escenarios
     obras }o--o{ objetos : M2M_objetos
     obras }o--o{ tecnicas : M2M_tecnicas
     obras }o--o| tipos_gestuales : M2O_tipo_gestual
     obras }o--o| complejos_gestuales : M2O_complejo_gestual
-    obras }o--o{ gestos : M2M_gestos
     obras }o--o| fisiognomicas : M2O_fisiognomica
     obras }o--o| fisiognomicas_imagen : M2O_fisiognomica_imagen
     obras }o--o| cartelas_filacterias : M2O_cartela_filacteria
@@ -361,7 +386,9 @@ erDiagram
     tecnicas }o--o{ obras : M2M
     tipos_gestuales |o--o{ obras : O2M
     complejos_gestuales |o--o{ obras : O2M
-    gestos }o--o{ obras : M2M
+    gestos }o--o{ obras : O2M_obras_gesto_1
+    gestos }o--o{ obras : O2M_obras_gesto_2
+    gestos }o--o{ obras : O2M_obras_gesto_3
     fisiognomicas |o--o{ obras : O2M
     fisiognomicas_imagen |o--o{ obras : O2M
     cartelas_filacterias |o--o{ obras : O2M

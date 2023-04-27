@@ -8,7 +8,7 @@ import { Fuente } from './colecciones/fuentes';
 import { Objeto } from './colecciones/objetos';
 import { RelatoVisual } from './colecciones/relatosVisuales';
 import { Tecnica } from './colecciones/tecnicas';
-import { FileItem, ID } from '@directus/sdk';
+import { ID } from '@directus/sdk';
 import { Gesto } from './colecciones/gestos';
 import { Fisiognomica } from './colecciones/fisiognomicas';
 import { FisiognomicaImagen } from './colecciones/fisiognomicasImagen';
@@ -49,6 +49,9 @@ export type ColeccionesArca = {
   complejos_gestuales: ComplejoGestual;
   tipos_gestuales: TipoGestual;
   gestos: Gesto;
+  gesto1: Gesto;
+  gesto2: Gesto;
+  gesto3: Gesto;
   fisiognomicas: Fisiognomica;
   fisiognomicas_imagen: FisiognomicaImagen;
   cartelas_filacterias: CartelaFilacteria;
@@ -128,6 +131,12 @@ export type Obra = {
   categoria5?: ID;
   /** M2O: Categoria 6 */
   categoria6?: ID;
+  /** M2O: Gesto 1 */
+  gesto1?: ID;
+  /** M2O: Gesto 2 */
+  gesto2?: ID;
+  /** M2O: Gesto 3 */
+  gesto3?: ID;
 
   /**
    * ..:: Relaciones "Many to Many" (M2M) - Permite más de 1 valor ::..
