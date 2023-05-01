@@ -1,29 +1,7 @@
-import { Directus, ID } from '@directus/sdk';
+import { Directus } from '@directus/sdk';
 import { CastingContext } from 'csv-parse/.';
-import { Actividad, ActividadObjeto, ColeccionesArca } from '../tipos';
+import { Actividad, ActividadObjeto, ColeccionesArca, Personaje, PersonajeFuente } from '../tipos';
 import { esNumero, flujoCSV, procesarCSV, procesarFechaActividad, urlsAEnlacesHTML, vacio } from '../utilidades/ayudas';
-
-export type Personaje = {
-  id?: ID;
-  nombre: string;
-  descripcion: string;
-  muerte: number | null;
-  muerte_anotacion: string | null;
-  beatificacion_canonizacion_desde: number | string | null;
-  beatificacion_canonizacion_desde_anotacion: string | null;
-  beatificacion_canonizacion_hasta: number | string | null;
-  beatificacion_canonizacion_hasta_anotacion: string | null;
-  fuente: string;
-};
-
-export type PersonajeFuente = {
-  id: number;
-  name: string;
-  text: string;
-  'Fecha muerte': ActividadObjeto;
-  'Fecha beatificación / canonización': Actividad;
-  source: string;
-};
 
 function limpieza(
   valor: string,

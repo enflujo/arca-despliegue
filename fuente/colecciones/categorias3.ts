@@ -1,24 +1,10 @@
-import { Directus, ID } from '@directus/sdk';
+import { Directus } from '@directus/sdk';
 import { CastingContext } from 'csv-parse/.';
-import { ColeccionesArca, Obra } from '../tipos';
+import { Categoria3, CategoriaFuente, ColeccionesArca } from '../tipos';
 import { flujoCSV, procesarCSV } from '../utilidades/ayudas';
 
-export type Categoria3 = {
-  id?: ID;
-  nombre: string;
-  descripcion?: string;
-  obras?: Obra[];
-  ancestro: ID;
-};
-
-export type Categoria3Fuente = {
-  id: number;
-  name: string;
-  ancestry: string;
-};
-
 function limpieza(valor: string, contexto: CastingContext): string | boolean | string[] {
-  const columna = contexto.column as keyof Categoria3Fuente;
+  const columna = contexto.column as keyof CategoriaFuente;
 
   if (columna === 'name') {
     return valor.trim();
@@ -40,7 +26,7 @@ function limpieza(valor: string, contexto: CastingContext): string | boolean | s
   return valor;
 }
 
-async function procesar(fila: Categoria3Fuente, directus: Directus<ColeccionesArca>): Promise<Categoria3 | null> {
+async function procesar(fila: CategoriaFuente, directus: Directus<ColeccionesArca>): Promise<Categoria3 | null> {
   if (!fila.ancestry) return null;
 
   const respuesta = { nombre: fila.name, id: fila.id } as Categoria3;

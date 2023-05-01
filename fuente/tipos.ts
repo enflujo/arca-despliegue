@@ -1,32 +1,14 @@
-import { Autor } from './colecciones/autores';
-import { ComplejoGestual } from './colecciones/complejosGestuales';
-import { Pais } from './colecciones/paises';
-import { Ubicacion } from './colecciones/ubicaciones';
-import { Donante } from './colecciones/donantes';
-import { Escenario } from './colecciones/escenarios';
-import { Fuente } from './colecciones/fuentes';
-import { Objeto } from './colecciones/objetos';
-import { RelatoVisual } from './colecciones/relatosVisuales';
-import { Tecnica } from './colecciones/tecnicas';
-import { ID } from '@directus/sdk';
-import { Gesto } from './colecciones/gestos';
-import { Fisiognomica } from './colecciones/fisiognomicas';
-import { FisiognomicaImagen } from './colecciones/fisiognomicasImagen';
-import { Rostro } from './colecciones/rostros';
-import { Ciudad } from './colecciones/ciudades';
-import { Personaje } from './colecciones/personajes';
-import { TipoGestual } from './colecciones/tiposGestuales';
-import { CartelaFilacteria } from './colecciones/cartelasFilacterias';
-import { Categoria1 } from './colecciones/categorias1';
-import { Categoria2 } from './colecciones/categorias2';
-import { Categoria3 } from './colecciones/categorias3';
-import { Categoria4 } from './colecciones/categorias4';
-import { Categoria5 } from './colecciones/categorias5';
-import { Categoria6 } from './colecciones/categorias6';
-import { Simbolo } from './colecciones/simbolos';
-import { Descriptor } from './colecciones/descriptores';
-import { Caracteristica } from './colecciones/caracteristicas';
+import { ID, FileItem } from '@directus/sdk';
 
+/**
+ * Los tipos que contienen la palabra "Fuente" en su nombre,
+ * hacen referencia al modelo anterior y se convierten al modelo descrito en el tipo con el mismo nombre, pero sin la palabra Fuente.
+ * Ejemplo: "AutorFuente" pasa a ser "Autor", "ObraFuente" pasa a ser "Obra", etc.
+ */
+
+/**
+ * Las colecciones creadas en el CMS.
+ */
 export type ColeccionesArca = {
   obras: Obra;
   autores: Autor;
@@ -40,25 +22,22 @@ export type ColeccionesArca = {
   categorias3: Categoria3;
   categorias4: Categoria4;
   categorias5: Categoria5;
-  categorias6: Categoria6;
-  objetos: Objeto;
-  escenarios: Escenario;
-  tecnicas: Tecnica;
-  donantes: Donante;
-  relatos_visuales: RelatoVisual;
-  complejos_gestuales: ComplejoGestual;
-  tipos_gestuales: TipoGestual;
+  categorias6: SubCategoria;
   gestos: Gesto;
-  gesto1: Gesto;
-  gesto2: Gesto;
-  gesto3: Gesto;
-  fisiognomicas: Fisiognomica;
-  fisiognomicas_imagen: FisiognomicaImagen;
-  cartelas_filacterias: CartelaFilacteria;
-  rostros: Rostro;
-  simbolos: Simbolo;
-  descriptores: Descriptor;
-  caracteristicas: Caracteristica;
+  objetos: CamposGeneralesColeccion;
+  escenarios: CamposGeneralesColeccion;
+  tecnicas: CamposGeneralesColeccion;
+  donantes: CamposGeneralesColeccion;
+  relatos_visuales: CamposGeneralesColeccion;
+  complejos_gestuales: CamposGeneralesColeccion;
+  tipos_gestuales: CamposGeneralesColeccion;
+  fisiognomicas: CamposGeneralesColeccion;
+  fisiognomicas_imagen: CamposGeneralesColeccion;
+  cartelas_filacterias: CamposGeneralesColeccion;
+  rostros: CamposGeneralesColeccion;
+  simbolos: CamposGeneralesColeccion;
+  descriptores: CamposGeneralesColeccion;
+  caracteristicas: CamposGeneralesColeccion;
 };
 
 /**
@@ -163,90 +142,57 @@ export type Obra = {
 
 export type ObraFuente = {
   Id: number;
-
-  /** ..:: Directos ::.. */
   título: string;
   fechas_actividad: string;
   Sintesis: string;
   Anotacion_Comentario_bibliográfico: string;
   Iconotexto: string;
-
-  /** */
   Relato_visual_id: number;
   Relato_visual_lista: string;
-
   Tipo_gestual_id: number;
   Tipo_gestual_lista: string;
-
-  /** */
   Objetos_gestos_id: number;
   Objetos_gestos_lista: string;
-
-  /** */
   Complejo_gestual_id: number;
   Complejo_gestual_lista: string;
-
-  /** */
   autores_id: number;
   Autores: string;
-
-  /** */
   escenario_2_id: number;
   Escenario: string;
-
-  /** */
   tecnica_id: number;
   Tecnica: string;
-
-  /** */
   fuente_imagen_1_id: number;
   Fuente_imagen: string;
-
-  /** */
   donante_1_id: number;
   Donante: string;
-
-  /** */
   ubicacion_id: number;
   Ubicacion: string;
-
-  /** */
   Gesto_1_id: number;
   Gesto_1: string;
   Gesto_2_id: number;
   Gesto_2: string;
   Gesto_3_id: number;
   Gesto_3: string;
-
-  /** */
   Fisiognómica_id: number;
   Fisiognómica_lista: string;
-
-  /** */
   Fisiognomica_imagen_id: number;
   Fisiognomica_imagen_lista: string;
-
-  /** */
   Rostro_id: number;
   Rostro_lista: string;
-
   categorias_personajes_1_id: number;
   categorias_personajes_1: string;
   categorias_personajes_2_id: number;
   categorias_personajes_2: string;
   categorias_personajes_3_id: number;
   categorias_personajes_3: string;
-
   Ciudades_origen_id: number;
   Ciudad_Origen: string;
   Ciudades_actual_id: number;
   Ciudad_Actual: string;
-
   Paises_origen_id: number;
   Pais_Origen: string;
   Paises_actual_id: number;
   Pais_Actual: string;
-
   categoria_1_id: number;
   Categoria_1: string;
   categoria_2_id: number;
@@ -259,12 +205,262 @@ export type ObraFuente = {
   Categoria_5: string;
   categoria_6_id: number;
   Categoria_6: string;
-
   Cartela_filacteria_2_id: number;
   Cartela_filacteria_2_lista: string;
-
   Anotación_gestual: string;
 };
+
+export type Autor = {
+  id?: ID;
+  nombre: string;
+  apellido: string;
+  desde: number | null;
+  desde_anotacion: string | null;
+  hasta: number | null;
+  hasta_anotacion: string | null;
+  biografia: string;
+  referencia: string;
+  obras?: ID[];
+};
+
+export type AutorFuente = {
+  id: number;
+  name: string;
+  lastname: string;
+  fullname: string;
+  activity: Actividad;
+  biography: string;
+  reference: string;
+};
+
+/**
+ * La colección de países se creo sin fuente ya que la versión anterior tenía los nombres en inglés.
+ * La volvemos a crear con nombres en español y GeoJSON del area a partir de datos públicos.
+ */
+export type Pais = {
+  id?: ID;
+  nombre: string;
+  slug?: string;
+  geo: object;
+};
+
+export type Ciudad = {
+  id?: ID;
+  nombre: string;
+  pais?: ID;
+  ubicaciones?: ID[];
+  obras_origen?: ID[];
+  obras?: ID[];
+};
+
+export type CiudadFuente = {
+  id: number;
+  name: string;
+  pais: string;
+};
+
+export type Ubicacion = {
+  id?: ID;
+  nombre: string;
+  anotacion: string | null;
+  geo?: string;
+  ciudad?: ID;
+  obras?: ID[];
+};
+
+export type UbicacionFuente = {
+  id: number;
+  name: string;
+  Lugar: string;
+  latitud: number;
+  longitud: number;
+  'lugar/ubicación': string;
+  Anotación: string;
+};
+
+/**
+ * Las fuentes no tienen campo nombre o slug ya que no se tratan como datos visualizables.
+ */
+export type Fuente = {
+  id?: ID;
+  descripcion: string;
+  obras?: ID[];
+};
+
+export type FuenteFuente = {
+  id: number;
+  name: string;
+};
+
+export type Gesto = {
+  id?: ID;
+  codigo: string | null;
+  nombre: string;
+  descripcion?: string;
+  obras_gesto_1?: ID[];
+  obras_gesto_2?: ID[];
+  obras_gesto_3?: ID[];
+};
+
+export type GestoFuente = {
+  id: number;
+  Nombre: string;
+  'Nombre de registro': string;
+};
+
+export type Personaje = {
+  id?: ID;
+  nombre: string;
+  slug?: string;
+  descripcion: string;
+  fuente: string;
+  muerte: number | null;
+  muerte_anotacion: string | null;
+  beatificacion_canonizacion_desde: number | string | null;
+  beatificacion_canonizacion_desde_anotacion: string | null;
+  beatificacion_canonizacion_hasta: number | string | null;
+  beatificacion_canonizacion_hasta_anotacion: string | null;
+  obras?: ID[];
+};
+
+export type PersonajeFuente = {
+  id: number;
+  name: string;
+  text: string;
+  'Fecha muerte': ActividadObjeto;
+  'Fecha beatificación / canonización': Actividad;
+  source: string;
+};
+
+export interface Categoria {
+  id?: ID;
+  nombre: string;
+  slug?: string;
+  descripcion?: string;
+  obras?: Obra[];
+}
+
+export interface SubCategoria extends Categoria {
+  ancestro?: ID;
+}
+
+export interface Categoria1 extends Categoria {
+  imagen?: FileItem;
+  categorias2?: ID[];
+}
+
+export interface Categoria2 extends SubCategoria {
+  categorias3?: ID[];
+}
+
+export interface Categoria3 extends SubCategoria {
+  categorias4?: ID[];
+}
+
+export interface Categoria4 extends SubCategoria {
+  categorias5?: ID[];
+}
+
+export interface Categoria5 extends SubCategoria {
+  categorias6?: ID[];
+}
+
+// Categoria6 es exactamente SubCategoria ya que no tiene categorias subsecuentes.
+
+export type CategoriaFuente = {
+  id: number;
+  name: string;
+  ancestry: string;
+};
+
+/**
+ * Este modelo se usa en casi todas las colecciones de ahora en adelante.
+ */
+export type CamposGeneralesColeccion = {
+  id?: ID;
+  nombre: string;
+  slug?: string;
+  descripcion?: string;
+  obras?: ID[];
+};
+
+/**
+ * Aunque son muy parecidas en su estructura, el modelado anterior nombraba los campos de maneras inconsistentes: en inglés o español y a veces con mayúsculas.
+ * Se crea un tipo para cada fuente para no tener confusiones al revisar los campos.
+ */
+export type ComplejoGestualFuente = {
+  id: number;
+  nombre: string;
+};
+
+export type DonanteFuente = {
+  id: number;
+  name: string;
+};
+
+export type EscenarioFuente = {
+  id: number;
+  name: string;
+};
+
+export type ObjetoFuente = {
+  id: number;
+  nombre: string;
+};
+
+export type RelatoVisualFuente = {
+  id: number;
+  Nombre: string;
+};
+
+export type TecnicaFuente = {
+  id: number;
+  name: string;
+};
+
+export type FisiognomicaFuente = {
+  id: number;
+  Nombre: string;
+};
+
+export type FisiognomicaImagenFuente = {
+  id: number;
+  nombre: string;
+};
+
+export type RostroFuente = {
+  id: number;
+  Nombre: string;
+};
+
+export type TipoGestualFuente = {
+  id: number;
+  nombre: string;
+};
+
+export type CartelaFilacteriaFuente = {
+  id: number;
+  name: string;
+};
+
+export type SimbolosFuente = {
+  id: number;
+  name: string;
+};
+
+export type DescriptoresFuente = {
+  id: number;
+  description: string;
+};
+
+export type CaracteristicasFuente = {
+  id: number;
+  name: string;
+};
+
+/**
+ * Otros tipos de uso general
+ */
 
 export type Actividad = {
   desde: ActividadObjeto;

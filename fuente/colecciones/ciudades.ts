@@ -1,19 +1,7 @@
-import { Directus, ID } from '@directus/sdk';
+import { Directus } from '@directus/sdk';
 import { CastingContext } from 'csv-parse/.';
-import { ColeccionesArca } from '../tipos';
+import { Ciudad, CiudadFuente, ColeccionesArca } from '../tipos';
 import { flujoCSV, procesarCSV } from '../utilidades/ayudas';
-
-export type Ciudad = {
-  id?: ID;
-  nombre: string;
-  pais?: ID;
-};
-
-export type CiudadFuente = {
-  id: number;
-  name: string;
-  pais: string;
-};
 
 function limpieza(valor: string, contexto: CastingContext): string {
   const columna = contexto.column as keyof CiudadFuente;

@@ -1,29 +1,10 @@
-import { Directus, ID } from '@directus/sdk';
+import { Directus } from '@directus/sdk';
 import { CastingContext } from 'csv-parse';
-import { ColeccionesArca, Obra } from '../tipos';
+import { ColeccionesArca, Ubicacion, UbicacionFuente } from '../tipos';
 import { esNumero, flujoCSV, procesarCSV } from '../utilidades/ayudas';
 
-export type Ubicacion = {
-  id?: ID;
-  nombre: string;
-  anotacion: string | null;
-  geo?: string;
-  ciudad?: ID;
-  obras?: Obra[];
-};
-
-export type UbicacionOrigen = {
-  id: number;
-  name: string;
-  Lugar: string;
-  latitud: number;
-  longitud: number;
-  'lugar/ubicación': string;
-  Anotación: string;
-};
-
 function limpieza(valor: string, contexto: CastingContext): string | number {
-  const columna = contexto.column as keyof UbicacionOrigen;
+  const columna = contexto.column as keyof UbicacionFuente;
 
   if (columna === 'Lugar' || columna === 'lugar/ubicación') {
     return valor.trim();
@@ -35,7 +16,7 @@ function limpieza(valor: string, contexto: CastingContext): string | number {
   return valor;
 }
 
-async function procesar(lugar: UbicacionOrigen, directus: Directus<ColeccionesArca>): Promise<Ubicacion> {
+async function procesar(lugar: UbicacionFuente, directus: Directus<ColeccionesArca>): Promise<Ubicacion> {
   const respuesta: Ubicacion = {
     id: lugar.id,
     nombre: lugar.Lugar,

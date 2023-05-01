@@ -1,15 +1,8 @@
-import { Directus, ID } from '@directus/sdk';
-import { ColeccionesArca } from '../tipos';
+import { Directus } from '@directus/sdk';
+import { ColeccionesArca, Pais } from '../tipos';
 import paisesEs from 'world_countries_lists/data/countries/es/world.json';
 import { features as geos } from '../datos/paises.json';
 import { guardar } from '../utilidades/ayudas';
-
-export type Pais = {
-  id?: ID;
-  nombre: string;
-  slug?: string;
-  geo: object;
-};
 
 async function procesar(directus: Directus<ColeccionesArca>, datos: Pais[]): Promise<void> {
   const limite = 10;

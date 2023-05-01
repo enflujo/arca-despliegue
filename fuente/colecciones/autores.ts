@@ -1,33 +1,10 @@
 import { CastingContext } from 'csv-parse';
-import { esNumero, flujoCSV, procesarCSV, procesarFechaActividad, urlsAEnlacesHTML, vacio } from '../utilidades/ayudas';
-import { Directus, ID } from '@directus/sdk';
-import { Actividad, ColeccionesArca, Obra } from '../tipos';
-
-export type Autor = {
-  id?: ID;
-  nombre: string;
-  apellido: string;
-  desde: number | null;
-  desde_anotacion: string | null;
-  hasta: number | null;
-  hasta_anotacion: string | null;
-  biografia: string;
-  referencia: string;
-  obras?: Obra[];
-};
-
-export type AutorOrigen = {
-  id: number;
-  name: string;
-  lastname: string;
-  fullname: string;
-  activity: Actividad;
-  biography: string;
-  reference: string;
-};
+import { flujoCSV, procesarCSV, procesarFechaActividad, urlsAEnlacesHTML, vacio } from '../utilidades/ayudas';
+import { Directus } from '@directus/sdk';
+import { Actividad, Autor, AutorFuente, ColeccionesArca } from '../tipos';
 
 function limpieza(valor: string, contexto: CastingContext): Actividad | null | string {
-  const columna = contexto.column as keyof AutorOrigen;
+  const columna = contexto.column as keyof AutorFuente;
 
   // Convertir URLS a enlaces de HTML
   if (columna === 'reference' || columna === 'biography') {
@@ -58,7 +35,7 @@ function limpieza(valor: string, contexto: CastingContext): Actividad | null | s
   return valor;
 }
 
-async function procesar(autor: AutorOrigen): Promise<Autor | null> {
+async function procesar(autor: AutorFuente): Promise<Autor | null> {
   if (!autor.fullname) return null;
   return {
     id: autor.id,

@@ -1,21 +1,8 @@
-import { Directus, ID } from '@directus/sdk';
+import { Directus } from '@directus/sdk';
 import { CastingContext } from 'csv-parse/.';
 import slugify from 'slugify';
-import { ColeccionesArca, Obra } from '../tipos';
+import { CamposGeneralesColeccion, CaracteristicasFuente, ColeccionesArca } from '../tipos';
 import { flujoCSV, procesarCSV } from '../utilidades/ayudas';
-
-export type Caracteristica = {
-  id?: ID;
-  nombre: string;
-  slug: string;
-  descripcion?: string;
-  obras?: Obra[];
-};
-
-export type CaracteristicasFuente = {
-  id: number;
-  name: string;
-};
 
 function limpieza(valor: string, contexto: CastingContext): string {
   const columna = contexto.column as keyof CaracteristicasFuente;
@@ -27,7 +14,7 @@ function limpieza(valor: string, contexto: CastingContext): string {
   return valor;
 }
 
-function procesar({ name }: CaracteristicasFuente): Caracteristica {
+function procesar({ name }: CaracteristicasFuente): CamposGeneralesColeccion {
   return { nombre: name, slug: slugify(name, { lower: true }) };
 }
 

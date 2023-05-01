@@ -1,21 +1,10 @@
-import { Directus, ID } from '@directus/sdk';
+import { Directus } from '@directus/sdk';
 import { CastingContext } from 'csv-parse/.';
-import { ColeccionesArca, Obra } from '../tipos';
+import { ColeccionesArca, CamposGeneralesColeccion, TipoGestualFuente } from '../tipos';
 import { flujoCSV, procesarCSV } from '../utilidades/ayudas';
 
-export type TipoGestual = {
-  id?: ID;
-  nombre: string;
-  obras?: Obra[];
-};
-
-export type TiposGestualFuente = {
-  id: number;
-  nombre: string;
-};
-
 function limpieza(valor: string, contexto: CastingContext): string | null {
-  const columna = contexto.column as keyof TiposGestualFuente;
+  const columna = contexto.column as keyof TipoGestualFuente;
 
   if (columna === 'nombre') {
     return valor.trim();
@@ -24,7 +13,7 @@ function limpieza(valor: string, contexto: CastingContext): string | null {
   return valor;
 }
 
-function procesar({ id, nombre }: TiposGestualFuente): TipoGestual {
+function procesar({ id, nombre }: TipoGestualFuente): CamposGeneralesColeccion {
   return {
     id,
     nombre,

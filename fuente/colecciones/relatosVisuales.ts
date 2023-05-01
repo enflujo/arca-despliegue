@@ -1,18 +1,7 @@
-import { Directus, ID } from '@directus/sdk';
+import { Directus } from '@directus/sdk';
 import { CastingContext } from 'csv-parse/.';
-import { ColeccionesArca, Obra } from '../tipos';
+import { ColeccionesArca, CamposGeneralesColeccion, RelatoVisualFuente } from '../tipos';
 import { flujoCSV, procesarCSV } from '../utilidades/ayudas';
-
-export type RelatoVisual = {
-  id?: ID;
-  nombre: string;
-  obras?: Obra[];
-};
-
-export type RelatoVisualFuente = {
-  id: number;
-  Nombre: string;
-};
 
 function limpieza(valor: string, contexto: CastingContext): string {
   const columna = contexto.column as keyof RelatoVisualFuente;
@@ -24,7 +13,7 @@ function limpieza(valor: string, contexto: CastingContext): string {
   return valor;
 }
 
-function procesar({ id, Nombre }: RelatoVisualFuente): RelatoVisual {
+function procesar({ id, Nombre }: RelatoVisualFuente): CamposGeneralesColeccion {
   return { id, nombre: Nombre };
 }
 
