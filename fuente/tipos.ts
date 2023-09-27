@@ -247,7 +247,8 @@ export type Pais = {
 export type Ciudad = {
   id?: ID;
   nombre: string;
-  pais?: ID;
+  pais?: ID | Pais;
+  geo?: string;
   ubicaciones?: ID[];
   obras_origen?: ID[];
   obras?: ID[];

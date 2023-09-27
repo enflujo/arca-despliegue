@@ -20,7 +20,8 @@
     "gestos:servidor": "AMBIENTE=produccion ts-node ./fuente/moverGestos.ts",
     "ubicaciones": "nodemon ./fuente/actualizarColeccionesParticulares.ts",
     "ubicaciones:servidor": "AMBIENTE=produccion ts-node ./fuente/actualizarColeccionesParticulares.ts",
-    "diagrama": "mmdc -i modelado.mmd -o modelado.svg"
+    "diagrama": "mmdc -i modelado.mmd -o modelado.svg",
+    "geociudades": "nodemon ./fuente/geoCiudades.ts"
   },
   "dependencies": {
     "@directus/sdk": "^10.3.3",
